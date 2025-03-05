@@ -1,0 +1,1060 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pla",
+				"player_positions"
+			],
+			[
+				"tem",
+				"team_id"
+			],
+			[
+				"fin",
+				"find"
+			],
+			[
+				"team",
+				"team_id"
+			],
+			[
+				"al",
+				"align-items"
+			],
+			[
+				"ds",
+				"display"
+			],
+			[
+				"Text",
+				"Text"
+			],
+			[
+				"Card",
+				"Card"
+			],
+			[
+				"IART",
+				"IArticleCategory"
+			],
+			[
+				"Pl",
+				"Player_status"
+			],
+			[
+				"Ag",
+				"Age_group"
+			],
+			[
+				"UNDER",
+				"UNDER-19"
+			],
+			[
+				"Dom",
+				"Dominant_foot"
+			],
+			[
+				"IP",
+				"IPlayerPosition"
+			],
+			[
+				"32",
+				"32-finals"
+			],
+			[
+				"IS",
+				"IStandingRow"
+			],
+			[
+				"IM",
+				"IMatchScorer"
+			],
+			[
+				"NOR",
+				"NORMAL_GOAL"
+			],
+			[
+				"OW",
+				"OWN_GOAL"
+			],
+			[
+				"IMa",
+				"IMatchLeague"
+			],
+			[
+				"act",
+				"activeTab"
+			],
+			[
+				"lsp",
+				"letter-spacing"
+			],
+			[
+				"lgp",
+				"letter-spacing"
+			],
+			[
+				"le",
+				"letterCase"
+			],
+			[
+				"cl",
+				"className?"
+			],
+			[
+				"f",
+				"formula_condensed"
+			],
+			[
+				"fo",
+				"formula_condensed"
+			],
+			[
+				"tal",
+				"text-align"
+			],
+			[
+				"pdd",
+				"padding"
+			],
+			[
+				"pdb",
+				"padding-bottom"
+			],
+			[
+				"alin",
+				"align-items"
+			],
+			[
+				"fl",
+				"flex-end"
+			],
+			[
+				"he",
+				"header-content"
+			],
+			[
+				"Heading",
+				"Heading"
+			],
+			[
+				"ali",
+				"align-items"
+			],
+			[
+				"nav",
+				"nav-text"
+			],
+			[
+				"usePa",
+				"usePathname"
+			],
+			[
+				"Nav",
+				"Nav.module.css"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"getUt",
+				"getUTCFullYear"
+			],
+			[
+				"path",
+				"pathname"
+			],
+			[
+				"clo",
+				"closeMenu"
+			],
+			[
+				"useEffect",
+				"useEffect"
+			],
+			[
+				"NavMen",
+				"NavMenuLink"
+			],
+			[
+				"Link",
+				"Link"
+			],
+			[
+				"cur",
+				"currentMenu"
+			],
+			[
+				"Socials",
+				"Socials"
+			],
+			[
+				"useState",
+				"useState"
+			],
+			[
+				"--",
+				"--md"
+			],
+			[
+				"--se",
+				"--secondary-light"
+			],
+			[
+				"ff",
+				"font-family"
+			],
+			[
+				"min-h",
+				"min-height"
+			],
+			[
+				"font",
+				"font-smooth"
+			],
+			[
+				"for",
+				"formula_condensed"
+			],
+			[
+				"ThemePr",
+				"ThemeProvider"
+			],
+			[
+				"co",
+				"config"
+			],
+			[
+				"defaultS",
+				"defaultSystem"
+			],
+			[
+				"default",
+				"defaultConfig"
+			],
+			[
+				"Provider",
+				"ChakraProvider"
+			],
+			[
+				"st",
+				"string"
+			],
+			[
+				"has",
+				"hasOne"
+			],
+			[
+				"art",
+				"article_id"
+			],
+			[
+				"compe",
+				"competition_id"
+			],
+			[
+				"lea",
+				"league_id"
+			],
+			[
+				"compet",
+				"competition_id"
+			],
+			[
+				"cat",
+				"category_id"
+			],
+			[
+				"ha",
+				"hasMany"
+			],
+			[
+				"play",
+				"player_id"
+			],
+			[
+				"player",
+				"player_position_id"
+			],
+			[
+				"pl",
+				"player_id"
+			],
+			[
+				"b",
+				"boolean"
+			],
+			[
+				"competit",
+				"competitionId"
+			],
+			[
+				"tim",
+				"timestamp"
+			],
+			[
+				"sc",
+				"schema"
+			],
+			[
+				"spa",
+				"spaceY?"
+			],
+			[
+				"spac",
+				"spaceX?"
+			],
+			[
+				"Hea",
+				"Heading"
+			],
+			[
+				"flex",
+				"flexGrow?"
+			],
+			[
+				"fw",
+				"fontWeight?"
+			],
+			[
+				"Head",
+				"Heading"
+			],
+			[
+				"def",
+				"defaultSystem"
+			],
+			[
+				"de",
+				"defaultSystem"
+			],
+			[
+				"ES",
+				"ESNext"
+			],
+			[
+				"cha",
+				"ChakraProvider"
+			],
+			[
+				"react",
+				"react-router"
+			],
+			[
+				"Button",
+				"Button"
+			],
+			[
+				"un",
+				"underline"
+			],
+			[
+				"bdr",
+				"border-radius"
+			],
+			[
+				"c",
+				"className?"
+			],
+			[
+				"mx",
+				"max-width"
+			],
+			[
+				"bg",
+				"background"
+			],
+			[
+				"bdtr",
+				"border-top-right-radius"
+			],
+			[
+				"se",
+				"search-btn"
+			],
+			[
+				"bdrr",
+				"border-radius"
+			],
+			[
+				"isSe",
+				"isSearchBarOpened"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"tra",
+				"translateY()"
+			],
+			[
+				"players",
+				"players"
+			],
+			[
+				"pd",
+				"padding"
+			],
+			[
+				"CardBody",
+				"CardBody"
+			],
+			[
+				"CardHeader",
+				"CardHeader"
+			],
+			[
+				"ma",
+				"match-stat"
+			],
+			[
+				"bord",
+				"border"
+			],
+			[
+				"pr",
+				"preview-item"
+			],
+			[
+				"pre",
+				"preview__body"
+			],
+			[
+				"line",
+				"lineup_obj"
+			],
+			[
+				"lineu",
+				"lineup_obj"
+			],
+			[
+				"IPla",
+				"IPlayer"
+			],
+			[
+				"IMatch",
+				"IMatch"
+			],
+			[
+				"resu",
+				"result_context"
+			],
+			[
+				"mgb",
+				"margin-bottom"
+			],
+			[
+				"gau",
+				"grid-auto-rows"
+			],
+			[
+				"l",
+				"location"
+			],
+			[
+				"rep",
+				"replace"
+			],
+			[
+				"bb",
+				"border-bottom"
+			],
+			[
+				"useRouter",
+				"useRouter"
+			],
+			[
+				"Container",
+				"Container"
+			],
+			[
+				"MatchCard",
+				"MatchCard"
+			],
+			[
+				"obj",
+				"object-position"
+			],
+			[
+				"cont",
+				"content"
+			],
+			[
+				"mat",
+				"match-team__logo"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"pdt",
+				"padding-top"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"match",
+				"match"
+			],
+			[
+				"Switch",
+				"Switcher"
+			],
+			[
+				"alit",
+				"align-items"
+			],
+			[
+				"hon",
+				"honors"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/page.tsx",
+			"settings":
+			{
+				"buffer_size": 1377,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					5,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AgAAAPEBAAAAAAAA8gEAAAAAAAAAAAAA8gEAAAAAAAD0AQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA8QEAAAAAAADxAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					7,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AwAAAPQBAAAAAAAA9QEAAAAAAAAAAAAA9QEAAAAAAAD3AQAAAAAAAAAAAADyAQAAAAAAAPIBAAAAAAAAAgAAACAg",
+					"AQAAAAAAAAABAAAA9AEAAAAAAAD0AQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					11,
+					1,
+					"",
+					null,
+					"AQAAAPUBAAAAAAAARQIAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA9QEAAAAAAAD1AQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					14,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AwAAAEUCAAAAAAAARgIAAAAAAAAAAAAARgIAAAAAAABIAgAAAAAAAAAAAADzAQAAAAAAAPMBAAAAAAAABAAAACAgICA",
+					"AQAAAAAAAAABAAAARQIAAAAAAABFAgAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"jspre",
+				"JsPrettier: Format Code"
+			],
+			[
+				"Package Control: pci",
+				"Package Control: Install Package"
+			],
+			[
+				"pci",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control:",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/michky/projects/beyond-limits-fa",
+		"/home/michky/projects/beyond-limits-fa/app"
+	],
+	"file_history":
+	[
+		"/home/michky/projects/amplify-beyond-limits/pages/_app.page.tsx",
+		"/home/michky/projects/amplify-beyond-limits/components/Standing/Standing.tsx",
+		"/home/michky/projects/amplify-beyond-limits/styles/fonts.tsx",
+		"/home/michky/projects/amplify-beyond-limits/styles/styles.css",
+		"/home/michky/projects/amplify-beyond-limits/components/GuestLayout/GuestLayout.tsx",
+		"/home/michky/projects/amplify-beyond-limits/amplify/data/resource.ts",
+		"/home/michky/repos/beyond-limits-fa/components/main/MatchCard/MatchCard.module.css",
+		"/home/michky/repos/beyond-limits-fa/lib/placeholder-data.ts",
+		"/home/michky/repos/beyond-limits-fa/components/main/MatchCard/Logo.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/MatchCard/MatchCard.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/(main)/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/lib/schem.ts",
+		"/home/michky/repos/beyond-limits-fa/lib/definitions.ts",
+		"/home/michky/repos/beyond-limits-fa/components/main/Typography/Text.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/Card/Card.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/Card/CardBody.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/Card/CardHeader.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/Card/Card.module.css",
+		"/home/michky/repos/beyond-limits-fa/components/main/MatchCard/Details.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/MatchCard/ScoreTime.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/MatchCard/Form.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/MatchCard/Stats.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/MatchCard/Stats",
+		"/home/michky/repos/beyond-limits-fa/components/main/MatchCard/Date.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/MatchCard/Venue.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/MatchCard/ScoreBoard.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/nav/NavMenuBtn.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/nav/NavMenu.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/nav/Nav.module.css",
+		"/home/michky/repos/beyond-limits-fa/components/main/Typography/Typography.module.css",
+		"/home/michky/repos/beyond-limits-fa/app/(main)/layout.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/Header/Header.module.css",
+		"/home/michky/repos/beyond-limits-fa/app/styles/globals.css",
+		"/home/michky/repos/beyond-limits-fa/fonts.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/Header/Header.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/Typography/Heading.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/Header/HeaderLanding.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/ImageComp/ImageComp.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/search/Search.module.css",
+		"/home/michky/repos/beyond-limits-fa/components/main/nav/Nav.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/(main)/Layout.module.css",
+		"/home/michky/repos/beyond-limits-fa/components/main/nav/Hamburger.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/nav/NavLink.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/nav/NavMenuSubLinks.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/nav/NavMenuLink.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/nav/CloseBtn.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/nav/NavMenuText.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/Social/Social.tsx",
+		"/home/michky/repos/beyond-limits-fa/components/main/nav/NavLogo.tsx",
+		"/home/michky/repos/beyond-limits-fa/next.config.js",
+		"/home/michky/repos/beyond-limits-fa/components/main/search/Search.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/(admin)/cp/layout.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/styles/fonts.tsx",
+		"/home/michky/repos/beyond-limits-fa/package.json",
+		"/home/michky/repos/beyond-limits-fa/providers/ThemeProvider.tsx",
+		"/home/michky/repos/beyond-limits-fa/config/theme.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/(main)/loading.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/(admin)/cp/not-found.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/(main)/not-found.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/(main)/[...not-found]/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/(admin)/cp/[...not-found]/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/(admin)/cp/dashboard/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/(admin)/cp/seasons/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/(admin)/cp/matches/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/not-found.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/gallery/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/beyond-tv/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/stats/team-stats/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/stats/players-stats/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/news/[newsId]/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/results/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/fixtures/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/contact/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/news/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/players/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/competitions/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/about/history/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/app/about/honors/page.tsx",
+		"/home/michky/repos/beyond-limits-fa/beyond-limits-fa.sublime-project",
+		"/home/michky/projects/hr/src/components/Layout/Layout.tsx",
+		"/home/michky/projects/hr/src/App.tsx",
+		"/home/michky/projects/hr/src/components/Nav/Navbar.tsx",
+		"/home/michky/projects/hr/src/pages/dashboard.tsx",
+		"/home/michky/projects/hr/src/main.tsx",
+		"/home/michky/projects/hr/node_modules/@chakra-ui/react/dist/types/styled-system/provider.d.ts",
+		"/home/michky/projects/hr/tsconfig.app.json",
+		"/home/michky/projects/hr/src/pages/profile.tsx",
+		"/home/michky/projects/hr/src/pages/create.tsx",
+		"/home/michky/projects/hr/db.json",
+		"/home/michky/projects/hr/src/pages/home.tsx",
+		"/home/michky/projects/hr/vite.config.ts",
+		"/home/michky/projects/hr/src/data.tsx",
+		"/home/michky/projects/hr/package.json",
+		"/home/michky/projects/amplify-beyond-limits/pages/admin/index.page.tsx",
+		"/home/michky/projects/amplify-beyond-limits/components/AuthLayout/AuthLayout.tsx",
+		"/home/michky/projects/amplify-beyond-limits/pages/admin/season/index.page.tsx",
+		"/home/michky/projects/amplify-beyond-limits/seed/article.json",
+		"/home/michky/projects/amplify-beyond-limits/components/TableCard.tsx",
+		"/home/michky/projects/amplify-beyond-limits/pages/honours/index.page.tsx",
+		"/home/michky/projects/amplify-beyond-limits/pages/honours/Honours.module.css",
+		"/home/michky/projects/amplify-beyond-limits/pages/contact/index.page.tsx",
+		"/home/michky/projects/amplify-beyond-limits/pages/contact/Contact.module.css",
+		"/home/michky/projects/amplify-beyond-limits/lib/placeholder-data.ts",
+		"/home/michky/projects/amplify-beyond-limits/pages/search/index.page.tsx",
+		"/home/michky/projects/amplify-beyond-limits/pages/gallery/index.page.tsx",
+		"/home/michky/projects/amplify-beyond-limits/pages/gallery/Gallery.module.css",
+		"/home/michky/projects/amplify-beyond-limits/components/Search/Search.tsx",
+		"/home/michky/projects/amplify-beyond-limits/components/Typography/Heading.tsx",
+		"/home/michky/projects/amplify-beyond-limits/.gitignore",
+		"/home/michky/projects/amplify-beyond-limits/pages/search/Search.module.css",
+		"/home/michky/projects/amplify-beyond-limits/components/Typography/Typography.module.css",
+		"/home/michky/projects/amplify-beyond-limits/pages/search/Search.module.css\nSearch.module.css",
+		"/home/michky/projects/amplify-beyond-limits/components/Search/Search.module.css",
+		"/home/michky/projects/amplify-beyond-limits/pages/Search/Search.module.css\nSearch.module.css",
+		"/home/michky/projects/amplify-beyond-limits/pages/Search/index.page.tsx",
+		"/home/michky/projects/amplify-beyond-limits/components/Nav/Nav.module.css",
+		"/home/michky/projects/amplify-beyond-limits/components/Nav/Nav.tsx",
+		"/home/michky/projects/amplify-beyond-limits/components/Nav/NavSearchBtn.tsx",
+		"/home/michky/projects/amplify-beyond-limits/pages/player-stats/PlayerStats.module.css",
+		"/home/michky/projects/amplify-beyond-limits/pages/team-stats/TeamStats.module.css",
+		"/home/michky/projects/amplify-beyond-limits/pages/team-stats/index.page.tsx",
+		"/home/michky/projects/amplify-beyond-limits/pages/player-stats/index.page.tsx",
+		"/home/michky/projects/amplify-beyond-limits/pages/history/index.page.tsx",
+		"/home/michky/projects/amplify-beyond-limits/pages/history/History.module.css",
+		"/home/michky/projects/amplify-beyond-limits/pages/matches/[matchId]/stats/index.page.tsx",
+		"/home/michky/projects/amplify-beyond-limits/pages/matches/Match.module.css",
+		"/home/michky/projects/amplify-beyond-limits/components/MatchCards/MatchCard.module.css"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/page.tsx",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								577,
+								577
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".\"'/@<",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "LSP-typescript"
+								}
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										576,
+										577
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										534,
+										535
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"color_helper.scan":
+							{
+								"allow_scanning": false,
+								"color_class":
+								[
+									{
+										"class": "css-level-4",
+										"scopes": ""
+									}
+								],
+								"color_trigger": "(?xi)\n(?:\n    \\b(?<![-#&$])(?:\n        color\\((?!\\s*-)|(?:hsla?|(?:ok)?(?:lch|lab)|hwb|rgba?)\\(\n) |\n\\b(?<![-#&$])[\\w]{3,}(?![(-])\\b|(?<![&])\\#)\n",
+								"current_ext": ".tsx",
+								"current_syntax": "JavaScript/TSX",
+								"enabled": true,
+								"last_updated": 1741179576.39,
+								"scanning": "-comment"
+							},
+							"git_gutter_is_enabled": true,
+							"lsp_active": true,
+							"lsp_uri": "file:///home/michky/projects/beyond-limits-fa/app/page.tsx",
+							"show_definitions": false,
+							"syntax": "Packages/JavaScript/TSX.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 103.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "beyond-limits.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"lsp_show_inlay_hints": false
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 228.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
