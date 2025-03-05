@@ -1,0 +1,34 @@
+.matchcard {
+}
+
+.matchcard-header {
+	width: 100%;
+	height: 100%;
+	padding: 0 var(--lg);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo__box {
+	position: relative;
+	border-radius: 50%;
+	background: var(--white);
+	padding: var(--xs);
+	height: 2rem;
+	width: 2rem;
+}
+
+.logo {
+	position: relative;
+	border-radius: 50%;
+	height: auto;
+	max-width: 100%;
+	height: 1.5rem;
+	width: 1.5rem;
+}
+
+.logo img {
+	object-fit: contain !important;
+	object-position: center !important;
+}

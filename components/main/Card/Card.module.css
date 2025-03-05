@@ -1,0 +1,53 @@
+.card {
+  width: 100%;
+}
+
+.card.radius {
+  overflow: hidden;
+  border-radius: var(--base);
+}
+
+.card-header,
+.card-body {
+  width: 100%;
+}
+
+.card {
+  border-radius: var(--base);
+  overflow: hidden;
+}
+
+.card-header {
+  height: var(--xxxl);
+  border-top-right-radius: var(--base);
+  border-top-left-radius: var(--base);
+}
+
+.card-body {
+  min-height: var(--vii);
+  border-bottom-right-radius: var(--base);
+  border-bottom-left-radius: var(--base);
+  background: var(--blue-400);
+}
+
+.card-header.border {
+  border-bottom: 1px solid var(--t-border);
+}
+
+.card-header.dark,
+.card.dark,
+.card-body.dark {
+  background: var(--blue-500);
+}
+
+.card-header.light,
+.card.light,
+.card-body.light {
+  background: var(--blue-400);
+}
+
+.card.trans,
+.card-header.trans,
+.card-body.trans {
+  background: transparent;
+}
