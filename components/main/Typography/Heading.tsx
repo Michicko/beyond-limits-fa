@@ -7,16 +7,22 @@ function Heading({
 	children,
 	type,
 	letterCase,
+	mb,
+	align,
 }: {
 	level: number;
 	children: React.ReactNode;
 	type: "primary" | "secondary";
 	letterCase: "upper" | "lower" | "normal";
+	mb?: "xs" | "sm" | "base" | "md" | "lg" | "xl" | "xxl";
+	align?: string;
 }) {
 	const headingStyles = clsx(
 		styles.heading,
 		styles[`heading-${type}`],
 		styles[letterCase],
+		mb && styles[`mb-${mb}`],
+		align && styles[align],
 	);
 
 	return level === 1 ? (

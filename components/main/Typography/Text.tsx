@@ -9,13 +9,15 @@ function Text({
 	color,
 	letterCase,
 	type,
+	cssStyles,
 }: {
 	children: React.ReactNode;
-	size: "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl" | "iv" | "v" | "vi";
+	size: "sm" | "base" | "md" | "lg" | "xl" | "xxl" | "xxxl" | "iv" | "v" | "vi";
 	weight?: "light" | "bold";
 	color: string;
-	letterCase: "upper" | "lower" | "normal";
+	letterCase: "upper" | "lower" | "capitalize" | "normal";
 	type?: "lead" | "text";
+	cssStyles?: object;
 }) {
 	return (
 		<p
@@ -27,6 +29,7 @@ function Text({
 				styles[letterCase],
 				styles[type || "text"],
 			)}
+			style={cssStyles && { ...cssStyles }}
 		>
 			{children}
 		</p>

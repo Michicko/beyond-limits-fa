@@ -18,7 +18,7 @@
 }
 
 .card-header {
-  height: var(--xxxl);
+  height: var(--v);
   border-top-right-radius: var(--base);
   border-top-left-radius: var(--base);
 }
@@ -37,7 +37,7 @@
 .card-header.dark,
 .card.dark,
 .card-body.dark {
-  background: var(--blue-500);
+  background: var(--blue-600);
 }
 
 .card-header.light,

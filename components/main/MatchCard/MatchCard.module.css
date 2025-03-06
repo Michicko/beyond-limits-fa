@@ -1,13 +1,51 @@
 .matchcard {
+	height: 100%;
 }
 
 .matchcard-header {
+}
+
+.matchcard-header,
+.matchcard-body {
 	width: 100%;
 	height: 100%;
-	padding: 0 var(--lg);
+	padding: var(--base) var(--lg);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.matchcard-body {
+	align-items: flex-start;
+	padding-bottom: 0;
+}
+
+.matchcard-details,
+.matchcard-details__box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 0.3rem;
+}
+
+.matchcard-details__box.finished.show-btn {
+	margin-bottom: var(--sm);
+}
+
+.btn-box {
+	padding: var(--md) 0;
+	padding-top: var(--sm);
+	text-align: center;
+}
+
+.matchcard-details__box.finished {
+	flex-direction: row;
+}
+
+.matchcard-body.canceled,
+.matchcard-body.abandoned {
+	align-items: center;
 }
 
 .logo__box {
@@ -31,4 +69,50 @@
 .logo img {
 	object-fit: contain !important;
 	object-position: center !important;
+}
+
+.logo.sm {
+	height: 1.8rem;
+	width: 1.8rem;
+}
+
+.logo.md,
+.logo.lg,
+.logo.xl,
+.logo.xxl {
+	height: 2.2rem;
+	width: 2.2rem;
+}
+
+@media only screen and (min-width: 36rem) {
+	.logo.lg,
+	.logo.xl,
+	.logo.xxl {
+		height: 2.8rem;
+		width: 2.8rem;
+	}
+
+	.matchcard-header,
+	.matchcard-body {
+		padding: var(--base) var(--xxl);
+	}
+
+	.matchcard-body {
+		padding-bottom: 0;
+	}
+}
+
+@media only screen and (min-width: 48rem) {
+	.logo.xl,
+	.logo.xxl {
+		height: 3.4rem;
+		width: 3.4rem;
+	}
+}
+
+@media only screen and (min-width: 60rem) {
+	.logo.xxl {
+		height: 5rem;
+		width: 5rem;
+	}
 }

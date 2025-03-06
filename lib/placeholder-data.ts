@@ -1,3 +1,12 @@
+import {
+  Age_group,
+  Article_Cateory,
+  Competition_type,
+  Dominant_foot,
+  Match_status,
+  Player_status,
+} from "./definitions";
+
 export const visuals = [
   "/images/blvsig.png",
   "/images/contact.jpg",
@@ -121,7 +130,7 @@ const player_positions = [
   },
 ];
 
-const players = [
+export const players = [
   {
     id: "055d368e-3f4d-4d12-903b-e4aac2633993",
     firstname: "John",
@@ -137,12 +146,12 @@ const players = [
     dob: "2007-3-10",
     height: 175,
     weight: 78,
-    dominant_foot: "left",
+    dominant_foot: Dominant_foot.RIGHT,
     isTwoFooted: true,
-    image_home_kit: "",
-    image_away_kit: "",
-    age_group: "under-19",
-    status: "active",
+    image_home_kit: "/images/player-1.png",
+    image_away_kit: "/images/player-2.png",
+    age_group: Age_group.UNDER_19,
+    status: Player_status.ACTIVE,
   },
   {
     id: "cc8586e3-b78c-4680-ad20-7fe25f5398fb",
@@ -159,12 +168,34 @@ const players = [
     dob: "2008-5-10",
     height: 170,
     weight: 75,
-    dominant_foot: "right",
+    dominant_foot: Dominant_foot.LEFT,
     isTwoFooted: false,
-    image_home_kit: "",
-    image_away_kit: "",
-    age_group: "under-19",
-    status: "active",
+    image_home_kit: "/images/player-1.png",
+    image_away_kit: "/images/player-2.png",
+    age_group: Age_group.UNDER_19,
+    status: Player_status.ACTIVE,
+  },
+  {
+    id: "cb8586e3-b78c-4680-ad20-7fe25f5398fb",
+    firstname: "Okpala",
+    lastname: "Uche",
+    player_position_id: "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+    position: player_positions.find(
+      (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+    ),
+    general_match_stats: [],
+    position_match_stats: [],
+    squad_no: 18,
+    year_signed: 2024,
+    dob: "2008-5-10",
+    height: 168,
+    weight: 74,
+    dominant_foot: Dominant_foot.LEFT,
+    isTwoFooted: false,
+    image_home_kit: "/images/player-1.png",
+    image_away_kit: "/images/player-2.png",
+    age_group: Age_group.UNDER_19,
+    status: Player_status.ACTIVE,
   },
 ];
 
@@ -175,7 +206,7 @@ const seasons = [
   },
 ];
 
-const standing = [
+export const standing = [
   {
     id: "f412b74a-e81b-491b-8ac3-15134192d0fd",
     league_id: "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
@@ -238,7 +269,7 @@ const competitions = [
     short_name: "nnl",
     long_name: "nigerian national league",
     logo: "/images/nnl.png",
-    competition_type: "league",
+    competition_type: Competition_type.LEAGUE,
     season_id: "2380576c-20d9-4d05-9a96-0735514f03fc",
     season: seasons[0],
   },
@@ -261,12 +292,12 @@ const getMatchTeam = (team_id: string) => {
     team: teams.find((el) => el.id === team_id),
     goals: 0,
     stats: {
-      passes: "",
-      corners: "",
-      shots: "",
-      yellows: "",
-      reds: "",
-      penalty: "",
+      passes: 24,
+      corners: 12,
+      shots: 25,
+      yellows: 4,
+      reds: 0,
+      penalty: 0,
     },
   };
 };
@@ -277,33 +308,39 @@ const lineup = {
   coach: {
     name: "Ogundeye godwin",
     role: "coach",
+    image: "/images/coach.png",
   },
 };
 
 export const matches = [
   {
+    id: "d55ae10f-1c1f-46b4-abe6-7fba3891fc45",
     round: 5,
     competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
     competition: competitions[0],
     home: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c"),
-    away: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c"),
+    away: getMatchTeam("07b1ea51-73a7-41eb-aae1-9dff2500d50a"),
     date: "2025-4-15",
     time: "10:00 am",
     venue: "remo stars stadium",
-    status: "upcoming",
+    status: Match_status.UPCOMING,
     lineup: lineup,
     preview: {
       context:
         "Match between beyon limits fa and imperifal fc is going to be tough",
-      keyPlayer: "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+      keyPlayer: players.find(
+        (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+      ),
       aboutKeyPlayer: "He is a cool boy",
     },
     report: {
       context: "",
-      mvp: "",
+      mvp: players.find(
+        (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+      ),
       aboutMvp: "",
     },
-    scorers: "",
+    scorers: null,
     form: {
       home: ["w", "w", "d", "w"],
       away: ["w", "l", "d", "w"],
@@ -335,5 +372,132 @@ export const socials = [
     link: "https://youtube.com/@beyondlimitsfootballacadem7276?si=UrDiLOAy9c6j8jDM",
     icon: "/images/ant-design_youtube-outlined.svg",
     name: "Youtube",
+  },
+];
+
+export const articles = [
+  {
+    id: "cc3a4a86-a091-4099-be7a-2e1b061e340b",
+    title:
+      "Beyond Limits FA Earns Promotion to NNL After 4-0 Victory Over First Bank FC",
+    createdAt: "2024-06-15",
+    image: "/images/winners.jpg",
+    category: Article_Cateory.CLUB_NEWS,
+    content: `
+      <h1>What is going on</h1>
+      <p>Today we're going to discuss about the beautiful game of football. I know you must 
+      have heared about this over and over again</p>
+      <p>We are going to discuss Beyond Limits.</p>
+      `,
+  },
+  {
+    id: "bc2a4a86-a091-4099-be7a-2e1b061e330a",
+    category: Article_Cateory.MATCH_REPORT,
+    title:
+      "Beyond Limits FA Stuns Imperial FC with Dramatic 2-1 Comeback in Season Opener",
+    createdAt: "2024-06-01",
+    image: "/images/trophy-boy.jpg",
+    match: matches.find(
+      (el) => el.id === "d55ae10f-1c1f-46b4-abe6-7fba3891fc45",
+    ),
+    content: `
+      <h1>What is going on</h1>
+      <p>Today we're going to discuss about the beautiful game of football. I know you must 
+      have heared about this over and over again</p>
+      <p>We are going to discuss Beyond Limits.</p>
+      `,
+  },
+  {
+    id: "cc3a4a86-a093-3099-be7a-2e1b061e331a",
+    category: Article_Cateory.CLUB_NEWS,
+    title:
+      "Academy Breaks Records with 10-Game Unbeaten Streak, Securing Place in NNL",
+    createdAt: "2024-05-28",
+    image: "/images/results.jpg",
+    content: `
+      <h1>What is going on</h1>
+      <p>Today we're going to discuss about the beautiful game of football. I know you must 
+      have heared about this over and over again</p>
+      <p>We are going to discuss Beyond Limits.</p>
+      `,
+  },
+  {
+    id: "dd3a4a86-a091-4099-be7a-2e1b061e330a",
+    category: Article_Cateory.CLUB_NEWS,
+    title:
+      "End of Season Gala: Beyond Limits FA Celebrates Success with Players and Coaches",
+    createdAt: "2024-05-20",
+    image: "/images/teamstats.jpg",
+    content: `
+      <h1>What is going on</h1>
+      <p>Today we're going to discuss about the beautiful game of football. I know you must 
+      have heared about this over and over again</p>
+      <p>We are going to discuss Beyond Limits.</p>
+      `,
+  },
+  {
+    id: "cc3a4a86-a091-4099-be7a-2e1b061e23ab",
+    category: Article_Cateory.MATCH_REPORT,
+    title:
+      "Beyond Limits Academy Wins Thrilling Cup Final Against Local Rivals in 3-2 Victory",
+    createdAt: "2024-05-15",
+    image: "/images/honors.jpg",
+    match: matches.find(
+      (el) => el.id === "d55ae10f-1c1f-46b4-abe6-7fba3891fc45",
+    ),
+    content: `
+      <h1>What is going on</h1>
+      <p>Today we're going to discuss about the beautiful game of football. I know you must 
+      have heared about this over and over again</p>
+      <p>We are going to discuss Beyond Limits.</p>
+      `,
+  },
+  {
+    id: "cc3a4a86-a091-2149-be7a-2e1b061e330c",
+    category: Article_Cateory.MATCH_PREVIEW,
+    title:
+      "Beyond Limits FA Stuns Imperial FC with Dramatic 2-1 Comeback in Season Opener",
+    createdAt: "2024-06-01",
+    image: "/images/trophy-boy.jpg",
+    match: matches.find(
+      (el) => el.id === "d55ae10f-1c1f-46b4-abe6-7fba3891fc45",
+    ),
+    content: `
+      <h1>What is going on</h1>
+      <p>Today we're going to discuss about the beautiful game of football. I know you must 
+      have heared about this over and over again</p>
+      <p>We are going to discuss Beyond Limits.</p>
+      `,
+  },
+];
+
+export const match_highlights = [
+  {
+    id: 12,
+    title: "TCC 24|25 MD1 : BEYOND LIMITS FA VS IGANMU TIGERS",
+    date: "2024-01-10",
+    thumbnail: "/images/blvsig.png",
+    videoUrl: "https://www.youtube.com/watch?v=oVy2zUmq1DA&t=2s",
+  },
+  {
+    id: 13,
+    title: "PRESEASON FRIENDLY MATCH: BLFA 2-1 BENDEL INSURANCE",
+    date: "2024-01-05",
+    thumbnail: "/images/keep.png",
+    videoUrl: "https://www.youtube.com/watch?v=RvyFQolhGUg",
+  },
+  {
+    id: 14,
+    title: "GOTHIA CUP 2024: BEYOND LIMITS U17 Vs ROSENBORG U17",
+    date: "2024-01-03",
+    thumbnail: "/images/keep.png",
+    videoUrl: "https://www.youtube.com/watch?v=xxfZcnZx5h0",
+  },
+  {
+    id: 4,
+    title: "TV Post 4",
+    date: "2024-09-27",
+    videoUrl: "https://www.youtube.com/watch?v=oVy2zUmq1DA",
+    thumbnail: "/images/ongame.png",
   },
 ];

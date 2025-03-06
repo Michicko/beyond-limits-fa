@@ -10,11 +10,11 @@ function Logo({
 }: {
 	name: string;
 	logo: string;
-	size?: "sm" | "md" | "lg";
+	size?: "sm" | "md" | "lg" | "xl" | "xxl";
 }) {
 	return (
-		<div className={clsx(styles["logo-box"], size && styles[size])}>
-			<div className={clsx(styles["logo"])}>
+		<div className={clsx(styles["logo-box"])}>
+			<div className={clsx(styles["logo"], size && styles[size])}>
 				<ImageComp image={logo} alt={`${name} logo`} />
 			</div>
 		</div>

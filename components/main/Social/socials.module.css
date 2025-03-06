@@ -13,3 +13,11 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.social-link {
+  transition: transform 0.2s linear;
+}
+
+.social-link:hover {
+  transform: translateY(-0.5rem);
+}

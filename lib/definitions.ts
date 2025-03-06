@@ -1,5 +1,28 @@
 import { ReactNode } from "react";
 
+export interface IHighlight {
+	id: number;
+	title: string;
+	date: string;
+	thumbnail: string;
+	videoUrl: string;
+}
+
+export enum Article_Cateory {
+	MATCH_PREVIEW = "MATCH PREVIEW",
+	MATCH_REPORT = "MATCH REPORT",
+	CLUB_NEWS = "CLUB NEWS",
+}
+
+export interface IArticle {
+	id: string;
+	title: string;
+	createdAt: string;
+	category: Article_Cateory;
+	image: string;
+	match?: IMatch;
+}
+
 export interface ICurrentMenu {
 	id: number;
 	icon: ReactNode;
@@ -17,7 +40,7 @@ interface IPlayerPosition {
 	short_name: string;
 	long_name: string;
 	attributes: string[];
-	players: IPlayer[];
+	players?: IPlayer[];
 }
 
 interface ITeam {
@@ -33,7 +56,7 @@ interface IArticleCategory {
 	articles?: IArticle[];
 }
 
-interface IArticle {
+export interface IArticle {
 	article_category_id: string;
 	category: IArticleCategory;
 	cover_image: string;
@@ -42,12 +65,12 @@ interface IArticle {
 	content: {}[];
 }
 
-interface ISeason {
+export interface ISeason {
 	season: string;
 	competitions?: ICompetition[];
 }
 
-interface IHonor {
+export interface IHonor {
 	competition_id: string;
 	competition?: ICompetition;
 	trophy_image: string;
@@ -92,7 +115,7 @@ interface IPlayOffsRound {
 	matches: IMatch[];
 }
 
-interface IStandingRow {
+export interface IStandingRow {
 	league_id: string;
 	league?: ILeague;
 	team_id: string;
@@ -110,13 +133,13 @@ interface IStandingRow {
 	};
 }
 
-enum Competition_type {
+export enum Competition_type {
 	LEAGUE = "LEAGUE",
 	CUP = "CUP",
 	MIXEDCUP = "MIXEDCUP",
 }
 
-interface ICompetition {
+export interface ICompetition {
 	short_name: string;
 	long_name: string;
 	logo: string;
@@ -126,7 +149,7 @@ interface ICompetition {
 	matches?: IMatch[];
 }
 
-enum Match_status {
+export enum Match_status {
 	UPCOMING = "UPCOMING",
 	FINISHED = "FINISHED",
 	CANCELED = "CANCELED",
@@ -141,27 +164,28 @@ interface IMatchStats {
 	minutes_played: number;
 }
 
-enum Dominant_foot {
+export enum Dominant_foot {
 	LEFT = "LEFT",
 	RIGHT = "RIGHT",
 }
 
-enum Age_group {
+export enum Age_group {
 	UNDER_19 = "UNDER-19",
 	UNDER_17 = "UNDER-17",
 }
 
-enum Player_status {
+export enum Player_status {
 	LOANED = "LOANED",
 	ACTIVE = "ACTIVE",
 	INACTIVE = "INACTIVE",
 }
 
-interface IPlayer {
+export interface IPlayer {
+	id: string;
 	firstname: string;
 	lastname: string;
 	player_position_id: string;
-	position: IPlayerPosition;
+	position?: IPlayerPosition;
 	general_match_stats: IMatchStats[];
 	// get these stats from player position attributes and input in match positon
 	position_match_stats: object[];
@@ -190,7 +214,7 @@ interface ILineup {
 	coach: IStaff;
 }
 
-enum GOAL_TYPE {
+export enum GOAL_TYPE {
 	PENALTY = "PENALTY",
 	OWN_GOAL = "OWN_GOAL",
 	NORMAL_GOAL = "NORMAL_GOAL",
@@ -209,7 +233,7 @@ interface IMatchScorer {
 
 interface IMatchTeam {
 	team_id: string;
-	team: ITeam;
+	team?: ITeam;
 	goals: number;
 	stats: {
 		passes: number;
@@ -222,11 +246,12 @@ interface IMatchTeam {
 }
 
 export interface IMatch {
+	id: string;
 	round: string | number;
 	competition_id: string;
 	competition: ICompetition;
-	home: ITeam;
-	away: ITeam;
+	home: IMatchTeam;
+	away: IMatchTeam;
 	date: string;
 	time: string;
 	venue: string;
@@ -234,15 +259,15 @@ export interface IMatch {
 	lineup: ILineup;
 	preview: {
 		context: string;
-		keyPlayer: IPlayer;
+		keyPlayer?: IPlayer;
 		aboutKeyPlayer: string;
 	};
 	report: {
 		context: string;
-		mvp: IPlayer;
+		mvp?: IPlayer;
 		aboutMvp: string;
 	};
-	scorers: IMatchScorer[];
+	scorers?: IMatchScorer[] | null;
 	form: {
 		home: string[];
 		away: string[];

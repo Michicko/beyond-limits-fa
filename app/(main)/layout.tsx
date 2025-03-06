@@ -4,6 +4,7 @@ import styles from "./Layout.module.css";
 import clsx from "clsx";
 import Nav from "@/components/main/nav/Nav";
 import { formula_condensed, roboto } from "@/app/styles/fonts";
+import Footer from "@/components/main/Footer/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,13 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${formula_condensed.variable} ${roboto.className}`}
-    >
+    <html lang="en" className={`${formula_condensed.variable}`}>
       <body className={clsx(styles.layout)}>
         <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   );

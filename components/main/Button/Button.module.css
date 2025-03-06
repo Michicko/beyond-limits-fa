@@ -1,0 +1,49 @@
+.btn {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--xxs) var(--sm);
+	padding-top: calc(var(--xs) + 0.2rem);
+	line-height: 1;
+	text-transform: uppercase;
+	border-radius: var(--xxs);
+	letter-spacing: 1px;
+	font-family: var(--font);
+	font-weight: 700;
+	gap: var(--sm);
+	outline: transparent;
+	border: transparent;
+	cursor: pointer;
+}
+
+.btn.sm {
+	font-size: var(--sm);
+	padding: var(--xxs) var(--sm);
+	padding-top: calc(var(--xs) + 0.05rem);
+}
+
+.btn.secondary {
+	background: var(--secondary-light);
+	color: var(--primary-light);
+}
+
+.btn svg {
+	height: var(--base);
+	width: var(--base);
+	fill: var(--primary-light);
+	margin-top: -0.2rem;
+	display: none;
+}
+
+@media only screen and (min-width: 25rem) {
+	.btn svg {
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 36rem) {
+	.btn {
+		padding: var(--xs) var(--lg);
+		padding-top: calc(var(--sm) + 0.2rem);
+		gap: var(--base);
+	}
+}

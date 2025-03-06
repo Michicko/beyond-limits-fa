@@ -202,3 +202,11 @@ body {
 ul {
   padding-left: var(--md);
 }
+
+.main {
+  margin-top: -2rem;
+}
+
+.main > *:not(:last-child) {
+  margin-bottom: var(--iv);
+}
