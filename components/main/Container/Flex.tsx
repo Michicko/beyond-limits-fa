@@ -11,6 +11,7 @@ function Flex({
 	wrap,
 	mb,
 	my,
+	direction,
 }: {
 	children: React.ReactNode;
 	justify: string;
@@ -20,6 +21,7 @@ function Flex({
 	wrap?: boolean;
 	mb?: "xxs" | "xs" | "sm" | "base" | "md" | "lg" | "xl";
 	my?: "xxs" | "xs" | "sm" | "base" | "md" | "lg" | "xl" | "iv" | "v";
+	direction?: "col" | "row";
 }) {
 	return (
 		<div
@@ -32,6 +34,7 @@ function Flex({
 				wrap && styles["wrap"],
 				mb && styles[`mb-${mb}`],
 				my && styles[`my-${my}`],
+				direction && styles[`direction-${direction}`],
 			)}
 		>
 			{children}

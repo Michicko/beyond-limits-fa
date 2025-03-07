@@ -1,4 +1,4 @@
-import { Article_Cateory, IArticle } from "@/lib/definitions";
+import { IArticle } from "@/lib/definitions";
 import styles from "./Article.module.css";
 import clsx from "clsx";
 
@@ -12,14 +12,14 @@ const Article = ({ article }: { article: IArticle }) => {
     to top,
     rgba(4, 48, 91, 0.75),
     rgba(64, 84, 102, 0.02)
-  ), url(${article.image})`;
+  ), url(${article.cover_image})`;
 
   const cardStyles =
-    article.category === Article_Cateory.MATCH_PREVIEW
+    article.category && article.category.name === "MATCH_PREVIEW"
       ? {
           background: "#30353B",
         }
-      : article.category === Article_Cateory.MATCH_REPORT
+      : article.category && article.category.name === "MATCH_REPORT"
       ? {
           background: "#01305b",
         }
@@ -35,16 +35,17 @@ const Article = ({ article }: { article: IArticle }) => {
   return (
     <article
       className={clsx(styles.news__article, {
-        [styles["with-bg"]]: !selected_categories.includes(
-          article.category.toLowerCase(),
-        ),
+        [styles["with-bg"]]:
+          article.category &&
+          !selected_categories.includes(article.category.name.toLowerCase()),
       })}
       style={cardStyles}
     >
       {article.match &&
         article.match.home.team &&
         article.match.away.team &&
-        selected_categories.includes(article.category.toLowerCase()) && (
+        article.category &&
+        selected_categories.includes(article.category.name.toLowerCase()) && (
           <div className={styles.match__teams}>
             <div className={styles["team__img-box"]}>
               <ImageComp
@@ -61,7 +62,7 @@ const Article = ({ article }: { article: IArticle }) => {
           </div>
         )}
       <div className={clsx(styles.article__body)}>
-        <ArticleCategory category={article.category} />
+        {article.category && <ArticleCategory category={article.category} />}
         <h3>{article.title}</h3>
         <div className={clsx(styles["news__article-footer"])}>
           <p>{formatDate(article.createdAt)}</p>

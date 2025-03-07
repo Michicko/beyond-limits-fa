@@ -1,5 +1,12 @@
 import { ReactNode } from "react";
 
+export interface ISocial {
+	id: number;
+	link: string;
+	icon: string;
+	name: string;
+}
+
 export interface IHighlight {
 	id: number;
 	title: string;
@@ -8,19 +15,9 @@ export interface IHighlight {
 	videoUrl: string;
 }
 
-export enum Article_Cateory {
-	MATCH_PREVIEW = "MATCH PREVIEW",
-	MATCH_REPORT = "MATCH REPORT",
-	CLUB_NEWS = "CLUB NEWS",
-}
-
-export interface IArticle {
-	id: string;
-	title: string;
-	createdAt: string;
-	category: Article_Cateory;
-	image: string;
-	match?: IMatch;
+export interface ILink {
+	href: string;
+	name: string;
 }
 
 export interface ICurrentMenu {
@@ -51,18 +48,21 @@ interface ITeam {
 	stadium?: string;
 }
 
-interface IArticleCategory {
+export interface IArticleCategory {
+	id: string;
 	name: string;
-	articles?: IArticle[];
 }
 
 export interface IArticle {
-	article_category_id: string;
-	category: IArticleCategory;
-	cover_image: string;
+	id: string;
 	title: string;
+	createdAt: string;
+	article_category_id: string;
+	cover_image: string;
+	match?: IMatch;
 	tags: string[];
-	content: {}[];
+	content: string;
+	category?: IArticleCategory;
 }
 
 export interface ISeason {
@@ -81,14 +81,14 @@ export interface IHonor {
 }
 
 export interface ILeague {
+	id: string;
 	competition_id: string;
-	competition: ICompetition;
-	standings?: IStandingRow[];
+	competition?: ICompetition;
 }
 
 export interface ICup {
 	competition_id: string;
-	competition?: ICompetition;
+	competition: ICompetition | string;
 	playOffsRounds: string[];
 }
 
@@ -214,21 +214,18 @@ interface ILineup {
 	coach: IStaff;
 }
 
-export enum GOAL_TYPE {
-	PENALTY = "PENALTY",
-	OWN_GOAL = "OWN_GOAL",
-	NORMAL_GOAL = "NORMAL_GOAL",
-}
+// export enum GOAL_TYPE {
+// 	PENALTY = "PENALTY",
+// 	OWN_GOAL = "OWN GOAL",
+// 	NORMAL_GOAL = "NORMAL GOAL",
+// }
 
 interface IMatchScorer {
-	match_id: string;
 	time: string;
 	isBeyondLimitsPlayer: boolean;
-	goal_type: GOAL_TYPE;
-	// if isBeyondLimitsPlayer === player Id : player name
-	scorer: IPlayer | string;
-	// if isBeyondLimitsPlayer === player Id : player name
-	assist: IPlayer | string;
+	goal_type: string;
+	name: string;
+	assist: string;
 }
 
 interface IMatchTeam {
@@ -241,7 +238,6 @@ interface IMatchTeam {
 		shots: number;
 		yellows: number;
 		reds: number;
-		penalty: number;
 	};
 }
 
@@ -267,7 +263,7 @@ export interface IMatch {
 		mvp?: IPlayer;
 		aboutMvp: string;
 	};
-	scorers?: IMatchScorer[] | null;
+	scorers?: IMatchScorer[];
 	form: {
 		home: string[];
 		away: string[];

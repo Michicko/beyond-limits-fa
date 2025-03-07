@@ -32,12 +32,14 @@ function PlayerModal({ player }: { player: IPlayer }) {
 					</p>
 				</div>
 				<div className={clsx(styles["player-modal__infos"])}>
-					<PlayerInfo
-						info={{
-							name: player.position?.long_name,
-							value: player.position?.short_name,
-						}}
-					/>
+					{player.position && (
+						<PlayerInfo
+							info={{
+								name: player.position?.long_name,
+								value: player.position?.short_name,
+							}}
+						/>
+					)}
 					<PlayerInfo info={{ name: "Squad No", value: player.squad_no }} />
 					<PlayerInfo info={{ name: "DOB", value: player.dob }} />
 					<PlayerInfo info={{ name: "foot", value: player.dominant_foot }} />

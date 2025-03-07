@@ -123,7 +123,7 @@ const MenuLinks = [
     ],
   },
   {
-    innerLinks: ["/team-stats", "/player-stats"],
+    innerLinks: ["/stats/team-stats", "/stats/player-stats"],
     id: 33,
     name: "STATS",
     icon: (
@@ -143,20 +143,20 @@ const MenuLinks = [
     subMenu: [
       {
         id: 331,
-        link: "/team-stats",
+        link: "/stats/team-stats",
         name: "team stats",
         image: "/images/teamstats.jpg",
       },
       {
         id: 332,
-        link: "/player-stats",
+        link: "/stats/player-stats",
         name: "player stats",
         image: "/images/playerstats.jpg",
       },
     ],
   },
   {
-    innerLinks: ["/history", "/honours"],
+    innerLinks: ["/about/history", "/about/honours"],
     id: 34,
     name: "ABOUT",
     icon: (
@@ -176,13 +176,13 @@ const MenuLinks = [
     subMenu: [
       {
         id: 341,
-        link: "/history",
+        link: "/about/history",
         name: "our history",
         image: "/images/ourhistory.jpg",
       },
       {
         id: 342,
-        link: "/honours",
+        link: "/about/honours",
         name: "honours",
         image: "/images/honors.jpg",
       },

@@ -6,31 +6,25 @@ import Card from "../Card/Card";
 import CardHeader from "../Card/CardHeader";
 import CardBody from "../Card/CardBody";
 import StandingRow from "./StandingRow";
-import Button from "../Button/Button";
 
 function Standing({
 	standings,
 	showFull,
-	showBtn,
 }: {
 	standings: IStandingRow[];
 	showFull: boolean;
-	showBtn: boolean;
 }) {
 	const sortedStandings = standings.sort((a, b) => a.position - b.position);
+
 	// get blfc index in standing
 	const blfcIndex = sortedStandings.findIndex(
 		(el) => el.team && el.team.isBeyondLimits,
 	);
 
-	console.log(blfcIndex, standings);
-
 	// get team before blfc and blfc postions
 	const filteredStandings = showFull
 		? standings
 		: sortedStandings.slice(blfcIndex - 1, blfcIndex + 1);
-
-	console.log("fil", filteredStandings);
 
 	const theads = ["pos", "club", ...Object.keys(standings[0].stats)];
 

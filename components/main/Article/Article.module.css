@@ -59,6 +59,7 @@
   padding-bottom: var(--sm);
   border-bottom: 1px solid var(--gray-100);
   letter-spacing: 1px;
+  line-height: 1.5;
 }
 
 .news__article.with-bg::before {
@@ -108,6 +109,7 @@
   height: var(--md);
   width: var(--md);
   fill: var(--white);
+  margin-top: -0.25rem;
 }
 
 .news__article-footer {

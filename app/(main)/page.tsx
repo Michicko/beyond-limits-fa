@@ -14,6 +14,7 @@ import HeaderLanding from "@/components/main/Header/HeaderLanding";
 import MatchCard from "@/components/main/MatchCard/MatchCard";
 import PlayerList from "@/components/main/Player/PlayerList";
 import Standing from "@/components/main/Standing/Standing";
+import CustomLink from "@/components/main/Typography/CustomLink";
 import Heading from "@/components/main/Typography/Heading";
 import Text from "@/components/main/Typography/Text";
 import VideoCards from "@/components/main/VideoCard/VideoCards";
@@ -27,9 +28,10 @@ import {
 import "@aws-amplify/ui-react/styles.css";
 import Link from "next/link";
 
-const match = matches[0];
-
 export default function Home() {
+  const previous_match = matches.find((el) => el.status === "FINISHED");
+  const upcoming_match = matches.find((el) => el.status === "UPCOMING");
+
   return (
     <>
       <Header
@@ -55,34 +57,50 @@ export default function Home() {
         <Container as="section" size="lg">
           <Grid col="55-45" gap="md">
             <Grid col="2fr" gap="md">
-              <div>
-                <Heading level={2} type="secondary" letterCase="upper" mb="xs">
-                  Previous match
-                </Heading>
-                <MatchCard
-                  match={match}
-                  showBtn={true}
-                  theme="light"
-                  iconSize={"xl"}
-                />
-              </div>
-              <div>
-                <Heading level={2} type="secondary" letterCase="upper" mb="xs">
-                  Next match
-                </Heading>
-                <MatchCard
-                  match={match}
-                  showBtn={true}
-                  theme="light"
-                  iconSize={"xl"}
-                />
-              </div>
+              <>
+                {upcoming_match && previous_match && (
+                  <>
+                    <div>
+                      <Heading
+                        level={2}
+                        type="secondary"
+                        letterCase="upper"
+                        mb="xs"
+                      >
+                        Previous match
+                      </Heading>
+                      <MatchCard
+                        match={previous_match}
+                        showBtn={true}
+                        theme="light"
+                        iconSize={"xl"}
+                      />
+                    </div>
+                    <div>
+                      <Heading
+                        level={2}
+                        type="secondary"
+                        letterCase="upper"
+                        mb="xs"
+                      >
+                        Next match
+                      </Heading>
+                      <MatchCard
+                        match={upcoming_match}
+                        showBtn={true}
+                        theme="light"
+                        iconSize={"xl"}
+                      />
+                    </div>
+                  </>
+                )}
+              </>
             </Grid>
             <div>
               <Heading level={2} type="secondary" letterCase="upper" mb="xs">
                 NNL standing
               </Heading>
-              <Standing showFull={false} standings={standing} showBtn={false} />
+              <Standing showFull={false} standings={standing} />
             </div>
           </Grid>
         </Container>
@@ -97,11 +115,10 @@ export default function Home() {
             <Heading level={2} type="secondary" letterCase="upper">
               Latest News
             </Heading>
-            <Link href={"/news"}>
-              <Heading level={2} type="secondary" letterCase="upper">
-                View more news
-              </Heading>
-            </Link>
+            <CustomLink
+              link={{ name: "View more news", href: "/news" }}
+              type="secondary"
+            />
           </Flex>
           <ArticleList articles={articles.slice(0, 4)} />
         </Container>
@@ -116,13 +133,12 @@ export default function Home() {
             <Heading level={2} type="secondary" letterCase="upper">
               Our Players
             </Heading>
-            <Link href={"/news"}>
-              <Heading level={2} type="secondary" letterCase="upper">
-                View Full team
-              </Heading>
-            </Link>
+            <CustomLink
+              link={{ name: "View Full team", href: "/players/under-19" }}
+              type="secondary"
+            />
           </Flex>
-          <PlayerList players={players} />
+          <PlayerList players={players.slice(0, 3)} />
         </Container>
         <Container as="section" size="md">
           <Heading
@@ -135,24 +151,30 @@ export default function Home() {
             Upcoming matches
           </Heading>
           <Grid col="3" gap="sm">
-            <MatchCard
-              match={match}
-              showBtn={false}
-              theme="dark"
-              iconSize={"xl"}
-            />
-            <MatchCard
-              match={match}
-              showBtn={false}
-              theme="light"
-              iconSize={"xl"}
-            />
-            <MatchCard
-              match={match}
-              showBtn={false}
-              theme="dark"
-              iconSize={"xl"}
-            />
+            <>
+              {upcoming_match && (
+                <>
+                  <MatchCard
+                    match={upcoming_match}
+                    showBtn={false}
+                    theme="dark"
+                    iconSize={"md"}
+                  />
+                  <MatchCard
+                    match={upcoming_match}
+                    showBtn={false}
+                    theme="light"
+                    iconSize={"md"}
+                  />
+                  <MatchCard
+                    match={upcoming_match}
+                    showBtn={false}
+                    theme="dark"
+                    iconSize={"md"}
+                  />
+                </>
+              )}
+            </>
           </Grid>
           <Flex justify="center" align="center" my={"iv"}>
             <Button
@@ -175,7 +197,7 @@ export default function Home() {
                 maxWidth: "608px",
                 textAlign: "center",
                 lineHeight: "1.5",
-                letterSpacing: "px",
+                letterSpacing: "2px",
                 marginTop: "4rem",
                 marginBottom: "4rem",
               }}

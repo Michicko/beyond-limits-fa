@@ -9,13 +9,17 @@ function Heading({
 	letterCase,
 	mb,
 	align,
+	center,
+	color,
 }: {
 	level: number;
 	children: React.ReactNode;
-	type: "primary" | "secondary";
-	letterCase: "upper" | "lower" | "normal";
+	type: "primary" | "secondary" | "section";
+	letterCase: "upper" | "lower" | "capitalize" | "normal";
 	mb?: "xs" | "sm" | "base" | "md" | "lg" | "xl" | "xxl";
 	align?: string;
+	center?: boolean;
+	color?: string;
 }) {
 	const headingStyles = clsx(
 		styles.heading,
@@ -23,6 +27,8 @@ function Heading({
 		styles[letterCase],
 		mb && styles[`mb-${mb}`],
 		align && styles[align],
+		center && styles["center"],
+		color && styles[color],
 	);
 
 	return level === 1 ? (

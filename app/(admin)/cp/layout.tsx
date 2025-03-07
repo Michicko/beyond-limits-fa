@@ -12,7 +12,7 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ scrollPaddingTop: 0 }}>
       <body>{children}</body>
     </html>
   );

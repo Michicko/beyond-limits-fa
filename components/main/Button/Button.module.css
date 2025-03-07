@@ -34,6 +34,23 @@
 	display: none;
 }
 
+.btn.share-btn {
+	background: transparent;
+	color: var(--secondary-light);
+	border: var(--secondary-light) solid 1px;
+}
+
+.btn-img-box {
+	position: relative;
+	height: 1.5rem;
+	width: 1.5rem;
+}
+
+.btn.share-btn .share-btn:hover {
+	background: var(--secondary-light);
+	color: var(--primary-light);
+}
+
 @media only screen and (min-width: 25rem) {
 	.btn svg {
 		display: block;

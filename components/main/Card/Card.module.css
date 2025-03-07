@@ -4,7 +4,7 @@
 
 .card.radius {
   overflow: hidden;
-  border-radius: var(--base);
+  border-radius: var(--sm);
 }
 
 .card-header,
@@ -13,20 +13,20 @@
 }
 
 .card {
-  border-radius: var(--base);
+  border-radius: var(--sm);
   overflow: hidden;
 }
 
 .card-header {
   height: var(--v);
-  border-top-right-radius: var(--base);
-  border-top-left-radius: var(--base);
+  border-top-right-radius: var(--sm);
+  border-top-left-radius: var(--sm);
 }
 
 .card-body {
   min-height: var(--vii);
-  border-bottom-right-radius: var(--base);
-  border-bottom-left-radius: var(--base);
+  border-bottom-right-radius: var(--sm);
+  border-bottom-left-radius: var(--sm);
   background: var(--blue-400);
 }
 

@@ -1,17 +1,17 @@
-import { Article_Cateory } from "@/lib/definitions";
+import { IArticleCategory } from "@/lib/definitions";
 import styles from "./Article.module.css";
 import clsx from "clsx";
 import slugify from "slugify";
 
-const ArticleCategory = ({ category }: { category: Article_Cateory }) => {
+const ArticleCategory = ({ category }: { category: IArticleCategory }) => {
   return (
     <div
       className={clsx(
         styles.article__category,
-        styles[slugify(category.toLowerCase())],
+        category && styles[slugify(category.name.toLowerCase())],
       )}
     >
-      <p>{category}</p>
+      <p>{category && category.name}</p>
     </div>
   );
 };

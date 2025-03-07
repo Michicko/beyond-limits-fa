@@ -10,14 +10,42 @@ function Text({
 	letterCase,
 	type,
 	cssStyles,
+	mb,
+	center,
 }: {
 	children: React.ReactNode;
-	size: "sm" | "base" | "md" | "lg" | "xl" | "xxl" | "xxxl" | "iv" | "v" | "vi";
+	size:
+		| "xxs"
+		| "xs"
+		| "sm"
+		| "base"
+		| "md"
+		| "lg"
+		| "xl"
+		| "xxl"
+		| "xxxl"
+		| "iv"
+		| "v"
+		| "vi";
+	mb?:
+		| "xxs"
+		| "xs"
+		| "sm"
+		| "base"
+		| "md"
+		| "lg"
+		| "xl"
+		| "xxl"
+		| "xxxl"
+		| "iv"
+		| "v"
+		| "vi";
 	weight?: "light" | "bold";
-	color: string;
-	letterCase: "upper" | "lower" | "capitalize" | "normal";
+	color?: string;
+	letterCase?: "upper" | "lower" | "capitalize" | "normal";
 	type?: "lead" | "text";
 	cssStyles?: object;
+	center?: boolean;
 }) {
 	return (
 		<p
@@ -25,9 +53,11 @@ function Text({
 				styles.text,
 				styles[size],
 				styles[weight || "light"],
-				styles[color],
-				styles[letterCase],
+				color && styles[color],
+				letterCase && styles[letterCase],
 				styles[type || "text"],
+				mb && styles[`mb-${mb}`],
+				center && styles.center,
 			)}
 			style={cssStyles && { ...cssStyles }}
 		>

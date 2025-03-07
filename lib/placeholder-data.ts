@@ -1,6 +1,5 @@
 import {
   Age_group,
-  Article_Cateory,
   Competition_type,
   Dominant_foot,
   Match_status,
@@ -17,7 +16,11 @@ export const visuals = [
   "/images/results.jpg",
 ];
 
-const teams = [
+const findItem = (list: { id: string }[], id: string) => {
+  return list.find((el) => el.id === id);
+};
+
+export const teams = [
   {
     id: "f7dccbf7-d187-465d-918f-7760444e839c",
     short_name: "blfa",
@@ -52,7 +55,7 @@ const similar_attributes = [
   "clearance",
 ];
 
-const player_positions = [
+export const player_positions = [
   {
     id: "4ddb4b61-3b45-44b5-b21b-4ab385b8eb94",
     short_name: "gk",
@@ -154,6 +157,28 @@ export const players = [
     status: Player_status.ACTIVE,
   },
   {
+    id: "2cc2934b-f7eb-47b5-af55-ecee0bbbe4a4",
+    player_position_id: "737aeebc-23c0-4811-8d65-3c42b6e5f25c",
+    position: player_positions.find(
+      (el) => el.id === "737aeebc-23c0-4811-8d65-3c42b6e5f25c",
+    ),
+    squad_no: 4,
+    firstname: "Seyi",
+    lastname: "Olofin",
+    year_signed: 2023,
+    general_match_stats: [],
+    position_match_stats: [],
+    dob: "20012-5-2",
+    height: 180,
+    weight: 81,
+    dominant_foot: Dominant_foot.RIGHT,
+    isTwoFooted: true,
+    image_home_kit: "/images/player-1.png",
+    image_away_kit: "/images/player-2.png",
+    age_group: Age_group.UNDER_19,
+    status: Player_status.ACTIVE,
+  },
+  {
     id: "cc8586e3-b78c-4680-ad20-7fe25f5398fb",
     firstname: "Emeka",
     lastname: "Ojiofor",
@@ -197,12 +222,56 @@ export const players = [
     age_group: Age_group.UNDER_19,
     status: Player_status.ACTIVE,
   },
+  {
+    id: "3bc2934b-f7eb-47b5-af55-ecee0bbbe4a4",
+    player_position_id: "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
+    position: player_positions.find(
+      (el) => el.id === "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
+    ),
+    squad_no: 9,
+    firstname: "Aiyenugba",
+    lastname: "Daniel",
+    year_signed: 2024,
+    general_match_stats: [],
+    position_match_stats: [],
+    dob: "20011-5-2",
+    height: 170,
+    weight: 82,
+    dominant_foot: Dominant_foot.LEFT,
+    isTwoFooted: true,
+    image_home_kit: "/images/player-1.png",
+    image_away_kit: "/images/player-2.png",
+    age_group: Age_group.UNDER_19,
+    status: Player_status.ACTIVE,
+  },
 ];
 
-const seasons = [
+export const seasons = [
   {
     id: "2380576c-20d9-4d05-9a96-0735514f03fc",
     season: "2024/2025",
+  },
+];
+
+export const competitions = [
+  {
+    id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+    short_name: "nnl",
+    long_name: "nigerian national league",
+    logo: "/images/nnl.png",
+    competition_type: Competition_type.LEAGUE,
+    season_id: "2380576c-20d9-4d05-9a96-0735514f03fc",
+    season: seasons[0],
+  },
+];
+
+export const leagues = [
+  {
+    id: "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
+    competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+    competition: competitions.find(
+      (compe) => compe.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+    ),
   },
 ];
 
@@ -210,9 +279,13 @@ export const standing = [
   {
     id: "f412b74a-e81b-491b-8ac3-15134192d0fd",
     league_id: "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
-    league: "",
+    league: leagues.find(
+      (league) => league.id === "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
+    ),
     team_id: "f7dccbf7-d187-465d-918f-7760444e839c",
-    team: teams.find((el) => el.id === "f7dccbf7-d187-465d-918f-7760444e839c"),
+    team: teams.find(
+      (team) => team.id === "f7dccbf7-d187-465d-918f-7760444e839c",
+    ),
     position: 2,
     stats: {
       p: 12,
@@ -228,9 +301,13 @@ export const standing = [
   {
     id: "1dc23f0e-0704-4457-94ca-ef6e1efda117",
     league_id: "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
-    league: "",
+    league: leagues.find(
+      (league) => league.id === "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
+    ),
     team_id: "07b1ea51-73a7-41eb-aae1-9dff2500d50a",
-    team: teams.find((el) => el.id === "07b1ea51-73a7-41eb-aae1-9dff2500d50a"),
+    team: teams.find(
+      (team) => team.id === "07b1ea51-73a7-41eb-aae1-9dff2500d50a",
+    ),
     position: 1,
     stats: {
       p: 12,
@@ -246,9 +323,13 @@ export const standing = [
   {
     id: "1dc23f0e-0704-4457-94ca-ef6e1efda117",
     league_id: "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
-    league: "",
+    league: leagues.find(
+      (league) => league.id === "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
+    ),
     team_id: "8bc32940-d9a7-43c4-8af9-7313a7d8b9c1",
-    team: teams.find((el) => el.id === "8bc32940-d9a7-43c4-8af9-7313a7d8b9c1"),
+    team: teams.find(
+      (team) => team.id === "8bc32940-d9a7-43c4-8af9-7313a7d8b9c1",
+    ),
     position: 3,
     stats: {
       p: 12,
@@ -263,48 +344,34 @@ export const standing = [
   },
 ];
 
-const competitions = [
-  {
-    id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
-    short_name: "nnl",
-    long_name: "nigerian national league",
-    logo: "/images/nnl.png",
-    competition_type: Competition_type.LEAGUE,
-    season_id: "2380576c-20d9-4d05-9a96-0735514f03fc",
-    season: seasons[0],
+const getMatchTeam = (
+  team_id: string,
+  goals?: number,
+  stats?: {
+    passes: number;
+    corners: number;
+    shots: number;
+    yellows: number;
+    reds: number;
   },
-];
-
-const leagues = [
-  {
-    id: "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
-    competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
-    competition: competitions.find(
-      (el) => el.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
-    ),
-    standings: standing,
-  },
-];
-
-const getMatchTeam = (team_id: string) => {
+) => {
   return {
     team_id: team_id,
     team: teams.find((el) => el.id === team_id),
-    goals: 0,
+    goals: goals || 0,
     stats: {
-      passes: 24,
-      corners: 12,
-      shots: 25,
-      yellows: 4,
-      reds: 0,
-      penalty: 0,
+      passes: stats?.passes || 0,
+      corners: stats?.corners || 0,
+      shots: stats?.shots || 0,
+      yellows: stats?.yellows || 0,
+      reds: stats?.reds || 0,
     },
   };
 };
 
 const lineup = {
-  starters: [...players],
-  substitutes: [...players],
+  starters: players.slice(0, 11),
+  substitutes: players.slice(0, 5),
   coach: {
     name: "Ogundeye godwin",
     role: "coach",
@@ -335,15 +402,80 @@ export const matches = [
     },
     report: {
       context: "",
-      mvp: players.find(
-        (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
-      ),
+      // mvp: "",
       aboutMvp: "",
     },
-    scorers: null,
+    // scorers: "",
     form: {
       home: ["w", "w", "d", "w"],
       away: ["w", "l", "d", "w"],
+    },
+  },
+  {
+    id: "c42ae10f-1c1f-46b4-abe6-7fba3891fc45",
+    round: 6,
+    competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+    competition: competitions[0],
+    home: getMatchTeam("8bc32940-d9a7-43c4-8af9-7313a7d8b9c1", 2, {
+      passes: 23,
+      corners: 6,
+      yellows: 5,
+      reds: 0,
+      shots: 13,
+    }),
+    away: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c", 4, {
+      passes: 43,
+      corners: 14,
+      yellows: 2,
+      reds: 0,
+      shots: 18,
+    }),
+    date: "2025-5-10",
+    time: "9:30 am",
+    venue: "Ifako stadium",
+    status: Match_status.FINISHED,
+    lineup: lineup,
+    preview: {
+      context:
+        "Match between beyon limits fa and gbagada fc is going to be tough",
+      keyPlayer: players.find(
+        (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+      ),
+      aboutKeyPlayer: "He is a cool boy",
+    },
+    report: {
+      context: "The match was a really tough one",
+      mvp: players.find(
+        (el) => el.id === "cb8586e3-b78c-4680-ad20-7fe25f5398fb",
+      ),
+      aboutMvp: "He played hsi heart out",
+    },
+    scorers: [
+      {
+        time: "23rd",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Ajayi sogunde",
+        assist: "Emmanuel Loel",
+      },
+      {
+        time: "33rd",
+        isBeyondLimitsPlayer: false,
+        goal_type: "normal goal",
+        name: "Oju Larry",
+        assist: "",
+      },
+      {
+        time: "65th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Ajayi sogunde",
+        assist: "Emmanuel Loel",
+      },
+    ],
+    form: {
+      home: ["w", "w", "l", "w"],
+      away: ["w", "w", "w", "l"],
     },
   },
 ];
@@ -375,28 +507,50 @@ export const socials = [
   },
 ];
 
+export const article_categories = [
+  {
+    id: "bb3a4a86-a091-4099-be7a-2e1b061e340c",
+    name: "CLUB NEWS",
+  },
+  {
+    id: "bb3a4a86-a091-4099-be7a-2e1b061e340b",
+    name: "MATCH REPORT",
+  },
+  {
+    id: "dd2a4a86-a091-4099-be7a-2e1b061e340b",
+    name: "MATCH PREVIEW",
+  },
+];
+
 export const articles = [
   {
     id: "cc3a4a86-a091-4099-be7a-2e1b061e340b",
     title:
       "Beyond Limits FA Earns Promotion to NNL After 4-0 Victory Over First Bank FC",
     createdAt: "2024-06-15",
-    image: "/images/winners.jpg",
-    category: Article_Cateory.CLUB_NEWS,
+    cover_image: "/images/winners.jpg",
+    article_category_id: "bb3a4a86-a091-4099-be7a-2e1b061e340c",
+    category: article_categories.find(
+      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340c",
+    ),
     content: `
       <h1>What is going on</h1>
       <p>Today we're going to discuss about the beautiful game of football. I know you must 
       have heared about this over and over again</p>
       <p>We are going to discuss Beyond Limits.</p>
       `,
+    tags: ["hello", "world"],
   },
   {
     id: "bc2a4a86-a091-4099-be7a-2e1b061e330a",
-    category: Article_Cateory.MATCH_REPORT,
+    article_category_id: "bb3a4a86-a091-4099-be7a-2e1b061e340b",
+    category: article_categories.find(
+      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340b",
+    ),
     title:
       "Beyond Limits FA Stuns Imperial FC with Dramatic 2-1 Comeback in Season Opener",
     createdAt: "2024-06-01",
-    image: "/images/trophy-boy.jpg",
+    cover_image: "/images/trophy-boy.jpg",
     match: matches.find(
       (el) => el.id === "d55ae10f-1c1f-46b4-abe6-7fba3891fc45",
     ),
@@ -406,42 +560,54 @@ export const articles = [
       have heared about this over and over again</p>
       <p>We are going to discuss Beyond Limits.</p>
       `,
+    tags: ["hello", "world"],
   },
   {
     id: "cc3a4a86-a093-3099-be7a-2e1b061e331a",
-    category: Article_Cateory.CLUB_NEWS,
+    article_category_id: "bb3a4a86-a091-4099-be7a-2e1b061e340c",
+    category: article_categories.find(
+      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340c",
+    ),
     title:
       "Academy Breaks Records with 10-Game Unbeaten Streak, Securing Place in NNL",
     createdAt: "2024-05-28",
-    image: "/images/results.jpg",
+    cover_image: "/images/results.jpg",
     content: `
       <h1>What is going on</h1>
       <p>Today we're going to discuss about the beautiful game of football. I know you must 
       have heared about this over and over again</p>
       <p>We are going to discuss Beyond Limits.</p>
       `,
+    tags: ["hello", "world"],
   },
   {
     id: "dd3a4a86-a091-4099-be7a-2e1b061e330a",
-    category: Article_Cateory.CLUB_NEWS,
+    article_category_id: "bb3a4a86-a091-4099-be7a-2e1b061e340c",
+    category: article_categories.find(
+      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340c",
+    ),
     title:
       "End of Season Gala: Beyond Limits FA Celebrates Success with Players and Coaches",
     createdAt: "2024-05-20",
-    image: "/images/teamstats.jpg",
+    cover_image: "/images/teamstats.jpg",
     content: `
       <h1>What is going on</h1>
       <p>Today we're going to discuss about the beautiful game of football. I know you must 
       have heared about this over and over again</p>
       <p>We are going to discuss Beyond Limits.</p>
       `,
+    tags: ["hello", "world"],
   },
   {
     id: "cc3a4a86-a091-4099-be7a-2e1b061e23ab",
-    category: Article_Cateory.MATCH_REPORT,
+    article_category_id: "bb3a4a86-a091-4099-be7a-2e1b061e340C",
+    category: article_categories.find(
+      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340c",
+    ),
     title:
       "Beyond Limits Academy Wins Thrilling Cup Final Against Local Rivals in 3-2 Victory",
     createdAt: "2024-05-15",
-    image: "/images/honors.jpg",
+    cover_image: "/images/honors.jpg",
     match: matches.find(
       (el) => el.id === "d55ae10f-1c1f-46b4-abe6-7fba3891fc45",
     ),
@@ -451,14 +617,18 @@ export const articles = [
       have heared about this over and over again</p>
       <p>We are going to discuss Beyond Limits.</p>
       `,
+    tags: ["hello", "world"],
   },
   {
     id: "cc3a4a86-a091-2149-be7a-2e1b061e330c",
-    category: Article_Cateory.MATCH_PREVIEW,
+    article_category_id: "dd2a4a86-a091-4099-be7a-2e1b061e340b",
+    category: article_categories.find(
+      (el) => el.id === "dd2a4a86-a091-4099-be7a-2e1b061e340b",
+    ),
     title:
       "Beyond Limits FA Stuns Imperial FC with Dramatic 2-1 Comeback in Season Opener",
     createdAt: "2024-06-01",
-    image: "/images/trophy-boy.jpg",
+    cover_image: "/images/trophy-boy.jpg",
     match: matches.find(
       (el) => el.id === "d55ae10f-1c1f-46b4-abe6-7fba3891fc45",
     ),
@@ -468,6 +638,7 @@ export const articles = [
       have heared about this over and over again</p>
       <p>We are going to discuss Beyond Limits.</p>
       `,
+    tags: ["hello", "world"],
   },
 ];
 
@@ -499,5 +670,36 @@ export const match_highlights = [
     date: "2024-09-27",
     videoUrl: "https://www.youtube.com/watch?v=oVy2zUmq1DA",
     thumbnail: "/images/ongame.png",
+  },
+];
+
+export const honors = [
+  {
+    competition: { short: "NNL", long: "Nigerian National League" },
+    trophy: "/images/nnl-trophy.png",
+    numbers_won: 1,
+    years: [2024],
+    article_id: 3,
+  },
+  {
+    competition: { short: "VC", long: "Viareggio cup" },
+    trophy: "/images/vc-trophy.png",
+    numbers_won: 1,
+    years: [2024],
+    article_id: 3,
+  },
+  {
+    competition: { short: "tccc", long: "The Creative Championship cup" },
+    trophy: "/images/tccc-trophy.png",
+    numbers_won: 1,
+    years: [2023, 2024],
+    article_id: 3,
+  },
+  {
+    competition: { short: "tccl", long: "The Creative Championship league" },
+    trophy: "/images/tccl-trophy.png",
+    numbers_won: 1,
+    years: [2024],
+    article_id: 3,
   },
 ];
