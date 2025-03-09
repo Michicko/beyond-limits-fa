@@ -1,17 +1,17 @@
+.tab__container {
+	width: 100%;
+	overflow-x: auto;
+	position: relative;
+	display: flex;
+}
+
 .tab-list {
 	display: inline-flex;
 	align-items: center;
 	gap: var(--md);
 	padding: var(--xxs) var(--sm);
 	border-radius: var(--xs);
-	min-width: 20rem;
-}
-
-.tab__container {
-	width: 100%;
-	overflow-x: auto;
-	position: relative;
-	display: flex;
+	margin-bottom: 0.5rem;
 }
 
 .tab.white {

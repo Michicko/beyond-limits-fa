@@ -42,9 +42,7 @@ function Lineup({ params }: { params: { matchId: string } }) {
 							</div>
 						</CardHeader>
 						<CardBody as="div" theme={"light"}>
-							<div
-								className={clsx(styles.preview__body, styles.p, styles.grid)}
-							>
+							<div className={clsx(styles.preview__body, styles.grid)}>
 								<ul>
 									{starters.map((lineup_obj, i) => {
 										if (!lineup_obj) return;

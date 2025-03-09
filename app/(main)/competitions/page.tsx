@@ -25,7 +25,10 @@ function Competitions() {
 									priority={false}
 								/>
 							</div>
-							<p className={clsx(styles.competition__name)}>
+							<p className={clsx(styles.competition__name, styles.short)}>
+								{competition.short_name}
+							</p>
+							<p className={clsx(styles.competition__name, styles.long)}>
 								{competition.long_name}
 							</p>
 							<div className={clsx(styles["competition-icon__box"])}>

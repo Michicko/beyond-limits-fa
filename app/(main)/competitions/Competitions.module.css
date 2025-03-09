@@ -56,8 +56,11 @@
 .competition__name {
 	font-size: var(--base);
 	font-weight: 700;
-	text-transform: capitalize;
-	letter-spacing: 1px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.competition__name.long {
+	display: none;
 }
 
 @media only screen and (min-width: 36rem) {

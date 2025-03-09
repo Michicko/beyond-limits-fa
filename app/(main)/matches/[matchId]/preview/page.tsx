@@ -65,7 +65,20 @@ function Review({ params }: { params: { matchId: string } }) {
 						<CardBody as="div" theme={"light"}>
 							<div className={clsx(styles.preview__body, styles["py-b"])}>
 								<ul className={clsx(styles["team-form__list"])}>
-									<li className={clsx(styles["preview-item"])}>
+									<li
+										className={clsx(
+											styles["preview-item"],
+											styles["item-name"],
+										)}
+									>
+										<Text
+											color="white"
+											size="base"
+											weight="bold"
+											letterCase="upper"
+										>
+											{match.home.team?.short_name}
+										</Text>
 										<Text
 											color="white"
 											size="base"
@@ -81,7 +94,20 @@ function Review({ params }: { params: { matchId: string } }) {
 										</div>
 									</li>
 
-									<li className={clsx(styles["preview-item"])}>
+									<li
+										className={clsx(
+											styles["preview-item"],
+											styles["item-name"],
+										)}
+									>
+										<Text
+											color="white"
+											size="base"
+											weight="bold"
+											letterCase="upper"
+										>
+											{match.away.team?.short_name}
+										</Text>
 										<Text
 											color="white"
 											size="base"

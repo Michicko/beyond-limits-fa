@@ -16,7 +16,6 @@
 	font-size: var(--md);
 	font-weight: 500;
 	color: var(--white);
-	max-width: 80%;
 }
 
 .honor {
@@ -129,8 +128,11 @@
 	}
 }
 
-@media only screen and (min-width: 60rem) {
+@media only screen and (min-width: 64rem) {
 	.honor-img__box h3 {
 		font-size: var(--v);
+	}
+	.honours-intro p {
+		max-width: 80%;
 	}
 }

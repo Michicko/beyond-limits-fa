@@ -54,6 +54,10 @@
 	justify-content: center;
 }
 
+.match-layout__header {
+	margin-bottom: 1rem;
+}
+
 .match-header__details {
 	flex-direction: column;
 	gap: var(--xs);
@@ -72,7 +76,7 @@
 }
 
 .match-layout__main {
-	padding: var(--xxl) var(--md);
+	padding: var(--xxl) 0;
 }
 
 @media only screen and (min-width: 25rem) {

@@ -198,10 +198,6 @@ body {
   color: var(--white);
 }
 
-ul {
-  padding-left: var(--md);
-}
-
 .main {
   margin-top: -2rem;
 }
