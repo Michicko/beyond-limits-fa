@@ -9,7 +9,7 @@ function Gallery() {
 		<div className={clsx(styles.gallery)}>
 			{visuals.map((visual) => {
 				return (
-					<div className={clsx(styles.visual)}>
+					<div className={clsx(styles.visual)} key={visual}>
 						<ImageComp
 							image={visual}
 							alt=""

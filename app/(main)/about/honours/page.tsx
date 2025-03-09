@@ -62,7 +62,7 @@ function Honours() {
 										<ul className={clsx(styles["honors-years"])}>
 											{honor.years.map((year, i) => {
 												return (
-													<li className={clsx(styles["honor-year"])}>
+													<li className={clsx(styles["honor-year"])} key={year}>
 														{year}
 														{i < honor.years.length - 1 ? "," : ""}
 													</li>

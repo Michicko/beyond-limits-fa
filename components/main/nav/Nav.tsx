@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Search from "../search/Search";
 import NavMenu from "./NavMenu";
 import clsx from "clsx";
@@ -8,14 +8,37 @@ import NavLink from "./NavLink";
 import Hamburger from "./Hamburger";
 import NavLogo from "./NavLogo";
 import NavSearchBtn from "./NavSearchBtn";
+import { usePathname } from "next/navigation";
 
 function Nav() {
+	const pathname = usePathname();
+	const isStatePopped = useRef(false);
+
 	const [isSearchBarOpened, setIsSearchBarOpened] = useState(false);
 	const [isMenuOpened, setIsMenuOpened] = useState(false);
 
 	const openSearchBar = () => {
 		setIsSearchBarOpened(true);
 	};
+
+	// Handling the scroll position to ensure clicking on the links
+	// scrolls the page to the top with the sticky positioned navbar.
+	useEffect(() => {
+		const onPopState = () => (isStatePopped.current = true);
+
+		window.addEventListener("popstate", onPopState);
+		return () => window.removeEventListener("popstate", onPopState);
+	}, []);
+
+	useEffect(() => {
+		if (!isStatePopped.current) {
+			// navigation occurred without pressing
+			// the browser's back or forward buttons
+			window.scrollTo(0, 0);
+		} else {
+			isStatePopped.current = false;
+		}
+	}, [pathname]);
 
 	return (
 		<>

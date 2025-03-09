@@ -81,14 +81,18 @@ function MatchLayout({
 					type="secondary"
 				>{`${match.home.team?.long_name} vs ${match.away.team?.long_name}`}</Heading>
 				<Flex align="center" justify="center" gap="xs">
-					<Logo
-						logo={match.competition.logo}
-						name={match.competition.long_name}
-						size="lg"
-					/>
-					<Text size="md" weight="bold" letterCase="upper" color="white">
-						{match.competition.short_name}
-					</Text>
+					{match.competition && (
+						<>
+							<Logo
+								logo={match.competition.logo}
+								name={match.competition.long_name}
+								size="lg"
+							/>
+							<Text size="md" weight="bold" letterCase="upper" color="white">
+								{match.competition.short_name}
+							</Text>
+						</>
+					)}
 				</Flex>
 			</div>
 

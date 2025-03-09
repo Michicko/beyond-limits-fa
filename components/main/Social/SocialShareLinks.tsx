@@ -10,14 +10,12 @@ function SocialShareLinks({ url, text }: { url: string; text: string }) {
 			href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
 				url,
 			)}`,
-			icon: "/images/simple-line-icons_social-facebook.svg",
 		},
 		{
 			name: "twitter",
 			href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
 				url,
 			)}&text=${encodeURIComponent(text)}`,
-			icon: "/images/pajamas_twitter.svg",
 		},
 		// {
 		// 	name: "whatsapp",
@@ -30,9 +28,7 @@ function SocialShareLinks({ url, text }: { url: string; text: string }) {
 	return (
 		<div className={clsx(styles["social-share-links"])}>
 			{links.map((link) => {
-				return (
-					<ShareButton name={link.name} href={link.href} icon={link.icon} />
-				);
+				return <ShareButton name={link.name} href={link.href} />;
 			})}
 		</div>
 	);

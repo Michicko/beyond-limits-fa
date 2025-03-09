@@ -8,25 +8,18 @@ import Heading from "../../Typography/Heading";
 import Tab from "../../Tab/Tab";
 import LinkTab from "../../Tab/LinkTab";
 import styles from "../Layout.module.css";
+import { seasons } from "@/lib/placeholder-data";
 
 function CompetitionsLayout({
-  headerBg,
-  pageTitle,
-  seasons,
   children,
-  links,
+  pageTitle,
   competitionId,
 }: {
-  headerBg?: string;
-  pageTitle: string;
-  seasons?: { season: string }[];
   children: React.ReactElement;
-  links?: { name: string; href: string }[];
   competitionId?: string;
+  pageTitle?: string;
 }) {
-  const tabLinks = links
-    ? links
-    : competitionId
+  const tabLinks = competitionId
     ? [
         {
           name: "Results",
@@ -45,19 +38,25 @@ function CompetitionsLayout({
     : [
         { name: "fixtures", href: "/fixtures" },
         { name: "results", href: "/results" },
-        { name: "tables", href: "/tables" },
+        { name: "standing", href: "/standing" },
       ];
 
   return (
     <>
       <Header
-        bg={headerBg || "/images/fixtures-layout-header-bg.png"}
+        bg={"/images/fixtures-layout-header-bg.png"}
         alt="2024 / 2025 ongoing campaign"
         overlay={true}
       >
         <LayoutHeader>
           <>
-            <Heading level={1} letterCase="upper" type="primary">
+            <Heading
+              level={1}
+              letterCase="upper"
+              type="primary"
+              color="white"
+              center={true}
+            >
               {pageTitle}
             </Heading>
             {seasons && (

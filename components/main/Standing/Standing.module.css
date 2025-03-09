@@ -79,7 +79,7 @@ tr.shade {
 
 .standing th,
 .standing td {
-	font-size: var(--base);
+	font-size: var(--sm);
 	font-weight: 300;
 	font-family: var(--font);
 	line-height: 1;
@@ -96,10 +96,8 @@ tr.shade {
 
 .standing thead > * :nth-child(7),
 .standing thead > * :nth-child(8),
-.standing thead > * :nth-child(9),
 .standing tbody > * :nth-child(7),
-.standing tbody > * :nth-child(8),
-.standing tbody > * :nth-child(9) {
+.standing tbody > * :nth-child(8) {
 	display: none;
 }
 
@@ -111,22 +109,30 @@ tr.shade {
 	.img-box ~ :nth-child(2) {
 		display: none;
 	}
+
+	.standing th,
+	.standing td {
+		font-size: var(--base);
+	}
 }
 
 @media only screen and (min-width: 48rem) {
 	.standing thead > * :nth-child(7),
 	.standing thead > * :nth-child(8),
-	.standing thead > * :nth-child(9),
 	.standing tbody > * :nth-child(7),
-	.standing tbody > * :nth-child(8),
-	.standing tbody > * :nth-child(9) {
+	.standing tbody > * :nth-child(8) {
 		display: table-cell;
 	}
-}
 
-@media only screen and (min-width: 75rem) {
-	.standing thead > * :last-child,
-	.standing tbody > * :last-child {
+	.standing th,
+	.standing td {
 		text-align: center;
+	}
+
+	.standing th:nth-child(1),
+	.standing td:nth-child(1),
+	.standing th:nth-child(2),
+	.standing td:nth-child(2) {
+		text-align: left;
 	}
 }

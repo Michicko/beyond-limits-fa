@@ -4,6 +4,7 @@ import {
   Dominant_foot,
   Match_status,
   Player_status,
+  Playoffs_round,
 } from "./definitions";
 
 export const visuals = [
@@ -15,10 +16,6 @@ export const visuals = [
   "/images/trials.png",
   "/images/results.jpg",
 ];
-
-const findItem = (list: { id: string }[], id: string) => {
-  return list.find((el) => el.id === id);
-};
 
 export const teams = [
   {
@@ -44,6 +41,62 @@ export const teams = [
     logo: "/images/gbagada_fc.png",
     isBeyondLimits: false,
     stadium: "gbagada stadium",
+  },
+  {
+    id: "4cd32940-d9a7-43c4-4ac9-7313a7d8b9b2",
+    short_name: "cc-u19",
+    long_name: "carrarese u19",
+    logo: "/images/carrarese_u19.png",
+    isBeyondLimits: false,
+    stadium: "Stadio dei Marmi",
+  },
+  {
+    id: "2cd32920-d9a7-33d4-4ac9-7213b7d8b9b2",
+    short_name: "f-u19",
+    long_name: "fioretina u19",
+    logo: "/images/fioretina_u19.png",
+    isBeyondLimits: false,
+    stadium: "Stadio Curva Fiesole - Viola Park",
+  },
+  {
+    id: "2fd32420-d9b4-22c5-4ac9-7213b7d8b9b3",
+    short_name: "cz-u19",
+    long_name: "crvena-zvezda u19",
+    logo: "/images/crvena-zvezda_u19.png",
+    isBeyondLimits: false,
+    stadium: "Rajko Mitić - Jug veštačka trava 4",
+  },
+  {
+    id: "2cd42420-d9b4-32c5-4ac9-7213b7d8b9b3",
+    short_name: "a-u19",
+    long_name: "avellino u19",
+    logo: "/images/avellino_u19.png",
+    isBeyondLimits: false,
+    stadium: "Stadio Partenio-Adriano Lombardi",
+  },
+  {
+    id: "2cc42120-d9b4-32c5-4ad9-7214b7d8b9b3",
+    short_name: "t-u19",
+    long_name: "torino u19",
+    logo: "/images/torino_u19.png",
+    isBeyondLimits: false,
+    stadium: "Stadio Valentino Mazzola",
+  },
+  {
+    id: "2dc52120-d9b4-32c5-4ad9-3214b4d8b9b3",
+    short_name: "oc-u19",
+    long_name: "ojodu city u19",
+    logo: "/images/ojodu-city_u19.png",
+    isBeyondLimits: false,
+    stadium: "Ojodu stadium",
+  },
+  {
+    id: "2cc32121-d9b4-32c5-4ad9-3214b4d8b9b3",
+    short_name: "b-u19",
+    long_name: "brazzaville u19",
+    logo: "/images/brazzaville_u19.png",
+    isBeyondLimits: false,
+    stadium: "",
   },
 ];
 
@@ -223,7 +276,73 @@ export const players = [
     status: Player_status.ACTIVE,
   },
   {
+    id: "2b4586e3-b78c-4680-ad20-7fe25f5398fb",
+    firstname: "Olamilekan",
+    lastname: "Adegoyega",
+    player_position_id: "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+    position: player_positions.find(
+      (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+    ),
+    general_match_stats: [],
+    position_match_stats: [],
+    squad_no: 17,
+    year_signed: 2024,
+    dob: "2011-5-10",
+    height: 172,
+    weight: 80,
+    dominant_foot: Dominant_foot.RIGHT,
+    isTwoFooted: false,
+    image_home_kit: "/images/player-1.png",
+    image_away_kit: "/images/player-2.png",
+    age_group: Age_group.UNDER_19,
+    status: Player_status.ACTIVE,
+  },
+  {
+    id: "2c4584e3-c78c-2680-ad20-7fe25f5398fb",
+    firstname: "Taiwo-Cole",
+    lastname: "Oyetunde",
+    player_position_id: "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+    position: player_positions.find(
+      (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+    ),
+    general_match_stats: [],
+    position_match_stats: [],
+    squad_no: 15,
+    year_signed: 2023,
+    dob: "2011-4-21",
+    height: 175,
+    weight: 75,
+    dominant_foot: Dominant_foot.LEFT,
+    isTwoFooted: false,
+    image_home_kit: "/images/player-1.png",
+    image_away_kit: "/images/player-2.png",
+    age_group: Age_group.UNDER_19,
+    status: Player_status.ACTIVE,
+  },
+  {
     id: "3bc2934b-f7eb-47b5-af55-ecee0bbbe4a4",
+    player_position_id: "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
+    position: player_positions.find(
+      (el) => el.id === "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
+    ),
+    squad_no: 7,
+    firstname: "Aiyenugba",
+    lastname: "Daniel",
+    year_signed: 2024,
+    general_match_stats: [],
+    position_match_stats: [],
+    dob: "20011-5-2",
+    height: 170,
+    weight: 82,
+    dominant_foot: Dominant_foot.LEFT,
+    isTwoFooted: true,
+    image_home_kit: "/images/player-1.png",
+    image_away_kit: "/images/player-2.png",
+    age_group: Age_group.UNDER_19,
+    status: Player_status.ACTIVE,
+  },
+  {
+    id: "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
     player_position_id: "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
     position: player_positions.find(
       (el) => el.id === "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
@@ -237,8 +356,30 @@ export const players = [
     dob: "20011-5-2",
     height: 170,
     weight: 82,
-    dominant_foot: Dominant_foot.LEFT,
+    dominant_foot: Dominant_foot.RIGHT,
     isTwoFooted: true,
+    image_home_kit: "/images/player-1.png",
+    image_away_kit: "/images/player-2.png",
+    age_group: Age_group.UNDER_19,
+    status: Player_status.ACTIVE,
+  },
+  {
+    id: "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+    firstname: "Shina",
+    lastname: "Ayodele",
+    player_position_id: "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
+    position: player_positions.find(
+      (el) => el.id === "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
+    ),
+    general_match_stats: [],
+    position_match_stats: [],
+    squad_no: 8,
+    year_signed: 2023,
+    dob: "2006-06-22",
+    height: 175,
+    weight: 75,
+    dominant_foot: Dominant_foot.RIGHT,
+    isTwoFooted: false,
     image_home_kit: "/images/player-1.png",
     image_away_kit: "/images/player-2.png",
     age_group: Age_group.UNDER_19,
@@ -261,16 +402,19 @@ export const competitions = [
     logo: "/images/nnl.png",
     competition_type: Competition_type.LEAGUE,
     season_id: "2380576c-20d9-4d05-9a96-0735514f03fc",
-    season: seasons[0],
+    season: seasons.find(
+      (el) => el.id === "2380576c-20d9-4d05-9a96-0735514f03fc",
+    ),
   },
-];
-
-export const leagues = [
   {
-    id: "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
-    competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
-    competition: competitions.find(
-      (compe) => compe.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+    id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    short_name: "vc",
+    long_name: "Viareggio cup",
+    logo: "/images/vc.png",
+    competition_type: Competition_type.MIXEDCUP,
+    season_id: "2380576c-20d9-4d05-9a96-0735514f03fc",
+    season: seasons.find(
+      (el) => el.id === "2380576c-20d9-4d05-9a96-0735514f03fc",
     ),
   },
 ];
@@ -278,9 +422,9 @@ export const leagues = [
 export const standing = [
   {
     id: "f412b74a-e81b-491b-8ac3-15134192d0fd",
-    league_id: "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
-    league: leagues.find(
-      (league) => league.id === "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
+    competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+    competition: competitions.find(
+      (league) => league.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
     ),
     team_id: "f7dccbf7-d187-465d-918f-7760444e839c",
     team: teams.find(
@@ -292,17 +436,16 @@ export const standing = [
       w: 10,
       d: 2,
       l: 0,
-      f: 15,
-      a: 10,
-      gd: "15:10",
+      g: "15:10",
+      gd: 5,
       pts: 32,
     },
   },
   {
     id: "1dc23f0e-0704-4457-94ca-ef6e1efda117",
-    league_id: "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
-    league: leagues.find(
-      (league) => league.id === "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
+    competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+    competition: competitions.find(
+      (league) => league.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
     ),
     team_id: "07b1ea51-73a7-41eb-aae1-9dff2500d50a",
     team: teams.find(
@@ -314,17 +457,16 @@ export const standing = [
       w: 11,
       d: 1,
       l: 0,
-      f: 15,
-      a: 10,
-      gd: "15:10",
+      g: "15:10",
+      gd: 5,
       pts: 34,
     },
   },
   {
     id: "1dc23f0e-0704-4457-94ca-ef6e1efda117",
-    league_id: "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
-    league: leagues.find(
-      (league) => league.id === "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
+    competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+    competition: competitions.find(
+      (league) => league.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
     ),
     team_id: "8bc32940-d9a7-43c4-8af9-7313a7d8b9c1",
     team: teams.find(
@@ -336,13 +478,139 @@ export const standing = [
       w: 9,
       d: 1,
       l: 2,
-      f: 14,
-      a: 9,
-      gd: "14:9",
+      g: "14:9",
+      gd: 5,
       pts: 28,
     },
   },
+  {
+    id: "2cc23f0e-1504-3427-94ca-bf6e1efda117",
+    competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    competition: competitions.find(
+      (league) => league.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    team_id: "f7dccbf7-d187-465d-918f-7760444e839c",
+    team: teams.find(
+      (team) => team.id === "f7dccbf7-d187-465d-918f-7760444e839c",
+    ),
+    position: 1,
+    stats: {
+      p: 3,
+      w: 3,
+      d: 0,
+      l: 0,
+      g: "15:4",
+      gd: 11,
+      pts: 9,
+    },
+  },
+  {
+    id: "3dd13e0e-1504-2427-44ca-bf6e1efda117",
+    competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    competition: competitions.find(
+      (league) => league.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    team_id: "2cd32920-d9a7-33d4-4ac9-7213b7d8b9b2",
+    team: teams.find(
+      (team) => team.id === "2cd32920-d9a7-33d4-4ac9-7213b7d8b9b2",
+    ),
+    position: 2,
+    stats: {
+      p: 3,
+      w: 2,
+      d: 0,
+      l: 1,
+      g: "11:7",
+      gd: 5,
+      pts: 6,
+    },
+  },
+  {
+    id: "2cd13e0b-1504-2327-44ca-bf6e1efda117",
+    competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    competition: competitions.find(
+      (league) => league.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    team_id: "4cd32940-d9a7-43c4-4ac9-7313a7d8b9b2",
+    team: teams.find(
+      (team) => team.id === "4cd32940-d9a7-43c4-4ac9-7313a7d8b9b2",
+    ),
+    position: 4,
+    stats: {
+      p: 3,
+      w: 0,
+      d: 0,
+      l: 3,
+      g: "2:13",
+      gd: -11,
+      pts: 0,
+    },
+  },
+  {
+    id: "2bc13e0b-1504-2428-44ca-bf6e1efda117",
+    competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    competition: competitions.find(
+      (league) => league.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    team_id: "2fd32420-d9b4-22c5-4ac9-7213b7d8b9b3",
+    team: teams.find(
+      (team) => team.id === "2fd32420-d9b4-22c5-4ac9-7213b7d8b9b3",
+    ),
+    position: 3,
+    stats: {
+      p: 3,
+      w: 1,
+      d: 0,
+      l: 2,
+      g: "5:9",
+      gd: -4,
+      pts: 3,
+    },
+  },
 ];
+
+export const leagues = [
+  {
+    id: "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
+    competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+    competition: competitions.find(
+      (compe) => compe.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+    ),
+    standing: standing.filter(
+      (el) => el.competition_id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+    ),
+    main: [
+      "d55ae10f-1c1f-46b4-abe6-7fba3891fc45",
+      "c42ae10f-1c1f-46b4-abe6-7fba3891fc45",
+    ],
+  },
+];
+
+export const mixed_cups = [
+  {
+    id: "2412b73a-e81b-451b-8ac3-15134192d0fd",
+    competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    competition: competitions.find(
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    standing: standing.filter(
+      (el) => el.competition_id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    main: [
+      "c42ae10f-1c1f-46b4-abe6-4bba3891fc43",
+      "242be10f-1c1f-46b4-abe6-7fba3891fc45",
+      "252ce10f-2c1f-46b4-abe6-7fba3891fc45",
+    ],
+    playOffs: [
+      "232ce11f-2c1f-46b4-abe6-7fba3491cc45",
+      "215ce12c-2c1f-43b4-abe6-7fba3891fc45",
+      "223ce11c-2d1f-46c4-abe6-2fba3891fc45",
+      "224ce11c-2d1f-46c4-abe6-2fba3891fc42",
+    ],
+  },
+];
+
+// p w d l gd g pts
 
 const getMatchTeam = (
   team_id: string,
@@ -354,6 +622,7 @@ const getMatchTeam = (
     yellows: number;
     reds: number;
   },
+  penalties?: number,
 ) => {
   return {
     team_id: team_id,
@@ -366,6 +635,7 @@ const getMatchTeam = (
       yellows: stats?.yellows || 0,
       reds: stats?.reds || 0,
     },
+    penalties: penalties,
   };
 };
 
@@ -476,6 +746,575 @@ export const matches = [
     form: {
       home: ["w", "w", "l", "w"],
       away: ["w", "w", "w", "l"],
+    },
+  },
+  // matches for viareggio
+  {
+    id: "c42ae10f-1c1f-46b4-abe6-4bba3891fc43",
+    round: 1,
+    competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    competition: competitions.find(
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    home: getMatchTeam("4cd32940-d9a7-43c4-4ac9-7313a7d8b9b2", 0, {
+      passes: 200,
+      corners: 6,
+      yellows: 5,
+      reds: 0,
+      shots: 13,
+    }),
+    away: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c", 6, {
+      passes: 243,
+      corners: 12,
+      yellows: 2,
+      reds: 0,
+      shots: 18,
+    }),
+    date: "2024-02-12",
+    time: "3:00 pm",
+    venue: "Italy stadium",
+    status: Match_status.FINISHED,
+    lineup: lineup,
+    preview: {
+      context:
+        "Match between beyon limits fa and gbagada fc is going to be tough",
+      keyPlayer: players.find(
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+      ),
+      aboutKeyPlayer:
+        "He is a joy to watch, i expect him to get some goals today",
+    },
+    report: {
+      context: "It was a beautiful match which beautiful memories",
+      mvp: players.find(
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+      ),
+      aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
+      not only that he also left with the people's heart.`,
+    },
+    scorers: [
+      {
+        time: "1st",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Kparobo Ariehri",
+        assist: "",
+      },
+      {
+        time: "6th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Olamilekan Adegoyega",
+        assist: "",
+      },
+      {
+        time: "13th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Kparobo Ariehri",
+        assist: "",
+      },
+      {
+        time: "37th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Kparobo Ariehri",
+        assist: "",
+      },
+      {
+        time: "69th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Adebayo Dikko",
+        assist: "",
+      },
+      {
+        time: "82nd",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Shina Ayodele",
+        assist: "",
+      },
+    ],
+    form: {
+      home: [],
+      away: [],
+    },
+  },
+  {
+    id: "242be10f-1c1f-46b4-abe6-7fba3891fc45",
+    round: 2,
+    competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    competition: competitions.find(
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    home: getMatchTeam("4cd32940-d9a7-43c4-4ac9-7313a7d8b9b2", 0, {
+      passes: 220,
+      corners: 2,
+      yellows: 3,
+      reds: 0,
+      shots: 13,
+    }),
+    away: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c", 3, {
+      passes: 343,
+      corners: 12,
+      yellows: 0,
+      reds: 0,
+      shots: 14,
+    }),
+    date: "2024-02-14",
+    time: "3:00 pm",
+    venue: "Italy stadium",
+    status: Match_status.FINISHED,
+    lineup: lineup,
+    preview: {
+      context:
+        "Match between beyon limits fa and gbagada fc is going to be tough",
+      keyPlayer: players.find(
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+      ),
+      aboutKeyPlayer:
+        "He is a joy to watch, i expect him to get some goals today",
+    },
+    report: {
+      context: "It was a beautiful match which beautiful memories",
+      mvp: players.find(
+        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+      ),
+      aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
+      not only that he also left with the people's heart.`,
+    },
+    scorers: [
+      {
+        time: "63rd",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Kparobo Ariehri",
+        assist: "",
+      },
+      {
+        time: "71st",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Olamilekan Adegoyega",
+        assist: "",
+      },
+      {
+        time: "83rd",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Kparobo Ariehri",
+        assist: "",
+      },
+    ],
+    form: {
+      home: ["l"],
+      away: ["w"],
+    },
+  },
+  {
+    id: "252ce10f-2c1f-46b4-abe6-7fba3891fc45",
+    round: 3,
+    competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    competition: competitions.find(
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    home: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c", 6, {
+      passes: 420,
+      corners: 9,
+      yellows: 4,
+      reds: 0,
+      shots: 22,
+    }),
+    away: getMatchTeam("2cd32920-d9a7-33d4-4ac9-7213b7d8b9b2", 4, {
+      passes: 243,
+      corners: 10,
+      yellows: 2,
+      reds: 0,
+      shots: 18,
+    }),
+    date: "2024-02-16",
+    time: "3:00 pm",
+    venue: "Italy stadium",
+    status: Match_status.FINISHED,
+    lineup: lineup,
+    preview: {
+      context:
+        "Match between beyon limits fa and gbagada fc is going to be tough",
+      keyPlayer: players.find(
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+      ),
+      aboutKeyPlayer:
+        "He is a joy to watch, i expect him to get some goals today",
+    },
+    report: {
+      context: "It was a beautiful match which beautiful memories",
+      mvp: players.find(
+        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+      ),
+      aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
+      not only that he also left with the people's heart.`,
+    },
+    scorers: [
+      {
+        time: "4th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Kparobo Ariehri",
+        assist: "",
+      },
+      {
+        time: "6th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Olamilekan Adegoyega",
+        assist: "",
+      },
+      {
+        time: "11th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Isaac Chukwudi",
+        assist: "",
+      },
+      {
+        time: "38th",
+        isBeyondLimitsPlayer: false,
+        goal_type: "normal goal",
+        name: "Giorgio Puzzoli",
+        assist: "",
+      },
+      {
+        time: "39th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Oliundare",
+        assist: "",
+      },
+      {
+        time: "50th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Oliundare",
+        assist: "",
+      },
+      {
+        time: "59th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "penalty",
+        name: "Oliundare",
+        assist: "",
+      },
+      {
+        time: "61st",
+        isBeyondLimitsPlayer: false,
+        goal_type: "penalty",
+        name: "Giorgio Puzzoli",
+        assist: "",
+      },
+      {
+        time: "78th",
+        isBeyondLimitsPlayer: false,
+        goal_type: "normal goal",
+        name: "Stefano Maiorana",
+        assist: "",
+      },
+      {
+        time: "83rd",
+        isBeyondLimitsPlayer: false,
+        goal_type: "normal goal",
+        name: "Niccolo Generali",
+        assist: "",
+      },
+    ],
+    form: {
+      home: ["w", "w"],
+      away: ["w", "w"],
+    },
+  },
+  {
+    id: "232ce11f-2c1f-46b4-abe6-7fba3491cc45",
+    round: Playoffs_round.ROUND8,
+    competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    competition: competitions.find(
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    home: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c", 3, {
+      passes: 320,
+      corners: 9,
+      yellows: 2,
+      reds: 0,
+      shots: 15,
+    }),
+    away: getMatchTeam("2cd42420-d9b4-32c5-4ac9-7213b7d8b9b3", 1, {
+      passes: 243,
+      corners: 5,
+      yellows: 4,
+      reds: 0,
+      shots: 10,
+    }),
+    date: "2024-02-20",
+    time: "3:00 pm",
+    venue: "Italy stadium",
+    status: Match_status.FINISHED,
+    lineup: lineup,
+    preview: {
+      context:
+        "Match between beyon limits fa and gbagada fc is going to be tough",
+      keyPlayer: players.find(
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+      ),
+      aboutKeyPlayer:
+        "He is a joy to watch, i expect him to get some goals today",
+    },
+    report: {
+      context: "It was a beautiful match which beautiful memories",
+      mvp: players.find(
+        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+      ),
+      aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
+      not only that he also left with the people's heart.`,
+    },
+    scorers: [
+      {
+        time: "18th",
+        isBeyondLimitsPlayer: false,
+        goal_type: "own goal",
+        name: "Alessandro Lanzone",
+        assist: "",
+      },
+      {
+        time: "54th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Isaac Chukwudi",
+        assist: "",
+      },
+      {
+        time: "60th",
+        isBeyondLimitsPlayer: false,
+        goal_type: "normal goal",
+        name: "Francesco Palamara",
+        assist: "",
+      },
+      {
+        time: "93rd",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Shina Ayodele",
+        assist: "",
+      },
+    ],
+    form: {
+      home: ["w", "w", "w"],
+      away: ["l", "d", "w"],
+    },
+  },
+  {
+    id: "215ce12c-2c1f-43b4-abe6-7fba3891fc45",
+    round: Playoffs_round.QUATERFINALS,
+    competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    competition: competitions.find(
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    home: getMatchTeam("2cc42120-d9b4-32c5-4ad9-7214b7d8b9b3", 1, {
+      passes: 320,
+      corners: 9,
+      yellows: 2,
+      reds: 0,
+      shots: 6,
+    }),
+    away: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c", 2, {
+      passes: 343,
+      corners: 12,
+      yellows: 4,
+      reds: 0,
+      shots: 9,
+    }),
+    date: "2024-02-22",
+    time: "3:00 pm",
+    venue: "Italy stadium",
+    status: Match_status.FINISHED,
+    lineup: lineup,
+    preview: {
+      context:
+        "Match between beyon limits fa and gbagada fc is going to be tough",
+      keyPlayer: players.find(
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+      ),
+      aboutKeyPlayer:
+        "He is a joy to watch, i expect him to get some goals today",
+    },
+    report: {
+      context: "It was a beautiful match which beautiful memories",
+      mvp: players.find(
+        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+      ),
+      aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
+      not only that he also left with the people's heart.`,
+    },
+    scorers: [
+      {
+        time: "7th",
+        isBeyondLimitsPlayer: false,
+        goal_type: "normal goal",
+        name: "Simone Armocida",
+        assist: "",
+      },
+      {
+        time: "30th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Adebayo Dikko",
+        assist: "",
+      },
+      {
+        time: "54th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Shina Ayodele",
+        assist: "",
+      },
+    ],
+    form: {
+      home: ["w", "w", "d", "w"],
+      away: ["w", "w", "w", "w"],
+    },
+  },
+  {
+    id: "223ce11c-2d1f-46c4-abe6-2fba3891fc45",
+    round: Playoffs_round.SEMIFINALS,
+    competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    competition: competitions.find(
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    home: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c", 2, {
+      passes: 370,
+      corners: 9,
+      yellows: 2,
+      reds: 0,
+      shots: 6,
+    }),
+    away: getMatchTeam("2dc52120-d9b4-32c5-4ad9-3214b4d8b9b3", 1, {
+      passes: 323,
+      corners: 12,
+      yellows: 4,
+      reds: 0,
+      shots: 9,
+    }),
+    date: "2024-02-24",
+    time: "3:00 pm",
+    venue: "Italy stadium",
+    status: Match_status.FINISHED,
+    lineup: lineup,
+    preview: {
+      context:
+        "Match between beyon limits fa and gbagada fc is going to be tough",
+      keyPlayer: players.find(
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+      ),
+      aboutKeyPlayer:
+        "He is a joy to watch, i expect him to get some goals today",
+    },
+    report: {
+      context: "It was a beautiful match which beautiful memories",
+      mvp: players.find(
+        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+      ),
+      aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
+      not only that he also left with the people's heart.`,
+    },
+    scorers: [
+      {
+        time: "3rd",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Kparobo Ariehri",
+        assist: "",
+      },
+      {
+        time: "14th",
+        isBeyondLimitsPlayer: false,
+        goal_type: "normal goal",
+        name: "Ibrahim",
+        assist: "",
+      },
+
+      {
+        time: "53rd",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Isaac Chukwudi",
+        assist: "",
+      },
+    ],
+    form: {
+      home: ["w", "w", "w", "w", "w"],
+      away: ["w", "l", "w", "w", "w"],
+    },
+  },
+  {
+    id: "224ce11c-2d1f-46c4-abe6-2fba3891fc42",
+    round: Playoffs_round.FINALS,
+    competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    competition: competitions.find(
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+    ),
+    home: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c", 2, {
+      passes: 370,
+      corners: 12,
+      yellows: 2,
+      reds: 0,
+      shots: 16,
+    }),
+    away: getMatchTeam("2cc32121-d9b4-32c5-4ad9-3214b4d8b9b3", 0, {
+      passes: 223,
+      corners: 12,
+      yellows: 4,
+      reds: 0,
+      shots: 9,
+    }),
+    date: "2024-02-24",
+    time: "3:00 pm",
+    venue: "Italy stadium",
+    status: Match_status.FINISHED,
+    lineup: lineup,
+    preview: {
+      context:
+        "Match between beyon limits fa and gbagada fc is going to be tough",
+      keyPlayer: players.find(
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+      ),
+      aboutKeyPlayer:
+        "He is a joy to watch, i expect him to get some goals today",
+    },
+    report: {
+      context: "It was a beautiful match which beautiful memories",
+      mvp: players.find(
+        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+      ),
+      aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
+      not only that he also left with the people's heart.`,
+    },
+    scorers: [
+      {
+        time: "18th",
+        isBeyondLimitsPlayer: true,
+        goal_type: "normal goal",
+        name: "Kparobo Ariehri",
+        assist: "",
+      },
+      {
+        time: "27th",
+        isBeyondLimitsPlayer: false,
+        goal_type: "own goal",
+        name: "Christian Gloire Mafoulou",
+        assist: "",
+      },
+    ],
+    form: {
+      home: ["w", "w", "w", "w", "w", "w"],
+      away: ["w", "l", "d", "w", "w", "w"],
     },
   },
 ];

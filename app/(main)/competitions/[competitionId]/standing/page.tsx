@@ -1,6 +1,11 @@
 import CompetitionsLayout from "@/components/main/Layouts/CompetitionsLayout/CompetitionsLayout";
-import { competitions, seasons } from "@/lib/placeholder-data";
+import MixedCup from "@/components/main/MixedCup/MixedCup";
+import Standing from "@/components/main/Standing/Standing";
+import Text from "@/components/main/Typography/Text";
+import { competitions, leagues, mixed_cups } from "@/lib/placeholder-data";
 import React from "react";
+import clsx from "clsx";
+import styles from "../../Competitions.module.css";
 
 function CompetitionStanding({
 	params,
@@ -11,17 +16,44 @@ function CompetitionStanding({
 		(competition) => competition.id === params.competitionId,
 	);
 
-	if (!competition) return <div>No competition</div>;
+	const league = leagues.find(
+		(el) => el.competition_id === params.competitionId,
+	);
+
+	const mixed_cup = mixed_cups.find(
+		(el) => el.competition_id === params.competitionId,
+	);
+
+	// no competition with that id
+	if (!competition)
+		return (
+			<CompetitionsLayout
+				pageTitle={"Competitions"}
+				competitionId={params.competitionId}
+			>
+				<div>
+					<Text size="base" color="white" letterCase="normal">
+						No Competition with that id
+					</Text>
+				</div>
+			</CompetitionsLayout>
+		);
 
 	return (
 		<CompetitionsLayout
-			pageTitle={competition?.long_name}
-			headerBg="/images/fixtures.jpg"
-			seasons={seasons}
+			pageTitle={competition.long_name}
 			competitionId={params.competitionId}
 		>
-			<div>
-				<h1>Standing for {params.competitionId}</h1>
+			<div className={clsx(styles["competition-box"])}>
+				{competition.competition_type === "MIXEDCUP" && mixed_cup && (
+					<MixedCup
+						mixed_cup={mixed_cup}
+						competitionId={params.competitionId}
+					/>
+				)}
+				{competition.competition_type === "LEAGUE" && league && (
+					<Standing standings={league.standing} showFull={true} />
+				)}
 			</div>
 		</CompetitionsLayout>
 	);

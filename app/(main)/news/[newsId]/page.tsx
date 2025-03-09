@@ -9,6 +9,7 @@ import clsx from "clsx";
 import Article from "@/components/main/Article/Article";
 import { articles } from "@/lib/placeholder-data";
 import SocialShareLinks from "@/components/main/Social/SocialShareLinks";
+import ArticleCategory from "@/components/main/Article/ArticleCategory";
 
 function NewsArticle({ params }: { params: { newsId: string } }) {
 	const article = articles.find((article) => article.id === params.newsId);
@@ -22,12 +23,25 @@ function NewsArticle({ params }: { params: { newsId: string } }) {
 			>
 				<LayoutHeader>
 					<>
-						<Heading level={1} letterCase="upper" type="secondary">
+						<Heading
+							level={1}
+							letterCase="upper"
+							type="secondary"
+							center={true}
+						>
 							{article?.title}
 						</Heading>
-						<Text color="white" letterCase="upper" weight="bold" size="md">
+						<Text
+							letterCase="upper"
+							weight="bold"
+							size="md"
+							color={"secondary"}
+						>
 							December 15, 2025
 						</Text>
+						{article && article.category && (
+							<ArticleCategory category={article.category} />
+						)}
 					</>
 				</LayoutHeader>
 			</Header>

@@ -77,7 +77,8 @@
   grid-template-areas:
     "firstname firstname"
     "lastname squad_no";
-  gap: var(--xxs);
+  gap: 0.3rem;
+  line-height: 1;
 }
 .player__details > *:nth-child(1) {
   grid-area: firstname;
@@ -134,20 +135,20 @@
 
 .lastname,
 .firstname {
-  font-size: var(--md);
+  font-size: var(--base);
   font-weight: 400;
   color: var(--white);
   font-family: var(--font);
+  letter-spacing: 1px;
 }
 
 .firstname {
-  font-weight: 600;
-  font-size: calc(var(--md) + 0.2rem);
-  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: var(--md);
+  letter-spacing: 1px;
 }
 
 .player-modal {
-  /*  height: 100%;*/
   width: 100%;
   max-width: 50rem;
   background: var(--primary-dark);
@@ -181,7 +182,6 @@
 .player-kit::before {
   content: "";
   display: block;
-  /*  padding-top: 60%;*/
   padding-top: 100%;
 }
 
@@ -306,12 +306,13 @@
   .squad_no {
     font-size: var(--xl);
   }
+
   .firstname {
-    font-size: var(--xl);
+    font-size: var(--lg);
   }
 
   .lastname {
-    font-size: var(--lg);
+    font-size: var(--md);
   }
 
   .player__position-tile {

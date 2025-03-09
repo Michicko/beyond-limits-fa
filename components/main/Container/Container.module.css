@@ -150,6 +150,11 @@
 	justify-content: center;
 }
 
+.flex.justify-end {
+	justify-content: flex-end;
+	/*	text-align: right;*/
+}
+
 .flex.align-center,
 .grid.align-center {
 	align-items: center;

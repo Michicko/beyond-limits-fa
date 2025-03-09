@@ -44,6 +44,15 @@
 	font-size: var(--xl);
 }
 
+.text.interlude {
+	text-align: center;
+	line-height: 1.5;
+	letter-spacing: 1.5px;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	width: 80%;
+}
+
 .text.xxl {
 	font-size: var(--xxl);
 }
@@ -107,8 +116,13 @@
 .heading.heading-secondary,
 .link.link-secondary {
 	color: var(--white);
-	font-size: var(--xl);
+	font-size: var(--md);
 	letter-spacing: 1px;
+}
+
+.link.link-secondary {
+	text-transform: uppercase;
+	font-weight: 700;
 }
 
 .link.link-secondary:hover {
@@ -171,6 +185,10 @@
 	letter-spacing: 5px;
 }
 
+.text.hide-on-sm {
+	display: none;
+}
+
 @media only screen and (min-width: 25rem) {
 	.heading.heading-primary {
 		font-size: var(--xxxl);
@@ -185,8 +203,9 @@
 		font-size: var(--v);
 	}
 
-	.heading.heading-secondary {
-		font-size: var(--xxl);
+	.heading.heading-secondary,
+	.link.link-secondary {
+		font-size: var(--lg);
 	}
 
 	.text.lg {
@@ -244,11 +263,25 @@
 	.text.iv {
 		font-size: calc(var(--iv) * 1.4);
 	}
+
+	.heading.heading-secondary,
+	.link.link-secondary {
+		font-size: var(--xl);
+	}
+
+	.text.interlude {
+		font-size: var(--md);
+	}
+
+	.text.hide-on-sm {
+		display: block;
+	}
 }
 
 @media only screen and (min-width: 64rem) {
-	.heading.heading-primary {
-		font-size: var(--vii);
+	.heading.heading-secondary,
+	.link.link-secondary {
+		font-size: var(--xxl);
 	}
 
 	.text.lead {
@@ -274,5 +307,15 @@
 
 	.text.iv {
 		font-size: calc(var(--iv) * 1.5);
+	}
+
+	.text.interlude {
+		width: 75%;
+	}
+}
+
+@media only screen and (min-width: 75rem) {
+	.text.interlude {
+		width: 60%;
 	}
 }

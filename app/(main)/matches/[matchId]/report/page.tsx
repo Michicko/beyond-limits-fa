@@ -183,14 +183,16 @@ function Report({ params }: { params: { matchId: string } }) {
 										>
 											Competition
 										</Text>
-										<Text
-											color="white"
-											size="base"
-											letterCase={"upper"}
-											weight="bold"
-										>
-											{match.competition.long_name}
-										</Text>
+										{match.competition && (
+											<Text
+												color="white"
+												size="base"
+												letterCase={"upper"}
+												weight="bold"
+											>
+												{match.competition.long_name}
+											</Text>
+										)}
 									</li>
 									<li className={clsx(styles["preview-item"], styles.col)}>
 										<Text

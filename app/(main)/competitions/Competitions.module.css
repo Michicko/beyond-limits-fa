@@ -16,6 +16,31 @@
 	color: var(--white);
 }
 
+.competition-icon__box {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: var(--xxs);
+}
+
+.competition-icon__box p {
+	font-size: var(--base);
+	font-weight: 300;
+	color: var(--white);
+	letter-spacing: 1px;
+}
+
+.competition svg {
+	height: var(--md);
+	width: var(--md);
+	fill: var(--white);
+	margin-top: -0.3rem;
+}
+
+.competition-box {
+	margin-top: var(--sm);
+}
+
 .competition:hover {
 	transform: scale(0.99);
 }

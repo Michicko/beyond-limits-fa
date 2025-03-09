@@ -223,6 +223,29 @@
   min-height: 30rem;
   border-radius: var(--md);
   padding: var(--md);
+  display: flex;
+  flex-direction: column;
+}
+
+.article-content__box h1 {
+  font-size: var(--lg);
+  font-weight: 700;
+  color: var(--secondary-light);
+  line-height: 1.5;
+  margin-bottom: var(--xxs);
+}
+
+.article-content__box p {
+  font-size: var(--base);
+  font-weight: 300;
+  color: var(--white);
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+.article-content__box > *:last-child {
+  margin: 0 auto;
+  margin-top: auto;
 }
 
 .col-3 {

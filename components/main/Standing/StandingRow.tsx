@@ -32,8 +32,7 @@ function StandingRow({ row }: { row: IStandingRow }) {
 			<td>{row.stats.w}</td>
 			<td>{row.stats.d}</td>
 			<td>{row.stats.l}</td>
-			<td>{row.stats.f}</td>
-			<td>{row.stats.a}</td>
+			<td colSpan={2}>{row.stats.g}</td>
 			<td>{row.stats.gd}</td>
 			<td>{row.stats.pts}</td>
 		</>

@@ -145,24 +145,26 @@ function Review({ params }: { params: { matchId: string } }) {
 						<CardBody as="div" theme={"light"}>
 							<div className={clsx(styles.preview__body, styles["py-b"])}>
 								<ul className={clsx(styles["preview-list"])}>
-									<li className={clsx(styles["preview-item"], styles.col)}>
-										<Text
-											color="secondary"
-											size="xs"
-											letterCase={"upper"}
-											weight="bold"
-										>
-											Competition
-										</Text>
-										<Text
-											color="white"
-											size="base"
-											letterCase={"upper"}
-											weight="bold"
-										>
-											{match.competition.long_name}
-										</Text>
-									</li>
+									{match.competition && (
+										<li className={clsx(styles["preview-item"], styles.col)}>
+											<Text
+												color="secondary"
+												size="xs"
+												letterCase={"upper"}
+												weight="bold"
+											>
+												Competition
+											</Text>
+											<Text
+												color="white"
+												size="base"
+												letterCase={"upper"}
+												weight="bold"
+											>
+												{match.competition.long_name}
+											</Text>
+										</li>
+									)}
 									<li className={clsx(styles["preview-item"], styles.col)}>
 										<Text
 											color="secondary"

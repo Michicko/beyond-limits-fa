@@ -1,29 +1,24 @@
+import Calendar from "@/components/main/Calendar/Calendar";
+import Flex from "@/components/main/Container/Flex";
 import CompetitionsLayout from "@/components/main/Layouts/CompetitionsLayout/CompetitionsLayout";
 import MatchCard from "@/components/main/MatchCard/MatchCard";
 import { matches } from "@/lib/placeholder-data";
 import React from "react";
-import Flex from "@/components/main/Container/Flex";
-import Calendar from "@/components/main/Calendar/Calendar";
 
-const seasons = [{ season: "2023/2024" }, { season: "2024/2025" }];
-
-function Fixtures() {
+function Results() {
 	return (
-		<CompetitionsLayout
-			pageTitle="Fixtures"
-			headerBg="/images/fixtures.jpg"
-			seasons={seasons}
-		>
+		<CompetitionsLayout pageTitle="Results">
 			<>
 				<Calendar />
-				<Flex align="center" direction="col" justify="between" gap="sm" my="lg">
+				<Flex align="center" justify="between" direction="col" gap="sm" my="lg">
 					{matches
-						.filter((el) => el.status === "UPCOMING")
+						.filter((el) => el.status === "FINISHED")
 						.map((match) => {
 							return (
 								<MatchCard
 									match={match}
 									showBtn={match.preview ? true : false}
+									showName={true}
 									theme="light"
 									key={match.id}
 									iconSize="xl"
@@ -36,4 +31,4 @@ function Fixtures() {
 	);
 }
 
-export default Fixtures;
+export default Results;

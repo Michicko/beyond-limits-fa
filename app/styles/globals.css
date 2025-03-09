@@ -188,11 +188,10 @@ table {
 html {
   box-sizing: border-box;
   font-smoothing: antialiased;
-  scroll-behavior: smooth;
+  /*  scroll-behavior: smooth;*/
 }
 
 body {
-  min-height: 100vh;
   width: 100%;
   font-family: var(--font);
   line-height: 1;

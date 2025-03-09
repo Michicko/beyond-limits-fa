@@ -26,7 +26,6 @@ import {
   standing,
 } from "@/lib/placeholder-data";
 import "@aws-amplify/ui-react/styles.css";
-import Link from "next/link";
 
 export default function Home() {
   const previous_match = matches.find((el) => el.status === "FINISHED");
@@ -100,7 +99,12 @@ export default function Home() {
               <Heading level={2} type="secondary" letterCase="upper" mb="xs">
                 NNL standing
               </Heading>
-              <Standing showFull={false} standings={standing} />
+              <Standing
+                showFull={false}
+                standings={standing.filter(
+                  (el) => el.competition && el.competition.short_name === "nnl",
+                )}
+              />
             </div>
           </Grid>
         </Container>
@@ -190,17 +194,10 @@ export default function Home() {
           <Flex justify="center" align="center" my={"iv"}>
             <Text
               color="white"
-              size="md"
+              size="base"
               letterCase="normal"
               weight="light"
-              cssStyles={{
-                maxWidth: "608px",
-                textAlign: "center",
-                lineHeight: "1.5",
-                letterSpacing: "2px",
-                marginTop: "4rem",
-                marginBottom: "4rem",
-              }}
+              type="interlude"
             >
               At Beyond Limits Football Academy, we believe in more than just
               developing exceptional football talent; we strive to shape

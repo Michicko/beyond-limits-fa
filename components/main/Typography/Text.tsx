@@ -12,6 +12,7 @@ function Text({
 	cssStyles,
 	mb,
 	center,
+	hide_sm,
 }: {
 	children: React.ReactNode;
 	size:
@@ -43,9 +44,10 @@ function Text({
 	weight?: "light" | "bold";
 	color?: string;
 	letterCase?: "upper" | "lower" | "capitalize" | "normal";
-	type?: "lead" | "text";
+	type?: "lead" | "text" | "interlude";
 	cssStyles?: object;
 	center?: boolean;
+	hide_sm?: boolean;
 }) {
 	return (
 		<p
@@ -58,6 +60,7 @@ function Text({
 				styles[type || "text"],
 				mb && styles[`mb-${mb}`],
 				center && styles.center,
+				hide_sm && styles["hide-on-sm"],
 			)}
 			style={cssStyles && { ...cssStyles }}
 		>

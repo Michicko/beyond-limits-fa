@@ -1,17 +1,8 @@
 import React from "react";
 import styles from "./Button.module.css";
 import clsx from "clsx";
-import ImageComp from "@/components/ImageComp/ImageComp";
 
-function ShareButton({
-	name,
-	href,
-	icon,
-}: {
-	name: string;
-	href: string;
-	icon: string;
-}) {
+function ShareButton({ name, href }: { name: string; href: string }) {
 	return (
 		<a
 			href={href}
@@ -19,14 +10,6 @@ function ShareButton({
 			rel="noopener noreferrer"
 			className={clsx(styles.btn, styles["share-btn"])}
 		>
-			<div className={clsx(styles["btn-img-box"])}>
-				<ImageComp
-					image={icon}
-					placeholder={icon}
-					priority={false}
-					alt={name}
-				/>
-			</div>
 			{name}
 		</a>
 	);

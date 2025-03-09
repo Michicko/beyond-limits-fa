@@ -84,40 +84,40 @@ export interface ILeague {
 	id: string;
 	competition_id: string;
 	competition?: ICompetition;
+	standing?: string[] | IStandingRow[];
+	main: string[] | IMatch[];
 }
 
 export interface ICup {
+	id: string;
 	competition_id: string;
 	competition: ICompetition | string;
-	playOffsRounds: string[];
+	playOffs: string[] | IMatch[];
+}
+
+export enum Playoffs_round {
+	ROUND32 = "1/32-final",
+	ROUND16 = "1/16-final",
+	ROUND8 = "1/8-final",
+	QUATERFINALS = "QUATERFINAL",
+	SEMIFINALS = "SEMIFINAL",
+	THIRDPLACE = "THIRDPLACE",
+	FINALS = "FINAL",
 }
 
 export interface IMixedCup {
+	id: string;
 	competition_id: string;
 	competition?: ICompetition;
-	standing_id: string;
-	standing: IStandingRow[];
-	playOffsRounds: IPlayOffsRound[];
-}
-
-enum Playoffs_round {
-	ROUND32 = "1/32-finals",
-	ROUND16 = "1/16-finals",
-	ROUND8 = "1/8-finals",
-	QUATERFINALS = "QUATERFINALS",
-	SEMIFINALS = "SEMIFINALS",
-	THIRDPLACE = "THIRDPLACE",
-	FINALS = "FINALS",
-}
-
-interface IPlayOffsRound {
-	round: Playoffs_round;
-	matches: IMatch[];
+	standing: string[] | IStandingRow[];
+	main: string[] | IMatch[];
+	playOffs: string[] | IMatch[];
 }
 
 export interface IStandingRow {
-	league_id: string;
-	league?: ILeague;
+	id: string;
+	competition_id: string;
+	competition?: ICompetition;
 	team_id: string;
 	team?: ITeam;
 	position: number;
@@ -126,9 +126,8 @@ export interface IStandingRow {
 		w: number;
 		d: number;
 		l: number;
-		f: number;
-		a: number;
-		gd: string;
+		g: string;
+		gd: number;
 		pts: number;
 	};
 }
@@ -140,12 +139,13 @@ export enum Competition_type {
 }
 
 export interface ICompetition {
+	id: string;
 	short_name: string;
 	long_name: string;
 	logo: string;
 	competition_type: Competition_type;
 	season_id: string;
-	season: ISeason;
+	season?: ISeason;
 	matches?: IMatch[];
 }
 
@@ -239,13 +239,14 @@ interface IMatchTeam {
 		yellows: number;
 		reds: number;
 	};
+	penalties?: number;
 }
 
 export interface IMatch {
 	id: string;
 	round: string | number;
 	competition_id: string;
-	competition: ICompetition;
+	competition?: ICompetition;
 	home: IMatchTeam;
 	away: IMatchTeam;
 	date: string;

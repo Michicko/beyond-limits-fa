@@ -42,6 +42,13 @@ function Standing({
 												{el}
 											</th>
 										);
+									if (i === 6) {
+										return (
+											<th key={i + 2} colSpan={2}>
+												{el}
+											</th>
+										);
+									}
 									return <th key={i + 2}>{el}</th>;
 								})}
 							</tr>

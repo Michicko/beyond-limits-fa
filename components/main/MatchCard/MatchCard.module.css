@@ -18,6 +18,9 @@
 .matchcard-body {
 	align-items: flex-start;
 	padding-bottom: 0;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: var(--xxs);
 }
 
 .matchcard-details,
@@ -30,7 +33,11 @@
 }
 
 .matchcard-details__box.finished.show-btn {
-	margin-bottom: var(--sm);
+	margin-bottom: var(--xs);
+}
+
+.matchcard-details__box.upcoming.show-btn {
+	margin-bottom: 0.02rem;
 }
 
 .btn-box {

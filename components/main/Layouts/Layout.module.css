@@ -7,7 +7,7 @@
 	justify-content: flex-end;
 	align-items: center;
 	padding: var(--base);
-	padding-bottom: 15%;
+	padding-bottom: 25%;
 	gap: var(--base);
 }
 
@@ -93,7 +93,7 @@
 
 	.layout__header {
 		padding: 0 var(--xxl);
-		padding-bottom: 10%;
+		padding-bottom: 20%;
 	}
 }
 
