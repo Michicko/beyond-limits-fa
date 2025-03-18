@@ -15,11 +15,11 @@ const Article = ({ article }: { article: IArticle }) => {
   ), url(${article.cover_image})`;
 
   const cardStyles =
-    article.category && article.category.name === "MATCH_PREVIEW"
+    article.category && article.category.name === "MATCH PREVIEW"
       ? {
           background: "#30353B",
         }
-      : article.category && article.category.name === "MATCH_REPORT"
+      : article.category && article.category.name === "MATCH REPORT"
       ? {
           background: "#01305b",
         }

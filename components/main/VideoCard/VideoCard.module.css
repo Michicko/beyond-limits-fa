@@ -69,15 +69,10 @@
   color: var(--white);
   padding: 5px;
   text-align: center;
-  font-family: var(--font);
+  font-family: var(--font-body);
   font-size: var(--md);
-  font-weight: 300;
-  letter-spacing: 1px;
+  font-weight: 500;
 }
-
-/*.watchButton:hover {
-  cursor: pointer;
-}*/
 
 .buttonContainer {
   text-align: center;

@@ -7,6 +7,13 @@ import {
   Playoffs_round,
 } from "./definitions";
 
+export const landing_visuals = [
+  "/images/home-header-bg.png",
+  "/images/contact.jpg",
+  "/images/trophy-boy.jpg",
+  "/images/results.jpg",
+];
+
 export const visuals = [
   "/images/blvsig.png",
   "/images/contact.jpg",
@@ -22,7 +29,7 @@ export const teams = [
     id: "f7dccbf7-d187-465d-918f-7760444e839c",
     short_name: "blfa",
     long_name: "beyond limits fa",
-    logo: "/images/beondimitslogo.png",
+    logo: "/images/beyondimitslogo.png",
     isBeyondLimits: true,
     stadium: "Remo stars stadium",
   },
@@ -180,7 +187,7 @@ export const player_positions = [
   },
   {
     id: "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
-    short_name: "s",
+    short_name: "st",
     long_name: "striker",
     attributes: ["shots", "shots_on", "dribbles", "attacking_duels_won"],
   },
@@ -193,7 +200,7 @@ export const players = [
     lastname: "Doe",
     player_position_id: "4ddb4b61-3b45-44b5-b21b-4ab385b8eb94",
     position: player_positions.find(
-      (el) => el.id === "4ddb4b61-3b45-44b5-b21b-4ab385b8eb94",
+      (el) => el.id === "4ddb4b61-3b45-44b5-b21b-4ab385b8eb94"
     ),
     general_match_stats: [],
     position_match_stats: [],
@@ -213,7 +220,7 @@ export const players = [
     id: "2cc2934b-f7eb-47b5-af55-ecee0bbbe4a4",
     player_position_id: "737aeebc-23c0-4811-8d65-3c42b6e5f25c",
     position: player_positions.find(
-      (el) => el.id === "737aeebc-23c0-4811-8d65-3c42b6e5f25c",
+      (el) => el.id === "737aeebc-23c0-4811-8d65-3c42b6e5f25c"
     ),
     squad_no: 4,
     firstname: "Seyi",
@@ -221,7 +228,7 @@ export const players = [
     year_signed: 2023,
     general_match_stats: [],
     position_match_stats: [],
-    dob: "20012-5-2",
+    dob: "2012-5-2",
     height: 180,
     weight: 81,
     dominant_foot: Dominant_foot.RIGHT,
@@ -237,7 +244,7 @@ export const players = [
     lastname: "Ojiofor",
     player_position_id: "cc3a4a86-a091-4099-be7a-2e1b061e330a",
     position: player_positions.find(
-      (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+      (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a"
     ),
     general_match_stats: [],
     position_match_stats: [],
@@ -259,7 +266,7 @@ export const players = [
     lastname: "Uche",
     player_position_id: "cc3a4a86-a091-4099-be7a-2e1b061e330a",
     position: player_positions.find(
-      (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+      (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a"
     ),
     general_match_stats: [],
     position_match_stats: [],
@@ -281,7 +288,7 @@ export const players = [
     lastname: "Adegoyega",
     player_position_id: "cc3a4a86-a091-4099-be7a-2e1b061e330a",
     position: player_positions.find(
-      (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+      (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a"
     ),
     general_match_stats: [],
     position_match_stats: [],
@@ -303,7 +310,7 @@ export const players = [
     lastname: "Oyetunde",
     player_position_id: "cc3a4a86-a091-4099-be7a-2e1b061e330a",
     position: player_positions.find(
-      (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+      (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a"
     ),
     general_match_stats: [],
     position_match_stats: [],
@@ -316,14 +323,14 @@ export const players = [
     isTwoFooted: false,
     image_home_kit: "/images/player-1.png",
     image_away_kit: "/images/player-2.png",
-    age_group: Age_group.UNDER_19,
+    age_group: Age_group.UNDER_17,
     status: Player_status.ACTIVE,
   },
   {
     id: "3bc2934b-f7eb-47b5-af55-ecee0bbbe4a4",
     player_position_id: "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
     position: player_positions.find(
-      (el) => el.id === "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
+      (el) => el.id === "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8"
     ),
     squad_no: 7,
     firstname: "Aiyenugba",
@@ -331,7 +338,7 @@ export const players = [
     year_signed: 2024,
     general_match_stats: [],
     position_match_stats: [],
-    dob: "20011-5-2",
+    dob: "2011-5-2",
     height: 170,
     weight: 82,
     dominant_foot: Dominant_foot.LEFT,
@@ -345,7 +352,7 @@ export const players = [
     id: "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
     player_position_id: "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
     position: player_positions.find(
-      (el) => el.id === "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
+      (el) => el.id === "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8"
     ),
     squad_no: 9,
     firstname: "Aiyenugba",
@@ -353,7 +360,7 @@ export const players = [
     year_signed: 2024,
     general_match_stats: [],
     position_match_stats: [],
-    dob: "20011-5-2",
+    dob: "2011-5-2",
     height: 170,
     weight: 82,
     dominant_foot: Dominant_foot.RIGHT,
@@ -369,7 +376,7 @@ export const players = [
     lastname: "Ayodele",
     player_position_id: "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
     position: player_positions.find(
-      (el) => el.id === "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8",
+      (el) => el.id === "3bc2934b-f7eb-47b5-af55-ecee0bbbe6a8"
     ),
     general_match_stats: [],
     position_match_stats: [],
@@ -389,6 +396,14 @@ export const players = [
 
 export const seasons = [
   {
+    id: "2380576c-20d7-4d05-9a96-0735514f03fc",
+    season: "2022/2023",
+  },
+  {
+    id: "2380574c-20d9-4d05-9a96-0735514f03fc",
+    season: "2023/2024",
+  },
+  {
     id: "2380576c-20d9-4d05-9a96-0735514f03fc",
     season: "2024/2025",
   },
@@ -401,10 +416,13 @@ export const competitions = [
     long_name: "nigerian national league",
     logo: "/images/nnl.png",
     competition_type: Competition_type.LEAGUE,
-    season_id: "2380576c-20d9-4d05-9a96-0735514f03fc",
-    season: seasons.find(
-      (el) => el.id === "2380576c-20d9-4d05-9a96-0735514f03fc",
-    ),
+  },
+  {
+    id: "bc5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+    short_name: "tccc",
+    long_name: "the creative championship league",
+    logo: "/images/tccc.png",
+    competition_type: Competition_type.LEAGUE,
   },
   {
     id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
@@ -412,10 +430,6 @@ export const competitions = [
     long_name: "Viareggio cup",
     logo: "/images/vc.png",
     competition_type: Competition_type.MIXEDCUP,
-    season_id: "2380576c-20d9-4d05-9a96-0735514f03fc",
-    season: seasons.find(
-      (el) => el.id === "2380576c-20d9-4d05-9a96-0735514f03fc",
-    ),
   },
 ];
 
@@ -424,11 +438,11 @@ export const standing = [
     id: "f412b74a-e81b-491b-8ac3-15134192d0fd",
     competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
     competition: competitions.find(
-      (league) => league.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+      (league) => league.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45"
     ),
     team_id: "f7dccbf7-d187-465d-918f-7760444e839c",
     team: teams.find(
-      (team) => team.id === "f7dccbf7-d187-465d-918f-7760444e839c",
+      (team) => team.id === "f7dccbf7-d187-465d-918f-7760444e839c"
     ),
     position: 2,
     stats: {
@@ -445,11 +459,11 @@ export const standing = [
     id: "1dc23f0e-0704-4457-94ca-ef6e1efda117",
     competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
     competition: competitions.find(
-      (league) => league.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+      (league) => league.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45"
     ),
     team_id: "07b1ea51-73a7-41eb-aae1-9dff2500d50a",
     team: teams.find(
-      (team) => team.id === "07b1ea51-73a7-41eb-aae1-9dff2500d50a",
+      (team) => team.id === "07b1ea51-73a7-41eb-aae1-9dff2500d50a"
     ),
     position: 1,
     stats: {
@@ -466,11 +480,11 @@ export const standing = [
     id: "1dc23f0e-0704-4457-94ca-ef6e1efda117",
     competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
     competition: competitions.find(
-      (league) => league.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+      (league) => league.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45"
     ),
     team_id: "8bc32940-d9a7-43c4-8af9-7313a7d8b9c1",
     team: teams.find(
-      (team) => team.id === "8bc32940-d9a7-43c4-8af9-7313a7d8b9c1",
+      (team) => team.id === "8bc32940-d9a7-43c4-8af9-7313a7d8b9c1"
     ),
     position: 3,
     stats: {
@@ -487,11 +501,11 @@ export const standing = [
     id: "2cc23f0e-1504-3427-94ca-bf6e1efda117",
     competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
     competition: competitions.find(
-      (league) => league.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (league) => league.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
     ),
     team_id: "f7dccbf7-d187-465d-918f-7760444e839c",
     team: teams.find(
-      (team) => team.id === "f7dccbf7-d187-465d-918f-7760444e839c",
+      (team) => team.id === "f7dccbf7-d187-465d-918f-7760444e839c"
     ),
     position: 1,
     stats: {
@@ -508,11 +522,11 @@ export const standing = [
     id: "3dd13e0e-1504-2427-44ca-bf6e1efda117",
     competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
     competition: competitions.find(
-      (league) => league.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (league) => league.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
     ),
     team_id: "2cd32920-d9a7-33d4-4ac9-7213b7d8b9b2",
     team: teams.find(
-      (team) => team.id === "2cd32920-d9a7-33d4-4ac9-7213b7d8b9b2",
+      (team) => team.id === "2cd32920-d9a7-33d4-4ac9-7213b7d8b9b2"
     ),
     position: 2,
     stats: {
@@ -529,11 +543,11 @@ export const standing = [
     id: "2cd13e0b-1504-2327-44ca-bf6e1efda117",
     competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
     competition: competitions.find(
-      (league) => league.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (league) => league.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
     ),
     team_id: "4cd32940-d9a7-43c4-4ac9-7313a7d8b9b2",
     team: teams.find(
-      (team) => team.id === "4cd32940-d9a7-43c4-4ac9-7313a7d8b9b2",
+      (team) => team.id === "4cd32940-d9a7-43c4-4ac9-7313a7d8b9b2"
     ),
     position: 4,
     stats: {
@@ -550,11 +564,11 @@ export const standing = [
     id: "2bc13e0b-1504-2428-44ca-bf6e1efda117",
     competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
     competition: competitions.find(
-      (league) => league.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (league) => league.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
     ),
     team_id: "2fd32420-d9b4-22c5-4ac9-7213b7d8b9b3",
     team: teams.find(
-      (team) => team.id === "2fd32420-d9b4-22c5-4ac9-7213b7d8b9b3",
+      (team) => team.id === "2fd32420-d9b4-22c5-4ac9-7213b7d8b9b3"
     ),
     position: 3,
     stats: {
@@ -574,10 +588,14 @@ export const leagues = [
     id: "f7d227c5-ca5b-4f6c-844c-efe898960c3a",
     competition_id: "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
     competition: competitions.find(
-      (compe) => compe.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+      (compe) => compe.id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45"
+    ),
+    season_id: "2380576c-20d9-4d05-9a96-0735514f03fc",
+    season: seasons.find(
+      (el) => el.id === "2380576c-20d9-4d05-9a96-0735514f03fc"
     ),
     standing: standing.filter(
-      (el) => el.competition_id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45",
+      (el) => el.competition_id === "cd5ae10f-1f1f-46b4-abe6-7fba3891fc45"
     ),
     main: [
       "d55ae10f-1c1f-46b4-abe6-7fba3891fc45",
@@ -591,10 +609,14 @@ export const mixed_cups = [
     id: "2412b73a-e81b-451b-8ac3-15134192d0fd",
     competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
     competition: competitions.find(
-      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
+    ),
+    season_id: "2380576c-20d9-4d05-9a96-0735514f03fc",
+    season: seasons.find(
+      (el) => el.id === "2380576c-20d9-4d05-9a96-0735514f03fc"
     ),
     standing: standing.filter(
-      (el) => el.competition_id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (el) => el.competition_id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
     ),
     main: [
       "c42ae10f-1c1f-46b4-abe6-4bba3891fc43",
@@ -622,7 +644,7 @@ const getMatchTeam = (
     yellows: number;
     reds: number;
   },
-  penalties?: number,
+  penalties?: number
 ) => {
   return {
     team_id: team_id,
@@ -666,7 +688,7 @@ export const matches = [
       context:
         "Match between beyon limits fa and imperifal fc is going to be tough",
       keyPlayer: players.find(
-        (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+        (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a"
       ),
       aboutKeyPlayer: "He is a cool boy",
     },
@@ -709,14 +731,14 @@ export const matches = [
       context:
         "Match between beyon limits fa and gbagada fc is going to be tough",
       keyPlayer: players.find(
-        (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a",
+        (el) => el.id === "cc3a4a86-a091-4099-be7a-2e1b061e330a"
       ),
       aboutKeyPlayer: "He is a cool boy",
     },
     report: {
       context: "The match was a really tough one",
       mvp: players.find(
-        (el) => el.id === "cb8586e3-b78c-4680-ad20-7fe25f5398fb",
+        (el) => el.id === "cb8586e3-b78c-4680-ad20-7fe25f5398fb"
       ),
       aboutMvp: "He played hsi heart out",
     },
@@ -754,7 +776,7 @@ export const matches = [
     round: 1,
     competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
     competition: competitions.find(
-      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
     ),
     home: getMatchTeam("4cd32940-d9a7-43c4-4ac9-7313a7d8b9b2", 0, {
       passes: 200,
@@ -779,7 +801,7 @@ export const matches = [
       context:
         "Match between beyon limits fa and gbagada fc is going to be tough",
       keyPlayer: players.find(
-        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4"
       ),
       aboutKeyPlayer:
         "He is a joy to watch, i expect him to get some goals today",
@@ -787,7 +809,7 @@ export const matches = [
     report: {
       context: "It was a beautiful match which beautiful memories",
       mvp: players.find(
-        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4"
       ),
       aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
       not only that he also left with the people's heart.`,
@@ -846,7 +868,7 @@ export const matches = [
     round: 2,
     competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
     competition: competitions.find(
-      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
     ),
     home: getMatchTeam("4cd32940-d9a7-43c4-4ac9-7313a7d8b9b2", 0, {
       passes: 220,
@@ -871,7 +893,7 @@ export const matches = [
       context:
         "Match between beyon limits fa and gbagada fc is going to be tough",
       keyPlayer: players.find(
-        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4"
       ),
       aboutKeyPlayer:
         "He is a joy to watch, i expect him to get some goals today",
@@ -879,7 +901,7 @@ export const matches = [
     report: {
       context: "It was a beautiful match which beautiful memories",
       mvp: players.find(
-        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb"
       ),
       aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
       not only that he also left with the people's heart.`,
@@ -917,7 +939,7 @@ export const matches = [
     round: 3,
     competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
     competition: competitions.find(
-      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
     ),
     home: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c", 6, {
       passes: 420,
@@ -942,7 +964,7 @@ export const matches = [
       context:
         "Match between beyon limits fa and gbagada fc is going to be tough",
       keyPlayer: players.find(
-        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4"
       ),
       aboutKeyPlayer:
         "He is a joy to watch, i expect him to get some goals today",
@@ -950,7 +972,7 @@ export const matches = [
     report: {
       context: "It was a beautiful match which beautiful memories",
       mvp: players.find(
-        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb"
       ),
       aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
       not only that he also left with the people's heart.`,
@@ -1037,7 +1059,7 @@ export const matches = [
     round: Playoffs_round.ROUND8,
     competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
     competition: competitions.find(
-      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
     ),
     home: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c", 3, {
       passes: 320,
@@ -1062,7 +1084,7 @@ export const matches = [
       context:
         "Match between beyon limits fa and gbagada fc is going to be tough",
       keyPlayer: players.find(
-        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4"
       ),
       aboutKeyPlayer:
         "He is a joy to watch, i expect him to get some goals today",
@@ -1070,7 +1092,7 @@ export const matches = [
     report: {
       context: "It was a beautiful match which beautiful memories",
       mvp: players.find(
-        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb"
       ),
       aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
       not only that he also left with the people's heart.`,
@@ -1115,7 +1137,7 @@ export const matches = [
     round: Playoffs_round.QUATERFINALS,
     competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
     competition: competitions.find(
-      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
     ),
     home: getMatchTeam("2cc42120-d9b4-32c5-4ad9-7214b7d8b9b3", 1, {
       passes: 320,
@@ -1140,7 +1162,7 @@ export const matches = [
       context:
         "Match between beyon limits fa and gbagada fc is going to be tough",
       keyPlayer: players.find(
-        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4"
       ),
       aboutKeyPlayer:
         "He is a joy to watch, i expect him to get some goals today",
@@ -1148,7 +1170,7 @@ export const matches = [
     report: {
       context: "It was a beautiful match which beautiful memories",
       mvp: players.find(
-        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb"
       ),
       aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
       not only that he also left with the people's heart.`,
@@ -1186,7 +1208,7 @@ export const matches = [
     round: Playoffs_round.SEMIFINALS,
     competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
     competition: competitions.find(
-      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
     ),
     home: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c", 2, {
       passes: 370,
@@ -1211,7 +1233,7 @@ export const matches = [
       context:
         "Match between beyon limits fa and gbagada fc is going to be tough",
       keyPlayer: players.find(
-        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4"
       ),
       aboutKeyPlayer:
         "He is a joy to watch, i expect him to get some goals today",
@@ -1219,7 +1241,7 @@ export const matches = [
     report: {
       context: "It was a beautiful match which beautiful memories",
       mvp: players.find(
-        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb"
       ),
       aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
       not only that he also left with the people's heart.`,
@@ -1258,7 +1280,7 @@ export const matches = [
     round: Playoffs_round.FINALS,
     competition_id: "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
     competition: competitions.find(
-      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42",
+      (el) => el.id === "bc3ae20f-1f1f-46b4-abe6-7fba3891fc42"
     ),
     home: getMatchTeam("f7dccbf7-d187-465d-918f-7760444e839c", 2, {
       passes: 370,
@@ -1283,7 +1305,7 @@ export const matches = [
       context:
         "Match between beyon limits fa and gbagada fc is going to be tough",
       keyPlayer: players.find(
-        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4",
+        (el) => el.id === "2cc2934b-f7bb-27c5-af35-ecee0bbbe4a4"
       ),
       aboutKeyPlayer:
         "He is a joy to watch, i expect him to get some goals today",
@@ -1291,7 +1313,7 @@ export const matches = [
     report: {
       context: "It was a beautiful match which beautiful memories",
       mvp: players.find(
-        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb",
+        (el) => el.id === "2b4584d3-c78c-2480-ad20-7fe25f5398fb"
       ),
       aboutMvp: `He was a joy to watch. He bagged a hatrick and left with the match ball, 
       not only that he also left with the people's heart.`,
@@ -1370,7 +1392,7 @@ export const articles = [
     cover_image: "/images/winners.jpg",
     article_category_id: "bb3a4a86-a091-4099-be7a-2e1b061e340c",
     category: article_categories.find(
-      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340c",
+      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340c"
     ),
     content: `
       <h1>What is going on</h1>
@@ -1384,14 +1406,14 @@ export const articles = [
     id: "bc2a4a86-a091-4099-be7a-2e1b061e330a",
     article_category_id: "bb3a4a86-a091-4099-be7a-2e1b061e340b",
     category: article_categories.find(
-      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340b",
+      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340b"
     ),
     title:
       "Beyond Limits FA Stuns Imperial FC with Dramatic 2-1 Comeback in Season Opener",
     createdAt: "2024-06-01",
     cover_image: "/images/trophy-boy.jpg",
     match: matches.find(
-      (el) => el.id === "d55ae10f-1c1f-46b4-abe6-7fba3891fc45",
+      (el) => el.id === "d55ae10f-1c1f-46b4-abe6-7fba3891fc45"
     ),
     content: `
       <h1>What is going on</h1>
@@ -1405,7 +1427,7 @@ export const articles = [
     id: "cc3a4a86-a093-3099-be7a-2e1b061e331a",
     article_category_id: "bb3a4a86-a091-4099-be7a-2e1b061e340c",
     category: article_categories.find(
-      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340c",
+      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340c"
     ),
     title:
       "Academy Breaks Records with 10-Game Unbeaten Streak, Securing Place in NNL",
@@ -1423,7 +1445,7 @@ export const articles = [
     id: "dd3a4a86-a091-4099-be7a-2e1b061e330a",
     article_category_id: "bb3a4a86-a091-4099-be7a-2e1b061e340c",
     category: article_categories.find(
-      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340c",
+      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340c"
     ),
     title:
       "End of Season Gala: Beyond Limits FA Celebrates Success with Players and Coaches",
@@ -1441,14 +1463,14 @@ export const articles = [
     id: "cc3a4a86-a091-4099-be7a-2e1b061e23ab",
     article_category_id: "bb3a4a86-a091-4099-be7a-2e1b061e340C",
     category: article_categories.find(
-      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340c",
+      (el) => el.id === "bb3a4a86-a091-4099-be7a-2e1b061e340c"
     ),
     title:
       "Beyond Limits Academy Wins Thrilling Cup Final Against Local Rivals in 3-2 Victory",
     createdAt: "2024-05-15",
     cover_image: "/images/honors.jpg",
     match: matches.find(
-      (el) => el.id === "d55ae10f-1c1f-46b4-abe6-7fba3891fc45",
+      (el) => el.id === "d55ae10f-1c1f-46b4-abe6-7fba3891fc45"
     ),
     content: `
       <h1>What is going on</h1>
@@ -1462,14 +1484,14 @@ export const articles = [
     id: "cc3a4a86-a091-2149-be7a-2e1b061e330c",
     article_category_id: "dd2a4a86-a091-4099-be7a-2e1b061e340b",
     category: article_categories.find(
-      (el) => el.id === "dd2a4a86-a091-4099-be7a-2e1b061e340b",
+      (el) => el.id === "dd2a4a86-a091-4099-be7a-2e1b061e340b"
     ),
     title:
       "Beyond Limits FA Stuns Imperial FC with Dramatic 2-1 Comeback in Season Opener",
     createdAt: "2024-06-01",
     cover_image: "/images/trophy-boy.jpg",
     match: matches.find(
-      (el) => el.id === "d55ae10f-1c1f-46b4-abe6-7fba3891fc45",
+      (el) => el.id === "d55ae10f-1c1f-46b4-abe6-7fba3891fc45"
     ),
     content: `
       <h1>What is going on</h1>
@@ -1514,6 +1536,7 @@ export const match_highlights = [
 
 export const honors = [
   {
+    id: "cc3a4a86-a092-2149-be7a-2e1b061e330c",
     competition: { short: "NNL", long: "Nigerian National League" },
     trophy: "/images/nnl-trophy.png",
     numbers_won: 1,
@@ -1521,6 +1544,7 @@ export const honors = [
     article_id: 3,
   },
   {
+    id: "cc3a4a86-a091-2149-be7a-2e1b061e330d",
     competition: { short: "VC", long: "Viareggio cup" },
     trophy: "/images/vc-trophy.png",
     numbers_won: 1,
@@ -1528,6 +1552,7 @@ export const honors = [
     article_id: 3,
   },
   {
+    id: "cc3a4a86-a041-2149-be7a-2e1b061e330c",
     competition: { short: "tccc", long: "The Creative Championship cup" },
     trophy: "/images/tccc-trophy.png",
     numbers_won: 1,
@@ -1535,6 +1560,7 @@ export const honors = [
     article_id: 3,
   },
   {
+    id: "cb3a4a86-a091-2149-be7a-2e1b061e330c",
     competition: { short: "tccl", long: "The Creative Championship league" },
     trophy: "/images/tccl-trophy.png",
     numbers_won: 1,

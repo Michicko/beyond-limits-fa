@@ -1,138 +1,146 @@
-/*.standing > *:first-child {
-	margin-bottom: var(--sm);
-}*/
-
 .standing table {
-	table-layout: fixed;
-	border-collapse: collapse;
-	border-spacing: var(--sm);
-	margin-bottom: var(--xxl);
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: var(--sm);
+  border: none;
+  margin-bottom: 2rem;
 }
 
 .standing table,
 .standing thead,
 .standing tr {
-	width: 100%;
+  width: 100%;
 }
 
-.matchcard-header,
-.matchcard-body {
-	padding: var(--lg) 0;
+.tr {
+  height: 3.5rem !important;
 }
 
-.standing thead {
-	height: var(--v);
+.tr td {
+  vertical-align: middle;
 }
 
 .standing thead,
 .standing th {
-	text-align: left;
-	vertical-align: middle;
-}
-
-.standing td {
-	padding: var(--lg) 0;
-}
-
-.standing td.with-child {
-	position: relative;
-}
-
-.standing td.with-child > *:nth-child(1) {
-	height: 100%;
-	position: absolute;
-}
-
-.standing thead {
-	padding-left: var(--xs);
-	padding-right: var(--xs);
+  text-align: left;
+  vertical-align: middle;
 }
 
 .standing thead tr > *:first-child,
 .standing tbody tr > *:first-child {
-	padding: 0 var(--xs);
-	padding-right: 0;
+  padding-left: 0.5rem;
 }
-.standing thead tr > *:nth-child(2),
+.standing thead tr > *:nth-child(2) {
+  padding-left: 1.5rem;
+}
+
+.standing thead tr > *:last-child {
+  padding-right: 0.5rem;
+}
+
 .standing tbody tr > *:nth-child(2) {
-	padding: 0 var(--xs);
-	padding-right: 0;
+  padding-left: 1rem;
 }
 
 tr.shade {
-	background: var(--blue-500);
+  background: var(--blue-500);
 }
 
 .img-box {
-	position: relative;
-	height: 1.5rem;
-	width: 1.5rem;
+  position: relative;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
-.img-box ~ :nth-child(3) {
-	display: none;
+.standing td.with-child > *:nth-child(1) {
+  float: left;
+}
+
+.standing td.with-child > *:nth-child(2),
+.standing td.with-child > *:nth-child(3) {
+  margin-left: 0.5rem;
+  display: inline;
+  float: left;
+  margin-top: 0.25rem;
+}
+
+.standing td.with-child > *:nth-child(3) {
+  display: none;
 }
 
 .standing tbody > *:not(:last-child) {
-	border-bottom: 1px solid var(--t-border);
+  border-bottom: 1px solid var(--t-border);
 }
 
 .standing th,
 .standing td {
-	font-size: var(--sm);
-	font-weight: 300;
-	font-family: var(--font);
-	line-height: 1;
-	letter-spacing: 1px;
+  font-size: var(--sm);
+  font-weight: 300;
+  font-family: var(--font-body);
+  line-height: 1;
 }
 
 .standing th {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 .standing th {
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .standing thead > * :nth-child(7),
 .standing thead > * :nth-child(8),
 .standing tbody > * :nth-child(7),
 .standing tbody > * :nth-child(8) {
-	display: none;
+  display: none;
 }
 
 @media only screen and (min-width: 36rem) {
-	.img-box ~ :nth-child(3) {
-		display: block;
-	}
-
-	.img-box ~ :nth-child(2) {
-		display: none;
-	}
-
-	.standing th,
-	.standing td {
-		font-size: var(--base);
-	}
+  .standing th,
+  .standing td {
+    font-size: var(--base);
+  }
 }
 
 @media only screen and (min-width: 48rem) {
-	.standing thead > * :nth-child(7),
-	.standing thead > * :nth-child(8),
-	.standing tbody > * :nth-child(7),
-	.standing tbody > * :nth-child(8) {
-		display: table-cell;
-	}
+  .standing th,
+  .standing td {
+    text-align: center;
+  }
 
-	.standing th,
-	.standing td {
-		text-align: center;
-	}
+  .standing th:nth-child(1),
+  .standing td:nth-child(1),
+  .standing th:nth-child(2),
+  .standing td:nth-child(2) {
+    text-align: left;
+  }
+}
 
-	.standing th:nth-child(1),
-	.standing td:nth-child(1),
-	.standing th:nth-child(2),
-	.standing td:nth-child(2) {
-		text-align: left;
-	}
+@media only screen and (min-width: 64rem) {
+  .standing thead > * :nth-child(7),
+  .standing thead > * :nth-child(8),
+  .standing tbody > * :nth-child(7),
+  .standing tbody > * :nth-child(8) {
+    display: table-cell;
+  }
+
+  .standing th,
+  .standing td {
+    text-align: center;
+  }
+
+  .standing th:nth-child(1),
+  .standing td:nth-child(1),
+  .standing th:nth-child(2),
+  .standing td:nth-child(2) {
+    text-align: left;
+  }
+
+  .standing td.with-child.long > *:nth-child(3) {
+    display: block;
+  }
+
+  .standing td.with-child.long > *:nth-child(2) {
+    display: none;
+  }
 }

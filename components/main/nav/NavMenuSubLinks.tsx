@@ -6,26 +6,26 @@ import NavMenuLink from "./NavMenuLink";
 import { ICurrentMenu } from "@/lib/definitions";
 
 function NavMenuSubLinks({
-	currentMenu,
-	closeMenu,
+  currentMenu,
+  closeMenu,
 }: {
-	currentMenu: ICurrentMenu;
-	closeMenu: () => void;
+  currentMenu: ICurrentMenu;
+  closeMenu: () => void;
 }) {
-	return (
-		<div className={clsx(styles["nav-menu__sub-links"])}>
-			<div
-				className={clsx(
-					styles["nav-menu__sub-link"],
-					styles["menu-" + currentMenu.subMenu.length],
-				)}
-			>
-				{currentMenu.subMenu.map((el, i) => {
-					return <NavMenuLink el={el} closeMenu={closeMenu} key={i} />;
-				})}
-			</div>
-		</div>
-	);
+  return (
+    <div className={clsx(styles["nav-menu__sub-links"])}>
+      <div
+        className={clsx(
+          styles["nav-menu__sub-link"],
+          styles["menu-" + currentMenu.subMenu.length]
+        )}
+      >
+        {currentMenu.subMenu.map((el, i) => {
+          return <NavMenuLink el={el} closeMenu={closeMenu} key={i} />;
+        })}
+      </div>
+    </div>
+  );
 }
 
 export default NavMenuSubLinks;

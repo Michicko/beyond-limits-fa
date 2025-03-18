@@ -8,70 +8,75 @@ import CardBody from "../Card/CardBody";
 import StandingRow from "./StandingRow";
 
 function Standing({
-	standings,
-	showFull,
+  standings,
+  showFull,
+  showLongName,
 }: {
-	standings: IStandingRow[];
-	showFull: boolean;
+  standings: IStandingRow[];
+  showFull: boolean;
+  showLongName: boolean;
 }) {
-	const sortedStandings = standings.sort((a, b) => a.position - b.position);
+  const sortedStandings = standings.sort((a, b) => a.position - b.position);
 
-	// get blfc index in standing
-	const blfcIndex = sortedStandings.findIndex(
-		(el) => el.team && el.team.isBeyondLimits,
-	);
+  // get blfc index in standing
+  const blfcIndex = sortedStandings.findIndex(
+    (el) => el.team && el.team.isBeyondLimits
+  );
 
-	// get team before blfc and blfc postions
-	const filteredStandings = showFull
-		? standings
-		: sortedStandings.slice(blfcIndex - 1, blfcIndex + 1);
+  // get team before blfc and blfc postions
+  const filteredStandings = showFull
+    ? standings
+    : sortedStandings.slice(blfcIndex - 1, blfcIndex + 1);
 
-	const theads = ["pos", "club", ...Object.keys(standings[0].stats)];
+  const theads = ["pos", "club", ...Object.keys(standings[0].stats)];
 
-	return (
-		<div className={clsx(styles.standing)}>
-			<Card theme="light">
-				<>
-					<table>
-						<CardHeader as="thead" theme="trans" border={true}>
-							<tr>
-								{theads.map((el, i) => {
-									if (i === 1)
-										return (
-											<th key={i + 2} colSpan={5}>
-												{el}
-											</th>
-										);
-									if (i === 6) {
-										return (
-											<th key={i + 2} colSpan={2}>
-												{el}
-											</th>
-										);
-									}
-									return <th key={i + 2}>{el}</th>;
-								})}
-							</tr>
-						</CardHeader>
-						<CardBody as="tbody" theme="light">
-							<>
-								{filteredStandings.map((row, i) => {
-									return (
-										<tr
-											key={i + 1 * 2}
-											className={clsx(row.team?.isBeyondLimits && styles.shade)}
-										>
-											{<StandingRow row={row} />}
-										</tr>
-									);
-								})}
-							</>
-						</CardBody>
-					</table>
-				</>
-			</Card>
-		</div>
-	);
+  return (
+    <div className={clsx(styles.standing)}>
+      <Card theme="light">
+        <>
+          <table className={clsx(showFull)}>
+            <CardHeader as="thead" theme="trans" border={true}>
+              <tr>
+                {theads.map((el, i) => {
+                  if (i === 1)
+                    return (
+                      <th key={i + 2} colSpan={4}>
+                        {el}
+                      </th>
+                    );
+                  if (i === 6) {
+                    return (
+                      <th key={i + 2} colSpan={2}>
+                        {el}
+                      </th>
+                    );
+                  }
+                  return <th key={i + 2}>{el}</th>;
+                })}
+              </tr>
+            </CardHeader>
+            <CardBody as="tbody" theme="light">
+              <>
+                {filteredStandings.map((row, i) => {
+                  return (
+                    <tr
+                      key={i + 1 * 2}
+                      className={clsx(
+                        styles.tr,
+                        row.team?.isBeyondLimits && styles.shade
+                      )}
+                    >
+                      {<StandingRow row={row} showLongName={showLongName} />}
+                    </tr>
+                  );
+                })}
+              </>
+            </CardBody>
+          </table>
+        </>
+      </Card>
+    </div>
+  );
 }
 
 export default Standing;

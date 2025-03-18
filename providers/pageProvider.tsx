@@ -2,7 +2,7 @@
 import PageContext from "@/contexts/pageContext";
 import React, { useState } from "react";
 
-function pageProvider({ children }: { children: React.ReactNode }) {
+function PageProvider({ children }: { children: React.ReactNode }) {
 	const [pageTitle, setPageTitle] = useState("");
 	const [pageBg, setPageBg] = useState("");
 	return (
@@ -14,4 +14,4 @@ function pageProvider({ children }: { children: React.ReactNode }) {
 	);
 }
 
-export default pageProvider;
+export default PageProvider;

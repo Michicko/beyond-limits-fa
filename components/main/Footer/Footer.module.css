@@ -26,7 +26,7 @@
   text-transform: uppercase;
   cursor: pointer;
   font-size: var(--base);
-  letter-spacing: 1px;
+  font-family: var(--font-body);
 }
 
 .links a:hover {
@@ -34,10 +34,9 @@
 }
 
 .footer-copy {
-  font-family: var(--font);
+  font-family: var(--font-body);
   font-size: var(--sm);
   font-weight: 700;
-  letter-spacing: 1px;
   color: var(--white);
   text-align: center;
   margin-top: var(--sm);
@@ -53,18 +52,12 @@
 
 .copyright {
   font-family: roboto;
-  font-size: 15px;
+  font-size: var(--base);
   color: #fff;
 }
 
 @media only screen and (min-width: 36rem) {
   .links a {
     font-size: var(--md);
-  }
-}
-
-@media only screen and (min-width: 48rem) {
-  .links a {
-    font-size: var(--lg);
   }
 }

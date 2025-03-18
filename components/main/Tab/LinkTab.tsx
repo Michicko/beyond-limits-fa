@@ -1,10 +1,9 @@
 "use client";
-
 import Link from "next/link";
 import styles from "./Tab.module.css";
 import clsx from "clsx";
 import { ILink } from "@/lib/definitions";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 const LinkTab = ({
   link,
@@ -15,7 +14,10 @@ const LinkTab = ({
   theme: "theme-1" | "theme-2";
   currentLink?: string;
 }) => {
-  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const queryString = searchParams.toString();
+  const path = usePathname();
+  const pathname = queryString ? path + "?" + queryString : path;
 
   return (
     <Link

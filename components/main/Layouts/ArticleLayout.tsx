@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { ILink } from "@/lib/definitions";
 import Tab from "../Tab/Tab";
 import LinkTab from "../Tab/LinkTab";
@@ -18,13 +18,15 @@ const ArticleLayout = ({
 }) => {
   return (
     <main className={clsx(styles["article-layout"])}>
-      <Tab bg={bg} theme={theme}>
-        <>
-          {links.map((link) => {
-            return <LinkTab link={link} theme="theme-1" />;
-          })}
-        </>
-      </Tab>
+      <Suspense key={bg} fallback={null}>
+        <Tab bg={bg} theme={theme}>
+          <>
+            {links.map((link) => {
+              return <LinkTab link={link} theme="theme-1" />;
+            })}
+          </>
+        </Tab>
+      </Suspense>
       {children}
     </main>
   );

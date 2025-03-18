@@ -1,3 +1,6 @@
+import { getDefaultSeason } from "@/lib/helper";
+import { seasons } from "@/lib/placeholder-data";
+
 const MenuLinks = [
   {
     innerLinks: ["/"],
@@ -22,6 +25,8 @@ const MenuLinks = [
         image: "/images/home-header-bg.png",
       },
     ],
+    description:
+      "At Beyond Limits Football Academy, we believe in more than just developing exceptional football talent; we strive to shape responsible, empowered individuals who contribute positively to society. As the juniors of the esteemed Remo Stars in the Nigerian Professional Football League, we take pride in our commitment to community development.",
   },
   {
     innerLinks: ["/news", "/beyond-tv"],
@@ -55,9 +60,15 @@ const MenuLinks = [
         image: "/images/beyondtv.jpg",
       },
     ],
+    description:
+      "Get the latest news about the club, academy and other interesting articles. Also check out our highlights and blah blah blah.",
   },
   {
-    innerLinks: ["/competitions"],
+    innerLinks: [
+      `/competitions?season=${encodeURIComponent(
+        getDefaultSeason(seasons).toString()
+      )}`,
+    ],
     id: 31,
     name: "COMPETITION",
     icon: (
@@ -77,17 +88,15 @@ const MenuLinks = [
     subMenu: [
       {
         id: 311,
-        link: "/competitions",
+        link: `/competitions?season=${encodeURIComponent(
+          getDefaultSeason(seasons).toString()
+        )}`,
         name: "season overview",
         image: "/images/fixtures.jpg",
       },
-      // {
-      //   id: 312,
-      //   link: "/beyond-tv",
-      //   name: "beyond tv",
-      //   image: "/images/beyondtv.jpg",
-      // },
     ],
+    description:
+      "Get the latest about the competitions and check out our latest vicrories.",
   },
   {
     innerLinks: ["/players/under-19", "/players/under-17"],
@@ -121,9 +130,16 @@ const MenuLinks = [
         image: "/images/under17.png",
       },
     ],
+    description:
+      "Find out more about our squad, our under 19 and under 17 players.",
   },
   {
-    innerLinks: ["/stats/team-stats", "/stats/player-stats"],
+    innerLinks: [
+      `/stats/team-stats?season=${encodeURIComponent(
+        getDefaultSeason(seasons).toString()
+      )}`,
+      "/stats/player-stats",
+    ],
     id: 33,
     name: "STATS",
     icon: (
@@ -143,7 +159,9 @@ const MenuLinks = [
     subMenu: [
       {
         id: 331,
-        link: "/stats/team-stats",
+        link: `/stats/team-stats?season=${encodeURIComponent(
+          getDefaultSeason(seasons).toString()
+        )}`,
         name: "team stats",
         image: "/images/teamstats.jpg",
       },
@@ -154,6 +172,7 @@ const MenuLinks = [
         image: "/images/playerstats.jpg",
       },
     ],
+    description: "Check out our team stats and stats about our players.",
   },
   {
     innerLinks: ["/about/history", "/about/honours"],
@@ -187,6 +206,8 @@ const MenuLinks = [
         image: "/images/honors.jpg",
       },
     ],
+    description:
+      "Find out more about our club and check out our trophy collections in our honors page.",
   },
 ];
 

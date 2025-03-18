@@ -87,7 +87,7 @@ export default function NavMenu({
               />
             </div>
           </div>
-          <NavMenuText />
+          <NavMenuText description={currentMenu.description} />
         </div>
       </div>
     </div>

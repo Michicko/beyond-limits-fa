@@ -9,104 +9,63 @@ import Button from "@/components/main/Button/Button";
 import Container from "@/components/main/Container/Container";
 import Flex from "@/components/main/Container/Flex";
 import Grid from "@/components/main/Container/Grid";
-import Header from "@/components/main/Header/Header";
-import HeaderLanding from "@/components/main/Header/HeaderLanding";
 import MatchCard from "@/components/main/MatchCard/MatchCard";
 import PlayerList from "@/components/main/Player/PlayerList";
+import Slider from "@/components/main/Slider/Slider";
 import Standing from "@/components/main/Standing/Standing";
 import CustomLink from "@/components/main/Typography/CustomLink";
 import Heading from "@/components/main/Typography/Heading";
 import Text from "@/components/main/Typography/Text";
 import VideoCards from "@/components/main/VideoCard/VideoCards";
+import { getDefaultSeason } from "@/lib/helper";
 import {
   articles,
   match_highlights,
   matches,
   players,
+  seasons,
   standing,
 } from "@/lib/placeholder-data";
 import "@aws-amplify/ui-react/styles.css";
+import clsx from "clsx";
 
 export default function Home() {
   const previous_match = matches.find((el) => el.status === "FINISHED");
   const upcoming_match = matches.find((el) => el.status === "UPCOMING");
+  const currentSeason = getDefaultSeason(seasons);
 
   return (
     <>
-      <Header
-        bg={"/images/home-header-bg.png"}
-        alt="Beyond the limits team celebrating"
-      >
-        <HeaderLanding>
-          <Text
-            size="xxl"
-            weight="light"
-            color="white"
-            letterCase="upper"
-            type="lead"
-          >
-            Welcome To
-          </Text>
-          <Heading level={1} type={"primary"} letterCase="upper">
-            Beyond Limits Fa
-          </Heading>
-        </HeaderLanding>
-      </Header>
+      <Slider />
       <main className="main">
         <Container as="section" size="lg">
-          <Grid col="55-45" gap="md">
+          <div className={clsx("matchcards")}>
             <Grid col="2fr" gap="md">
               <>
                 {upcoming_match && previous_match && (
                   <>
-                    <div>
-                      <Heading
-                        level={2}
-                        type="secondary"
-                        letterCase="upper"
-                        mb="xs"
-                      >
-                        Previous match
-                      </Heading>
-                      <MatchCard
-                        match={previous_match}
-                        showBtn={true}
-                        theme="light"
-                        iconSize={"xl"}
-                      />
-                    </div>
-                    <div>
-                      <Heading
-                        level={2}
-                        type="secondary"
-                        letterCase="upper"
-                        mb="xs"
-                      >
-                        Next match
-                      </Heading>
-                      <MatchCard
-                        match={upcoming_match}
-                        showBtn={true}
-                        theme="light"
-                        iconSize={"xl"}
-                      />
-                    </div>
+                    <MatchCard
+                      match={previous_match}
+                      theme="light"
+                      iconSize={"md"}
+                    />
+                    <MatchCard
+                      match={upcoming_match}
+                      theme="light"
+                      iconSize={"md"}
+                    />
                   </>
                 )}
               </>
             </Grid>
-            <div>
-              <Heading level={2} type="secondary" letterCase="upper" mb="xs">
-                NNL standing
-              </Heading>
-              <Standing
-                showFull={false}
-                standings={standing.filter(
-                  (el) => el.competition && el.competition.short_name === "nnl",
-                )}
-              />
-            </div>
-          </Grid>
+            <Standing
+              showFull={false}
+              standings={standing.filter(
+                (el) => el.competition && el.competition.short_name === "nnl"
+              )}
+              showLongName={false}
+            />
+          </div>
         </Container>
         <Container as="section" size="lg">
           <Flex
@@ -116,12 +75,12 @@ export default function Home() {
             gap="xxs"
             mb={"sm"}
           >
-            <Heading level={2} type="secondary" letterCase="upper">
+            <Heading level={2} type="section" letterCase="upper">
               Latest News
             </Heading>
             <CustomLink
               link={{ name: "View more news", href: "/news" }}
-              type="secondary"
+              type="section"
             />
           </Flex>
           <ArticleList articles={articles.slice(0, 4)} />
@@ -134,12 +93,12 @@ export default function Home() {
             gap="xxs"
             mb={"sm"}
           >
-            <Heading level={2} type="secondary" letterCase="upper">
+            <Heading level={2} type="section" letterCase="upper">
               Our Players
             </Heading>
             <CustomLink
-              link={{ name: "View Full team", href: "/players/under-19" }}
-              type="secondary"
+              link={{ name: "View Full squad", href: "/players/under-19" }}
+              type="section"
             />
           </Flex>
           <PlayerList players={players.slice(0, 3)} />
@@ -147,7 +106,7 @@ export default function Home() {
         <Container as="section" size="md">
           <Heading
             level={2}
-            type="secondary"
+            type="section"
             letterCase="upper"
             mb="xxl"
             align={"center"}
@@ -160,19 +119,16 @@ export default function Home() {
                 <>
                   <MatchCard
                     match={upcoming_match}
-                    showBtn={false}
                     theme="dark"
                     iconSize={"md"}
                   />
                   <MatchCard
                     match={upcoming_match}
-                    showBtn={false}
                     theme="light"
                     iconSize={"md"}
                   />
                   <MatchCard
                     match={upcoming_match}
-                    showBtn={false}
                     theme="dark"
                     iconSize={"md"}
                   />
@@ -186,7 +142,9 @@ export default function Home() {
               isLink={true}
               size={"md"}
               text={"View more matches"}
-              url={"/fixtures"}
+              url={`/fixtures?season=${encodeURIComponent(
+                currentSeason.toString()
+              )}`}
             />
           </Flex>
         </Container>

@@ -6,15 +6,31 @@ function CardBody({
 	children,
 	as,
 	theme,
+	fixedBodyHeight,
 }: {
 	children: React.ReactElement;
 	as: "tbody" | "div";
 	theme: "dark" | "light" | "trans";
+	fixedBodyHeight?: boolean;
 }) {
 	return as === "div" ? (
-		<div className={clsx(styles["card-body"], styles[theme])}>{children}</div>
+		<div
+			className={clsx(
+				styles["card-body"],
+				styles[theme],
+				fixedBodyHeight && styles["fixed-height"],
+			)}
+		>
+			{children}
+		</div>
 	) : (
-		<tbody className={clsx(styles["card-body"], styles[theme])}>
+		<tbody
+			className={clsx(
+				styles["card-body"],
+				styles[theme],
+				fixedBodyHeight && styles["fixed-height"],
+			)}
+		>
 			{children}
 		</tbody>
 	);

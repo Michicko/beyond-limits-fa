@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import LayoutHeader from "./LayoutHeader";
 import LayoutMain from "./LayoutMain";
 import LayoutContainer from "./LayoutContainer";
@@ -9,6 +9,8 @@ import Tab from "../../Tab/Tab";
 import LinkTab from "../../Tab/LinkTab";
 import styles from "../Layout.module.css";
 import { seasons } from "@/lib/placeholder-data";
+import SeasonFilter from "../../Filters/SeasonFilter";
+import { getDefaultSeason } from "@/lib/helper";
 
 function CompetitionsLayout({
   children,
@@ -19,26 +21,49 @@ function CompetitionsLayout({
   competitionId?: string;
   pageTitle?: string;
 }) {
+  const currentSeason = getDefaultSeason(seasons);
+
   const tabLinks = competitionId
     ? [
         {
           name: "Results",
-          href: `/competitions/${competitionId}/results`,
+          href: `/competitions/${competitionId}/results?season=${encodeURIComponent(
+            currentSeason.toString()
+          )}`,
         },
         {
           name: "Fixtures",
-          href: `/competitions/${competitionId}/fixtures`,
+          href: `/competitions/${competitionId}/fixtures?season=${encodeURIComponent(
+            currentSeason.toString()
+          )}`,
         },
 
         {
           name: "Standing",
-          href: `/competitions/${competitionId}/standing`,
+          href: `/competitions/${competitionId}/standing?season=${encodeURIComponent(
+            currentSeason.toString()
+          )}`,
         },
       ]
     : [
-        { name: "fixtures", href: "/fixtures" },
-        { name: "results", href: "/results" },
-        { name: "standing", href: "/standing" },
+        {
+          name: "fixtures",
+          href: `/fixtures?season=${encodeURIComponent(
+            currentSeason.toString()
+          )}`,
+        },
+        {
+          name: "results",
+          href: `/results?season=${encodeURIComponent(
+            currentSeason.toString()
+          )}`,
+        },
+        {
+          name: "standing",
+          href: `/standing?season=${encodeURIComponent(
+            currentSeason.toString()
+          )}`,
+        },
       ];
 
   return (
@@ -59,32 +84,26 @@ function CompetitionsLayout({
             >
               {pageTitle}
             </Heading>
-            {seasons && (
-              <select name="season" id="season">
-                {seasons.map((el) => {
-                  return (
-                    <option value={el.season} key={el.season}>
-                      {el.season}
-                    </option>
-                  );
-                })}
-              </select>
-            )}
+            <Suspense key={currentSeason} fallback={<div>loading...</div>}>
+              <SeasonFilter />
+            </Suspense>
           </>
         </LayoutHeader>
       </Header>
       <LayoutMain>
         <>
           <div className={clsx(styles["layout-tab"])}>
-            <Tab bg="white" theme="theme-2">
-              <>
-                {tabLinks.map((link) => {
-                  return (
-                    <LinkTab link={link} theme="theme-2" key={link.name} />
-                  );
-                })}
-              </>
-            </Tab>
+            <Suspense key={pageTitle} fallback={null}>
+              <Tab bg="white" theme="theme-2">
+                <>
+                  {tabLinks.map((link) => {
+                    return (
+                      <LinkTab link={link} theme="theme-2" key={link.name} />
+                    );
+                  })}
+                </>
+              </Tab>
+            </Suspense>
           </div>
           <LayoutContainer>{children}</LayoutContainer>
         </>

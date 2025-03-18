@@ -192,8 +192,8 @@
 
 .article-container {
   width: 100%;
-  padding: var(--xxl) var(--md);
-  margin: var(--xxxl) 0;
+  padding: var(--md) var(--base);
+  margin: var(--xxl) 0;
   border-radius: var(--base);
   max-width: 986px;
   margin: 0 auto;
@@ -212,8 +212,7 @@
 }
 
 .article-container.article {
-  /*  position: absolute;*/
-  top: -5rem;
+  top: -2.5rem;
   width: 100%;
 }
 
@@ -279,8 +278,9 @@
   .article-container.error {
     margin-top: 8rem;
   }
+
   .article-container.article {
-    top: -6rem;
+    top: -4rem;
   }
 
   .article-content__box {
@@ -303,7 +303,7 @@
   }
 
   .article-container.article {
-    top: -8rem;
+    top: -5rem;
   }
   .article-content__box {
     padding: var(--vi);

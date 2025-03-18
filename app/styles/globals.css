@@ -6,6 +6,8 @@
   --white: #fff;
   --black: #000;
   --font: var(--formula-condensed);
+  /*  --font-heading: var(--formula-condensed);*/
+  --font-body: var(--font-roboto);
   --font-body: "roboto";
   --blue-200: #79beff;
   --blue-300: var(--primary-light);
@@ -27,6 +29,7 @@
   --green-200: #8affb9;
   --green-300: #5bff9d;
   --green-400: #00a341;
+  --green-500: #198754;
   --overlay: rgba(0, 25, 48, 0.4);
   --spacing: 0.25rem;
   --xxs: 0.5rem;
@@ -188,7 +191,7 @@ table {
 html {
   box-sizing: border-box;
   font-smoothing: antialiased;
-  /*  scroll-behavior: smooth;*/
+  scroll-behavior: smooth;
 }
 
 body {
@@ -199,9 +202,20 @@ body {
 }
 
 .main {
-  margin-top: -2rem;
+  margin-top: 2rem;
 }
 
 .main > *:not(:last-child) {
   margin-bottom: var(--iv);
+}
+
+.matchcards {
+  display: grid;
+  gap: var(--md);
+}
+
+@media only screen and (min-width: 64rem) {
+  .matchcards {
+    grid-template-columns: 4fr 3fr;
+  }
 }

@@ -61,7 +61,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${formula_condensed.variable}`}>
+    <html
+      lang="en"
+      className={`${formula_condensed.variable} ${roboto.variable}`}
+    >
       <body className={clsx(styles.layout)}>
         <NextTopLoader color="#ffd700" height={4} />
         <Nav />
