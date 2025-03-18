@@ -6,13 +6,14 @@ function TableRows(
     ChakraTable.RowProps &
     React.RefAttributes<HTMLTableRowElement>
 ) {
+  const tableRowStyles = {
+    h: "40px !important",
+    minH: "40px !important",
+    borderBottom: "1px solid",
+    borderColor: "neutral",
+  };
   return (
-    <ChakraTable.Row
-      h={"40px"}
-      borderBottom={"1px solid"}
-      borderColor={"neutral"}
-      {...props}
-    >
+    <ChakraTable.Row css={tableRowStyles} {...props}>
       {props.children}
     </ChakraTable.Row>
   );

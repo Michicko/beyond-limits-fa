@@ -18,6 +18,11 @@ function Standing({ standings }: { standings: IStandingRow[] }) {
     textTransform: "uppercase",
   };
 
+  const tableRowStyles = {
+    h: "45px !important",
+    minH: "45px !important",
+  };
+
   return (
     <Card.Root border={"1px solid"} borderColor={"neutral"} p={"10px"}>
       <Card.Header pt={"10px"}>
@@ -27,11 +32,12 @@ function Standing({ standings }: { standings: IStandingRow[] }) {
       </Card.Header>
 
       <Table.Root size="sm">
-        <Table.Header h={"45px"}>
-          <Table.Row verticalAlign={"middle"}>
+        <Table.Header css={tableRowStyles}>
+          <Table.Row verticalAlign={"middle"} css={tableRowStyles}>
             {statsHead.map((el, i) => {
               return (
                 <Table.ColumnHeader
+                  css={tableRowStyles}
                   textTransform={"uppercase"}
                   verticalAlign={"middle"}
                   textAlign={i <= 1 ? "left" : "center"}

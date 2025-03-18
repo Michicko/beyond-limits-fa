@@ -8,7 +8,6 @@ function TableColumnHeader(
 ) {
   return (
     <ChakraTable.ColumnHeader
-      verticalAlign={"middle"}
       textTransform={"capitalize"}
       fontWeight={"medium"}
       color={"text_lg"}

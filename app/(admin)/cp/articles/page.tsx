@@ -53,6 +53,7 @@ function Articles() {
                         return (
                           <TableColumnHeader
                             key={head}
+                            verticalAlign={"middle"}
                             pl={i === 0 ? "10px" : "0"}
                           >
                             {head}
