@@ -4,10 +4,11 @@ import { Box } from "@chakra-ui/react";
 function Main({ children }: { children: React.ReactNode }) {
   return (
     <Box
-      h={"full"}
+      minH={0}
       w={"full"}
-      overflow={"auto"}
       p={{ base: "20px 10px", sm: "20px" }}
+      overflow={"auto"}
+      h={"97%"}
     >
       {children}
     </Box>

@@ -7,12 +7,14 @@ function CheckBox({
   label,
   showLabel,
   size,
+  name,
 }: {
   checked: boolean | "indeterminate";
   onCheckedChange: (changes: any) => void;
   label: string;
   showLabel?: boolean;
   size?: "xs" | "sm" | "md" | "lg";
+  name?: string;
 }) {
   return (
     <HStack alignItems={"center"}>
@@ -25,6 +27,7 @@ function CheckBox({
         colorPalette={"gray"}
         cursor={"pointer"}
         checked={checked}
+        name={name}
         onCheckedChange={onCheckedChange}
       >
         <ChakraCheckBox.HiddenInput />

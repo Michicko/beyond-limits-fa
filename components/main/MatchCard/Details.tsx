@@ -1,14 +1,30 @@
-import { IMatch, Match_status } from "@/lib/definitions";
 import React from "react";
-import styles from "./MatchCard.module.css";
-import clsx from "clsx";
 import Text from "../Typography/Text";
-import formatDate from "@/lib/formatDate";
-import Button from "../Button/Button";
-import Flex from "../Container/Flex";
+import clsx from "clsx";
+import styles from "./MatchCard.module.css";
 
-function Details({ status }: { status: string }) {
-  return status === "FINISHED" || status === "UPCOMING" ? (
+function Details({
+  status,
+  home_score,
+  away_score,
+}: {
+  status: string;
+  home_score: number;
+  away_score: number;
+}) {
+  return status === "FINISHED" ? (
+    <div className={clsx(styles["matchcard-scores"])}>
+      <Text color="white" letterCase="normal" size="xxl" weight="bold">
+        {home_score}
+      </Text>
+      <Text color="white" letterCase="upper" size="xxl" weight="bold">
+        -
+      </Text>
+      <Text color="white" letterCase="normal" size="xxl" weight="bold">
+        {away_score}
+      </Text>
+    </div>
+  ) : status === "UPCOMING" ? (
     <>
       <Text color="white" letterCase="upper" size="xxl" weight="bold">
         -

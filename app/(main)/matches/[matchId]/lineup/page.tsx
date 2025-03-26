@@ -7,7 +7,7 @@ import CardHeader from "@/components/main/Card/CardHeader";
 import Heading from "@/components/main/Typography/Heading";
 import CardBody from "@/components/main/Card/CardBody";
 import Text from "@/components/main/Typography/Text";
-import { matches, player_positions } from "@/lib/placeholder-data";
+import { matches, player_positions, players } from "@/lib/placeholder-data";
 import groupPlayersByPositions from "@/lib/groupPlayerByPositions";
 
 function Lineup({ params }: { params: { matchId: string } }) {
@@ -17,11 +17,15 @@ function Lineup({ params }: { params: { matchId: string } }) {
 
   const starters = groupPlayersByPositions(
     player_positions.map((el) => el.long_name),
-    match.lineup.starters
+    match.lineup
+      .map((el) => players.find((player) => player.id === el))
+      .filter((el) => el !== undefined)
   );
   const subs = groupPlayersByPositions(
     player_positions.map((el) => el.long_name),
-    match.lineup.substitutes
+    match.substitutes
+      .map((el) => players.find((player) => player.id === el))
+      .filter((el) => el !== undefined)
   );
 
   return (
@@ -65,7 +69,7 @@ function Lineup({ params }: { params: { matchId: string } }) {
                             <Text
                               color="white"
                               size="base"
-                              weight="light"
+                              weight="regular"
                               letterCase="normal"
                               key={el.squad_no}
                             >
@@ -82,7 +86,7 @@ function Lineup({ params }: { params: { matchId: string } }) {
                     <Text
                       color="secondary"
                       size="sm"
-                      weight="bold"
+                      weight="semibold"
                       letterCase="upper"
                     >
                       coach
@@ -90,17 +94,17 @@ function Lineup({ params }: { params: { matchId: string } }) {
                     <Text
                       color="white"
                       size="base"
-                      weight="light"
+                      weight="regular"
                       letterCase="capitalize"
                     >
-                      {match.lineup.coach.name}
+                      {match.coach.name}
                     </Text>
                   </li>
                   <li className={clsx(styles["preview-item"], styles.col)}>
                     <Text
                       color="secondary"
                       size="sm"
-                      weight="bold"
+                      weight="semibold"
                       letterCase="upper"
                     >
                       Substitutes
@@ -114,7 +118,7 @@ function Lineup({ params }: { params: { matchId: string } }) {
                               <Text
                                 color="white"
                                 size="base"
-                                weight="light"
+                                weight="regular"
                                 letterCase="normal"
                                 key={el.squad_no + "-" + i}
                               >

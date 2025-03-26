@@ -1,4 +1,4 @@
-import { matches } from "@/lib/placeholder-data";
+import { matches, players } from "@/lib/placeholder-data";
 import React from "react";
 import styles from "../../Match.module.css";
 import clsx from "clsx";
@@ -14,6 +14,8 @@ function Report({ params }: { params: { matchId: string } }) {
   const match = matches.find((match) => match.id === params.matchId);
 
   if (!match) return <div>No match</div>;
+
+  const mvp = players.find((el) => el.id === match.report.mvp);
 
   return (
     <MatchLayout match={match} currentLink={`/matches/${match.id}/report`}>
@@ -64,7 +66,7 @@ function Report({ params }: { params: { matchId: string } }) {
                 {match.scorers && match.scorers.length > 0 ? (
                   <ul className={clsx(styles["team-form__list"])}>
                     {match.scorers.map((scorer, i) => {
-                      if (scorer.isBeyondLimitsPlayer) {
+                      if (!scorer.isOpponent) {
                         return (
                           <li
                             className={clsx(styles["preview-item"])}
@@ -78,7 +80,7 @@ function Report({ params }: { params: { matchId: string } }) {
                             >
                               {scorer.name}
                             </Text>
-                            <MatchScoreTime time={scorer.time} />
+                            <MatchScoreTime time={scorer.time} theme="light" />
                           </li>
                         );
                       }
@@ -140,7 +142,7 @@ function Report({ params }: { params: { matchId: string } }) {
                     letterCase="upper"
                     mb={"sm"}
                   >
-                    {match.report.mvp.firstname} {match.report.mvp.lastname}
+                    {mvp?.firstname} {mvp?.lastname}
                   </Text>
                   <Text
                     color="white"

@@ -21,6 +21,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import React, { useState } from "react";
 
 function Players() {
@@ -77,213 +78,15 @@ function Players() {
       <PageTitle pageTitle="Players" />
       <Box w={"full"} h={"full"} mt={"10px"}>
         <HStack justify={"flex-end"} mb={"20px"} gap="2">
-          <FormDialog
-            btn={
-              <Button
-                colorPalette={"blue"}
-                variant={"solid"}
-                css={btnStyles}
-                size={"md"}
-              >
-                Create Player
-              </Button>
-            }
-            scrollable={true}
-            name="Player"
+          <Button
+            colorPalette={"blue"}
+            variant={"solid"}
+            css={btnStyles}
+            size={"md"}
+            asChild
           >
-            <form>
-              <Stack gap="2">
-                <Field.Root required>
-                  <Field.Label color={"text_lg"}>Home kit</Field.Label>
-                  <CustomFileUpload description="home kit" />
-                </Field.Root>
-                <Field.Root required>
-                  <Field.Label color={"text_lg"}>Away kit</Field.Label>
-                  <CustomFileUpload description="away kit" />
-                </Field.Root>
-                <Field.Root required>
-                  <Field.Label color={"text_lg"}>Position</Field.Label>
-                  <CustomSelect
-                    options={player_positions.map((el) => {
-                      return {
-                        label: el.long_name,
-                        value: el.long_name,
-                      };
-                    })}
-                    name="Position"
-                    value={playerPosition}
-                    setValue={setPlayerPosition}
-                  />
-                </Field.Root>
-                <Field.Root required>
-                  <Field.Label color={"text_lg"}>firstname</Field.Label>
-                  <Input
-                    name={"firstname"}
-                    type={"text"}
-                    placeholder="Enter first name"
-                    px={"2"}
-                    color={"text_lg"}
-                    fontSize={"sm"}
-                    fontWeight={"medium"}
-                    mb={"5px"}
-                  />
-                </Field.Root>
-                <Field.Root required>
-                  <Field.Label color={"text_lg"}>lastname</Field.Label>
-                  <Input
-                    name={"lastname"}
-                    type={"text"}
-                    placeholder="Enter lastname"
-                    px={"2"}
-                    color={"text_lg"}
-                    fontSize={"sm"}
-                    fontWeight={"medium"}
-                    mb={"5px"}
-                  />
-                  <Field.HelperText
-                    fontSize={"sm"}
-                    fontWeight={"normal"}
-                    color={"text_md"}
-                  >
-                    Enter lastname (surname)
-                  </Field.HelperText>
-                </Field.Root>
-                <Field.Root required>
-                  <Field.Label color={"text_lg"}>Dob</Field.Label>
-                  <Input
-                    name={"dob"}
-                    type={"date"}
-                    px={"2"}
-                    color={"text_lg"}
-                    fontSize={"sm"}
-                    fontWeight={"medium"}
-                    mb={"5px"}
-                  />
-                  <Field.HelperText
-                    fontSize={"sm"}
-                    fontWeight={"normal"}
-                    color={"text_md"}
-                  >
-                    Enter Date of birth
-                  </Field.HelperText>
-                </Field.Root>
-                <Field.Root required>
-                  <Field.Label color={"text_lg"}>squad number</Field.Label>
-                  <Input
-                    name={"squad number"}
-                    type={"number"}
-                    placeholder="Enter squad number"
-                    px={"2"}
-                    color={"text_lg"}
-                    fontSize={"sm"}
-                    fontWeight={"medium"}
-                    mb={"5px"}
-                  />
-                  <Field.HelperText
-                    fontSize={"sm"}
-                    fontWeight={"normal"}
-                    color={"text_md"}
-                  >
-                    Enter squad number e.g 7
-                  </Field.HelperText>
-                </Field.Root>
-                <Field.Root required>
-                  <Field.Label color={"text_lg"}>Weight</Field.Label>
-                  <Input
-                    name={"weight"}
-                    type={"number"}
-                    placeholder="Enter weight"
-                    px={"2"}
-                    color={"text_lg"}
-                    fontSize={"sm"}
-                    fontWeight={"medium"}
-                    mb={"5px"}
-                  />
-                  <Field.HelperText
-                    fontSize={"sm"}
-                    fontWeight={"normal"}
-                    color={"text_md"}
-                  >
-                    Enter weight in (kg) e.g 75
-                  </Field.HelperText>
-                </Field.Root>
-                <Field.Root required>
-                  <Field.Label color={"text_lg"}>Height</Field.Label>
-                  <Input
-                    name={"height"}
-                    type={"number"}
-                    placeholder="Enter height"
-                    px={"2"}
-                    color={"text_lg"}
-                    fontSize={"sm"}
-                    fontWeight={"medium"}
-                    mb={"5px"}
-                  />
-                  <Field.HelperText
-                    fontSize={"sm"}
-                    fontWeight={"normal"}
-                    color={"text_md"}
-                  >
-                    Enter height in (cm) e.g 156
-                  </Field.HelperText>
-                </Field.Root>
-                <Field.Root required>
-                  <Field.Label color={"text_lg"}>Age Group</Field.Label>
-                  <CustomSelect
-                    options={["UNDER-17", "UNDER-19"].map((el) => {
-                      return {
-                        label: el,
-                        value: el,
-                      };
-                    })}
-                    name="Age Group"
-                    value={ageGroup}
-                    setValue={setAgeGroup}
-                  />
-                </Field.Root>
-                <Field.Root required>
-                  <Field.Label color={"text_lg"}>Player status</Field.Label>
-                  <CustomSelect
-                    options={["active", "loan", "inactive"].map((el) => {
-                      return {
-                        label: el,
-                        value: el,
-                      };
-                    })}
-                    name="Player status"
-                    value={playerPosition}
-                    setValue={setPlayerPosition}
-                  />
-                </Field.Root>
-                <Field.Root required>
-                  <Field.Label color={"text_lg"}>Dominant Foot</Field.Label>
-                  <CustomSelect
-                    options={["left", "right"].map((el) => {
-                      return {
-                        label: el,
-                        value: el,
-                      };
-                    })}
-                    name="Dominant foot"
-                    value={dominantFoot}
-                    setValue={setDominantFoot}
-                  />
-                </Field.Root>
-                <CheckBox
-                  checked={isTwoFooted}
-                  size="xs"
-                  label="Is Two Footed"
-                  onCheckedChange={(e) => {
-                    setIsTwoFooted(e.checked);
-                  }}
-                  showLabel={true}
-                />
-                <Button type="submit" css={btnStyles} colorPalette={"blue"}>
-                  Save
-                </Button>
-              </Stack>
-            </form>
-          </FormDialog>
+            <Link href={"/cp/players/create"}>Create Player</Link>
+          </Button>
         </HStack>
 
         {/* position filters */}

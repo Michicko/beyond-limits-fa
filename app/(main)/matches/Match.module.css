@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--md);
+  color: var(--white);
 }
 
 .preview > * {

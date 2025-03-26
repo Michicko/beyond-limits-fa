@@ -5,7 +5,7 @@
   text-transform: uppercase;
   border-radius: var(--xxs);
   font-family: var(--font-body);
-  font-weight: 900;
+  font-weight: 500;
   gap: var(--sm);
   outline: transparent;
   border: transparent;

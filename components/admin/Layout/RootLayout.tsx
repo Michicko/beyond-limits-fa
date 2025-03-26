@@ -19,9 +19,14 @@ function RootLayout({ children }: { children: React.ReactNode }) {
         <GridItem colSpan={{ base: 0, lg: "auto" }}>
           <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
         </GridItem>
-        <GridItem colSpan={{ base: 6, lg: "auto" }}>
+        <GridItem colSpan={{ base: 6, lg: "auto" }} h={"full"} w={"full"}>
           <Navbar setIsOpen={setIsOpen} />
-          <Box h={"calc(100vh - 60px)"} w={"full"} bg={"white"} pb={"10px"}>
+          <Box
+            h={"calc(100vh - 60px)"}
+            w={"full"}
+            bg={"white"}
+            overflow={"hidden"}
+          >
             <Main>{children}</Main>
           </Box>
         </GridItem>

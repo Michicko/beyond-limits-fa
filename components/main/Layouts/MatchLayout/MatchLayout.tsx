@@ -98,16 +98,17 @@ function MatchLayout({
       <Suspense key={match.id} fallback={null}>
         <Tab bg="white" theme="theme-2">
           <>
-            {generateLink(match.id).map((link) => {
-              return (
-                <LinkTab
-                  link={link}
-                  theme="theme-2"
-                  key={link.name}
-                  currentLink={currentLink}
-                />
-              );
-            })}
+            {match.id &&
+              generateLink(match.id).map((link) => {
+                return (
+                  <LinkTab
+                    link={link}
+                    theme="theme-2"
+                    key={link.name}
+                    currentLink={currentLink}
+                  />
+                );
+              })}
           </>
         </Tab>
       </Suspense>

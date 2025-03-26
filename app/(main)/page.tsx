@@ -20,11 +20,13 @@ import VideoCards from "@/components/main/VideoCard/VideoCards";
 import { getDefaultSeason } from "@/lib/helper";
 import {
   articles,
+  leagues,
   match_highlights,
   matches,
   players,
   seasons,
   standing,
+  teams,
 } from "@/lib/placeholder-data";
 import "@aws-amplify/ui-react/styles.css";
 import clsx from "clsx";
@@ -33,6 +35,17 @@ export default function Home() {
   const previous_match = matches.find((el) => el.status === "FINISHED");
   const upcoming_match = matches.find((el) => el.status === "UPCOMING");
   const currentSeason = getDefaultSeason(seasons);
+  const league = leagues.find((el) => el.competition?.short_name === "nnl");
+  const standings = standing.filter(
+    (el) => league && el.league_id === league.id
+  );
+  const nnl_standing = standings.map((el) => {
+    const team = teams.find((team_el) => team_el.id === el.team_id);
+    return {
+      ...el,
+      team,
+    };
+  });
 
   return (
     <>
@@ -58,13 +71,13 @@ export default function Home() {
                 )}
               </>
             </Grid>
-            <Standing
-              showFull={false}
-              standings={standing.filter(
-                (el) => el.competition && el.competition.short_name === "nnl"
-              )}
-              showLongName={false}
-            />
+            {league && (
+              <Standing
+                showFull={false}
+                standings={nnl_standing}
+                showLongName={false}
+              />
+            )}
           </div>
         </Container>
         <Container as="section" size="lg">
@@ -97,7 +110,7 @@ export default function Home() {
               Our Players
             </Heading>
             <CustomLink
-              link={{ name: "View Full squad", href: "/players/under-19" }}
+              link={{ name: "View More Players", href: "/players/under-19" }}
               type="section"
             />
           </Flex>
@@ -154,7 +167,7 @@ export default function Home() {
               color="white"
               size="base"
               letterCase="normal"
-              weight="light"
+              weight="regular"
               type="interlude"
             >
               At Beyond Limits Football Academy, we believe in more than just

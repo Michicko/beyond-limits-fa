@@ -4,6 +4,7 @@
   border-spacing: var(--sm);
   border: none;
   margin-bottom: 2rem;
+  color: var(--white);
 }
 
 .standing table,
@@ -78,12 +79,12 @@ tr.shade {
 .standing th,
 .standing td {
   font-size: var(--sm);
-  font-weight: 300;
+  font-weight: 400;
   font-family: var(--font-body);
 }
 
 .standing th {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .standing th {

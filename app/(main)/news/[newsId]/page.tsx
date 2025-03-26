@@ -3,13 +3,14 @@ import LayoutHeader from "@/components/main/Layouts/CompetitionsLayout/LayoutHea
 import LayoutMain from "@/components/main/Layouts/CompetitionsLayout/LayoutMain";
 import Heading from "@/components/main/Typography/Heading";
 import Text from "@/components/main/Typography/Text";
-import React from "react";
+import React, { Suspense } from "react";
 import styles from "../News.module.css";
 import clsx from "clsx";
 import Article from "@/components/main/Article/Article";
 import { articles } from "@/lib/placeholder-data";
 import SocialShareLinks from "@/components/main/Social/SocialShareLinks";
 import ArticleCategory from "@/components/main/Article/ArticleCategory";
+import TextEditor from "@/components/admin/TextEditor/TextEditor";
 
 function NewsArticle({ params }: { params: { newsId: string } }) {
   const article = articles.find((article) => article.id === params.newsId);
@@ -34,7 +35,7 @@ function NewsArticle({ params }: { params: { newsId: string } }) {
             <Text
               letterCase="upper"
               weight="bold"
-              size="md"
+              size="sm"
               color={"secondary"}
             >
               December 15, 2025
@@ -49,7 +50,10 @@ function NewsArticle({ params }: { params: { newsId: string } }) {
         <div className={clsx(styles["article-container"], styles.article)}>
           <div className={clsx(styles["article-content__box"])}>
             {article && (
-              <div dangerouslySetInnerHTML={{ __html: article.content }} />
+              // <div dangerouslySetInnerHTML={{ __html: article.content }} />
+              <Suspense fallback={null}>
+                <TextEditor content={article.content} readOnly={true} />
+              </Suspense>
             )}
             <SocialShareLinks
               text={`Check out this article: ${article?.title}`}

@@ -7,11 +7,11 @@ function TableCell(
 ) {
   return (
     <ChakraTable.Cell
-      verticalAlign={"middle"}
       textTransform={"capitalize"}
       fontWeight={"medium"}
       color={"text_md"}
       {...props}
+      verticalAlign={"middle"}
     >
       {props.children}
     </ChakraTable.Cell>

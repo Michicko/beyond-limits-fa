@@ -1,4 +1,16 @@
 import { ReactNode } from "react";
+import { JSONContent } from "@tiptap/react";
+
+export interface IStackStyles {
+  border: string;
+  padding: string;
+  borderRadius: string;
+}
+
+export interface ILabelStyles {
+  color: string;
+  alignSelf: string;
+}
 
 export interface ISocial {
   id: number;
@@ -41,7 +53,8 @@ interface IPlayerPosition {
   players?: IPlayer[];
 }
 
-interface ITeam {
+export interface ITeam {
+  id: string;
   short_name: string;
   long_name: string;
   logo: string;
@@ -59,10 +72,10 @@ export interface IArticle {
   title: string;
   createdAt: string;
   article_category_id: string;
-  cover_image: string;
+  coverImage: string;
   match?: IMatch;
   tags: string[];
-  content: string;
+  content: JSONContent | string;
   category?: IArticleCategory;
 }
 
@@ -81,6 +94,11 @@ export interface IHonor {
   article?: IArticle;
 }
 
+export enum CompetitionStatus {
+  pending = "pending",
+  completed = "completed",
+}
+
 export interface ILeague {
   id: string;
   competition_id: string;
@@ -88,14 +106,27 @@ export interface ILeague {
   season_id: string;
   season?: ISeason;
   standing?: string[] | IStandingRow[];
-  main: string[] | IMatch[];
+  status: CompetitionStatus;
+  winner?: ITeam;
 }
 
 export interface ICup {
   id: string;
   competition_id: string;
-  competition: ICompetition | string;
-  playOffs: string[] | IMatch[];
+  competition?: ICompetition;
+  season_id: string;
+  season?: ISeason;
+  playOffs?: string[] | IMatch[];
+  status: CompetitionStatus;
+  winner?: ITeam;
+}
+
+export interface IPlayOff {
+  id: string;
+  cup_id: string;
+  round: string;
+  match_id: string;
+  match?: IMatch;
 }
 
 export enum Playoffs_round {
@@ -114,17 +145,14 @@ export interface IMixedCup {
   competition?: ICompetition;
   season_id: string;
   season?: ISeason;
-  standing: string[] | IStandingRow[];
-  main: string[] | IMatch[];
-  playOffs: string[] | IMatch[];
+  league: ILeague;
+  cup: ICup;
+  winner?: ITeam;
 }
 
 export interface IStandingRow {
-  id: string;
-  competition_id: string;
-  competition?: ICompetition;
+  league_id: string;
   team_id: string;
-  team?: ITeam;
   position: number;
   stats: {
     p: number;
@@ -152,11 +180,17 @@ export interface ICompetition {
   matches?: IMatch[];
 }
 
-export enum Match_status {
+export enum MatchStatus {
   UPCOMING = "UPCOMING",
   FINISHED = "FINISHED",
   CANCELED = "CANCELED",
   ABANDONED = "ABANDONED",
+}
+
+export enum MatchResult {
+  WIN = "WIN",
+  LOSE = "LOSE",
+  DRAW = "DRAW",
 }
 
 interface IMatchStats {
@@ -187,7 +221,7 @@ export interface IPlayer {
   id: string;
   firstname: string;
   lastname: string;
-  player_position_id: string;
+  position_id: string;
   position?: IPlayerPosition;
   general_match_stats: IMatchStats[];
   // get these stats from player position attributes and input in match positon
@@ -223,12 +257,12 @@ interface ILineup {
 // 	NORMAL_GOAL = "NORMAL GOAL",
 // }
 
-interface IMatchScorer {
-  time: string;
-  isBeyondLimitsPlayer: boolean;
-  goal_type: string;
+export interface IMatchScorer {
+  id: string;
   name: string;
-  assist: string;
+  time: string;
+  goalType: string;
+  isOpponent: boolean;
 }
 
 interface IMatchTeam {
@@ -237,17 +271,19 @@ interface IMatchTeam {
   goals: number;
   stats: {
     passes: number;
+    offsides: number;
     corners: number;
     shots: number;
     yellows: number;
     reds: number;
   };
+  form: string;
   penalties?: number;
 }
 
 export interface IMatch {
-  id: string;
-  round: string | number;
+  id?: string;
+  round: string;
   competition_id: string;
   competition?: ICompetition;
   home: IMatchTeam;
@@ -255,21 +291,38 @@ export interface IMatch {
   date: string;
   time: string;
   venue: string;
-  status: Match_status;
-  lineup: ILineup;
+  status: MatchStatus;
+  result?: MatchResult;
+  lineup: string[];
+  substitutes: string[];
+  coach: {
+    name: string;
+    role: string;
+  };
   preview: {
-    context: string;
-    keyPlayer?: IPlayer;
+    context: JSONContent | string;
+    keyPlayer?: string;
     aboutKeyPlayer: string;
   };
   report: {
-    context: string;
-    mvp?: IPlayer;
+    context: JSONContent | string;
+    mvp?: string;
     aboutMvp: string;
   };
-  scorers?: IMatchScorer[];
-  form: {
-    home: string[];
-    away: string[];
+  scorers: IMatchScorer[];
+}
+
+export interface IMatchTeamForm {
+  team: string;
+  goals: string;
+  stats: {
+    passes: string;
+    offsides: string;
+    corners: string;
+    shots: string;
+    yellows: string;
+    reds: string;
   };
+  form: string;
+  penalties: string;
 }

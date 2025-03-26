@@ -14,6 +14,7 @@ import {
 import React from "react";
 import CustomMenu from "../CustomMenu/CustomMenu";
 import CustomMenuItem from "../CustomMenu/CustomMenuItem";
+import Link from "next/link";
 
 function PlayerCard({ player }: { player: IPlayer }) {
   const cardStyles = {
@@ -137,7 +138,9 @@ function PlayerCard({ player }: { player: IPlayer }) {
       </Card.Body>
       <CustomMenu position="absolute">
         <>
-          <CustomMenuItem label="Edit" showBorder={true} />
+          <CustomMenuItem label="Edit" showBorder={true}>
+            <Link href={`/cp/players/${player.id}/edit`}>Edit</Link>
+          </CustomMenuItem>
           <CustomMenuItem label="Delete" showBorder={false} />
         </>
       </CustomMenu>

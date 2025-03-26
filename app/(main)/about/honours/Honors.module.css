@@ -14,7 +14,7 @@
 .honours-intro p {
   font-family: var(--font-body);
   font-size: var(--md);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--white);
 }
 
@@ -61,12 +61,11 @@
   text-align: right;
   font-size: var(--xxl);
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--secondary-dark);
 }
 
 .honor-name {
-  font-weight: 900;
   color: var(--white);
   font-size: var(--md);
   text-align: left;
@@ -83,7 +82,7 @@
   font-weight: 400;
   color: var(--white);
   font-family: var(--font-body);
-  font-size: var(--base);
+  font-size: var(--sm);
 }
 
 .honor-details {
@@ -101,7 +100,7 @@
   }
 
   .honor-year {
-    font-size: var(--md);
+    font-size: var(--base);
   }
 }
 
@@ -111,7 +110,7 @@
   }
 
   .honor-year {
-    font-size: var(--lg);
+    font-size: var(--md);
   }
 }
 

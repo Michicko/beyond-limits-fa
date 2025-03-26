@@ -39,7 +39,7 @@ function Matches() {
           {matches.map((match) => {
             return (
               <GridItem key={match.id}>
-                <MatchCard showMenu={true} status="finished" />
+                <MatchCard match={match} showMenu={true} />
               </GridItem>
             );
           })}

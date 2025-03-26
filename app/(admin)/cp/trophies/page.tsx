@@ -25,6 +25,11 @@ function Trophies() {
 
   const [competition, setCompetition] = useState("");
 
+  const handleOnChange = (e: { target: { name: string; value: string } }) => {
+    const { value } = e.target;
+    setCompetition(value);
+  };
+
   return (
     <>
       <PageTitle pageTitle="Trophies" />
@@ -60,8 +65,9 @@ function Trophies() {
                       };
                     })}
                     name="Competition"
-                    value={competition}
-                    setValue={setCompetition}
+                    description="competition"
+                    selectedValue={competition}
+                    handleOnChange={handleOnChange}
                   />
                 </Field.Root>
                 <Button type="submit" css={btnStyles} colorPalette={"blue"}>

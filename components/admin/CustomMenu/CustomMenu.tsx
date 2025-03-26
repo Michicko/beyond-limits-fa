@@ -6,9 +6,11 @@ import CustomMenuItem from "./CustomMenuItem";
 function CustomMenu({
   children,
   position,
+  icon,
 }: {
   children: React.ReactElement;
   position?: "relative" | "absolute";
+  icon?: React.ReactNode;
 }) {
   return (
     <Menu.Root>
@@ -25,7 +27,7 @@ function CustomMenu({
           _focus={{ bg: "transparent", outline: "transparent" }}
           _enabled={{ bg: "transparent", outline: "transparent" }}
         >
-          {getIcon("dots")}
+          {icon ? icon : getIcon("dots")}
         </IconButton>
       </Menu.Trigger>
       <Portal>

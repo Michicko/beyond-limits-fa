@@ -3,7 +3,7 @@ import MatchLayout from "@/components/main/Layouts/MatchLayout/MatchLayout";
 import React from "react";
 import styles from "../../Match.module.css";
 import clsx from "clsx";
-import { matches } from "@/lib/placeholder-data";
+import { matches, players } from "@/lib/placeholder-data";
 import CardHeader from "@/components/main/Card/CardHeader";
 import Heading from "@/components/main/Typography/Heading";
 import Text from "@/components/main/Typography/Text";
@@ -14,6 +14,8 @@ function Review({ params }: { params: { matchId: string } }) {
   const match = matches.find((match) => match.id === params.matchId);
 
   if (!match) return <div>No match</div>;
+
+  const keyPlayer = players.find((el) => el.id === match.preview.keyPlayer);
 
   return (
     <MatchLayout match={match} currentLink={`/matches/${match.id}/preview`}>
@@ -88,7 +90,7 @@ function Review({ params }: { params: { matchId: string } }) {
                       {match.home.team?.long_name}
                     </Text>
                     <div className={clsx(styles["team-form"])}>
-                      {match.form.home.map((el, i) => {
+                      {match.home.form.split(",").map((el, i) => {
                         return <TeamForm form={el} key={match.id + i} />;
                       })}
                     </div>
@@ -117,7 +119,7 @@ function Review({ params }: { params: { matchId: string } }) {
                       {match.away.team?.long_name}
                     </Text>
                     <div className={clsx(styles["team-form"])}>
-                      {match.form.away.map((el, i) => {
+                      {match.away.form.split(",").map((el, i) => {
                         return <TeamForm form={el} key={match.id + (i + 2)} />;
                       })}
                     </div>
@@ -144,8 +146,7 @@ function Review({ params }: { params: { matchId: string } }) {
             <CardBody as="div" theme={"light"}>
               <div className={clsx(styles.preview__body, styles.p)}>
                 <Text color="secondary" size="sm" letterCase={"upper"}>
-                  {match.preview.keyPlayer?.firstname}{" "}
-                  {match.preview.keyPlayer?.lastname}
+                  {keyPlayer?.firstname} {keyPlayer?.lastname}
                 </Text>
                 <Text color="white" size="base">
                   {match.preview.aboutKeyPlayer}

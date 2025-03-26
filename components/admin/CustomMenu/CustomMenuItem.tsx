@@ -21,6 +21,7 @@ function CustomMenuItem({
       outline: "transparent",
       textDecoration: "none",
       border: "none",
+      display: "block",
     },
   };
 

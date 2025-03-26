@@ -4,6 +4,7 @@ import styles from "./Standing.module.css";
 import clsx from "clsx";
 import ImageComp from "@/components/ImageComp/ImageComp";
 import Text from "../Typography/Text";
+import { teams } from "@/lib/placeholder-data";
 
 function StandingRow({
   row,
@@ -12,28 +13,32 @@ function StandingRow({
   row: IStandingRow;
   showLongName: boolean;
 }) {
+  const team = teams.find((team) => team.id === row.team_id);
+
   return (
     <>
       <td>{row.position}</td>
       <td
         colSpan={4}
         className={clsx(styles["with-child"], showLongName && styles["long"])}
-        title={row.team?.long_name}
+        title={team?.long_name}
       >
         <div className={styles["img-box"]}>
-          {row.team?.logo && (
-            <ImageComp
-              image={row.team.logo}
-              alt={`${row.team?.long_name} logo`}
-            />
+          {team?.logo && (
+            <ImageComp image={team.logo} alt={`${team?.long_name} logo`} />
           )}
         </div>
-        <Text color="white" letterCase="upper" size="base" weight="bold">
-          {row.team?.short_name}
+        <Text color="white" letterCase="upper" size="base" weight="semibold">
+          {team?.short_name}
         </Text>
         {showLongName && (
-          <Text color="white" letterCase="capitalize" size="base" weight="bold">
-            {row.team?.long_name}
+          <Text
+            color="white"
+            letterCase="capitalize"
+            size="base"
+            weight="semibold"
+          >
+            {team?.long_name}
           </Text>
         )}
       </td>

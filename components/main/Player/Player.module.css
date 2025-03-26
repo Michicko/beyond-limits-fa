@@ -175,7 +175,7 @@
 
 .player-kit {
   position: relative;
-  background: var(--white);
+  background: transparent;
   border-radius: var(--sm);
   height: 100%;
 }

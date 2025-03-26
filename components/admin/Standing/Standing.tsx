@@ -1,8 +1,16 @@
-import { IStandingRow } from "@/lib/definitions";
-import { Table, Card, Heading } from "@chakra-ui/react";
+import { Table, Card, Heading, HStack } from "@chakra-ui/react";
 import React from "react";
+import MatchIcon from "../Card/MatchIcon";
+import { IStandingRow } from "@/lib/definitions";
+import { teams } from "@/lib/placeholder-data";
 
-function Standing({ standings }: { standings: IStandingRow[] }) {
+function Standing({
+  standings,
+  name,
+}: {
+  standings: IStandingRow[];
+  name?: string;
+}) {
   const statsHead = ["pos", "team", "p", "w", "d", "l", "g", "gd", "pts"];
   const headingStyles = {
     color: "text_lg",
@@ -23,11 +31,22 @@ function Standing({ standings }: { standings: IStandingRow[] }) {
     minH: "45px !important",
   };
 
+  const populatedStanding = standings
+    .map((row) => {
+      const team = teams.find((team) => team.id === row.team_id);
+      if (!team) return;
+      return {
+        ...row,
+        team,
+      };
+    })
+    .filter((el) => el !== undefined);
+
   return (
     <Card.Root border={"1px solid"} borderColor={"neutral"} p={"10px"}>
       <Card.Header pt={"10px"}>
         <Heading as={"h3"} css={headingStyles}>
-          Standing
+          {name} Standing
         </Heading>
       </Card.Header>
 
@@ -59,15 +78,15 @@ function Standing({ standings }: { standings: IStandingRow[] }) {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {standings
+          {populatedStanding
             .sort((a, b) => a.position - b.position)
             .map((standing, i) => (
               <Table.Row
-                key={standing.id}
+                key={standing.team.id}
                 h={"40px"}
                 borderBottom={"1px solid"}
                 borderColor={
-                  i === standings.length - 1 ? "transparent" : "neutral"
+                  i === populatedStanding.length - 1 ? "transparent" : "neutral"
                 }
                 bg={
                   standing.team && standing.team.isBeyondLimits
@@ -83,14 +102,32 @@ function Standing({ standings }: { standings: IStandingRow[] }) {
                   pl={"4px"}
                   display={{ base: "table-cell", md: "none" }}
                 >
-                  {standing.team && standing.team.short_name}
+                  <HStack>
+                    {standing.team && (
+                      <MatchIcon
+                        size="md"
+                        src={standing.team.logo}
+                        radius={false}
+                      />
+                    )}
+                    {standing.team && standing.team.short_name}
+                  </HStack>
                 </Table.Cell>
                 <Table.Cell
                   css={tdStyles}
                   pl={"4px"}
                   display={{ base: "none", md: "table-cell" }}
                 >
-                  {standing.team && standing.team.long_name}
+                  <HStack>
+                    {standing.team && (
+                      <MatchIcon
+                        size="md"
+                        src={standing.team.logo}
+                        radius={false}
+                      />
+                    )}
+                    {standing.team && standing.team.long_name}
+                  </HStack>
                 </Table.Cell>
                 <Table.Cell css={tdStyles} textAlign="center">
                   {standing.stats.p}

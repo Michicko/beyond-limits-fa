@@ -3,13 +3,15 @@ import Flex from "@/components/main/Container/Flex";
 import CompetitionsLayout from "@/components/main/Layouts/CompetitionsLayout/CompetitionsLayout";
 import MatchCard from "@/components/main/MatchCard/MatchCard";
 import { matches } from "@/lib/placeholder-data";
-import React from "react";
+import React, { Suspense } from "react";
 
 function Results() {
   return (
     <CompetitionsLayout pageTitle="Results">
       <>
-        <Calendar />
+        <Suspense fallback={null}>
+          <Calendar />
+        </Suspense>
         <Flex align="center" justify="between" direction="col" gap="sm" my="lg">
           {matches
             .filter((el) => el.status === "FINISHED")

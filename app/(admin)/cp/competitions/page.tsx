@@ -38,96 +38,29 @@ function Competitions() {
     fontSize: "md",
     fontWeight: "semibold",
   };
+
+  const handleCompetitionTypeChange = (e: {
+    target: { name: string; value: any };
+  }) => {
+    const { value } = e.target;
+    setCompetitionType(value);
+  };
+
   return (
     <>
       <PageTitle pageTitle="Competitions" />
       <Box w={"full"} h={"full"} mt={"30px"}>
         <Container maxW={"4xl"} fluid margin={"0 auto"}>
           <HStack justify={"flex-end"} mb={"20px"} gap="4">
-            <FormDialog
-              btn={
-                <Button
-                  colorPalette={"blue"}
-                  variant={"solid"}
-                  css={btnStyles}
-                  size={"md"}
-                >
-                  Create Competition
-                </Button>
-              }
-              scrollable={true}
-              name="Competition"
+            <Button
+              colorPalette={"blue"}
+              variant={"solid"}
+              css={btnStyles}
+              size={"md"}
+              asChild
             >
-              <form>
-                <Stack gap="4">
-                  <Field.Root required>
-                    <Field.Label color={"text_lg"}>
-                      Competition Logo
-                    </Field.Label>
-                    <CustomFileUpload description="competition logo" />
-                  </Field.Root>
-                  <Field.Root required>
-                    <Field.Label color={"text_lg"}>short name</Field.Label>
-                    <Input
-                      name={"short name"}
-                      type={"text"}
-                      placeholder="Enter Short name"
-                      px={"2"}
-                      color={"text_lg"}
-                      fontSize={"sm"}
-                      fontWeight={"medium"}
-                      mb={"5px"}
-                    />
-                    <Field.HelperText
-                      fontSize={"sm"}
-                      fontWeight={"normal"}
-                      color={"text_md"}
-                    >
-                      Enter short e.g nnl
-                    </Field.HelperText>
-                  </Field.Root>
-                  <Field.Root required>
-                    <Field.Label color={"text_lg"}>long name</Field.Label>
-                    <Input
-                      name={"long name"}
-                      type={"text"}
-                      placeholder="Enter long name"
-                      px={"2"}
-                      color={"text_lg"}
-                      fontSize={"sm"}
-                      fontWeight={"medium"}
-                      mb={"5px"}
-                    />
-                    <Field.HelperText
-                      fontSize={"sm"}
-                      fontWeight={"normal"}
-                      color={"text_md"}
-                    >
-                      Enter long e.g nigerian national league
-                    </Field.HelperText>
-                  </Field.Root>
-                  <Field.Root required>
-                    <Field.Label color={"text_lg"}>
-                      Competition Type
-                    </Field.Label>
-                    <CustomSelect
-                      options={["league", "mixedtype"].map((el) => {
-                        return {
-                          label: el,
-                          value: el,
-                        };
-                      })}
-                      name="competition type"
-                      value={competitionType}
-                      setValue={setCompetitionType}
-                    />
-                  </Field.Root>
-                  <Button type="submit" css={btnStyles} colorPalette={"blue"}>
-                    Save
-                  </Button>
-                </Stack>
-              </form>
-            </FormDialog>
+              <Link href={"/cp/competitions/create"}>Create Competition</Link>
+            </Button>
           </HStack>
           <Table>
             <>
@@ -176,59 +109,65 @@ function Competitions() {
                           <TableCell>
                             <CustomMenu>
                               <>
-                                {competition.competition_type === "LEAGUE" ? (
-                                  <CustomMenuItem
-                                    label="Create League"
-                                    showBorder={true}
-                                    disabled={
-                                      leagues.find(
-                                        (el) =>
-                                          el.competition_id === competition.id
-                                      ) && true
-                                    }
-                                  >
-                                    <Link
-                                      href={
-                                        leagues.find(
-                                          (el) =>
-                                            el.competition_id === competition.id
-                                        )
-                                          ? "#"
-                                          : `/cp/competitions/${competition.id}/leagues/create`
-                                      }
+                                {(competition.competition_type === "LEAGUE" ||
+                                  competition.competition_type ===
+                                    "MIXEDCUP") && (
+                                  <>
+                                    <CustomMenuItem
+                                      label="Create League"
+                                      showBorder={true}
                                     >
-                                      Create League
-                                    </Link>
-                                  </CustomMenuItem>
-                                ) : (
-                                  <CustomMenuItem
-                                    label="Create Mixed cup"
-                                    showBorder={true}
-                                    disabled={
-                                      mixed_cups.find(
-                                        (el) =>
-                                          el.competition_id === competition.id
-                                      ) && true
-                                    }
-                                  >
-                                    <Link
-                                      href={
-                                        mixed_cups.find(
-                                          (el) =>
-                                            el.competition_id === competition.id
-                                        )
-                                          ? "#"
-                                          : `/cp/competitions/${competition.id}/mixedcups/create`
-                                      }
+                                      <Link
+                                        href={`/cp/competitions/${competition.id}/leagues/create`}
+                                      >
+                                        Create League
+                                      </Link>
+                                    </CustomMenuItem>
+                                    <CustomMenuItem
+                                      label="View Leagues"
+                                      showBorder={true}
                                     >
-                                      Create Mixed cup
-                                    </Link>
-                                  </CustomMenuItem>
+                                      <Link
+                                        href={`/cp/competitions/${competition.id}/leagues`}
+                                      >
+                                        View Leagues
+                                      </Link>
+                                    </CustomMenuItem>
+                                  </>
                                 )}
-                                <CustomMenuItem
-                                  label="Edit"
-                                  showBorder={true}
-                                />
+
+                                {competition.competition_type ===
+                                  "MIXEDCUP" && (
+                                  <>
+                                    <CustomMenuItem
+                                      label="Create cup"
+                                      showBorder={true}
+                                    >
+                                      <Link
+                                        href={`/cp/competitions/${competition.id}/cups/create`}
+                                      >
+                                        Create cup
+                                      </Link>
+                                    </CustomMenuItem>
+                                    <CustomMenuItem
+                                      label="View cups"
+                                      showBorder={true}
+                                    >
+                                      <Link
+                                        href={`/cp/competitions/${competition.id}/cups`}
+                                      >
+                                        View cups
+                                      </Link>
+                                    </CustomMenuItem>
+                                  </>
+                                )}
+                                <CustomMenuItem label="Edit" showBorder={true}>
+                                  <Link
+                                    href={`/cp/competitions/${competition.id}/edit`}
+                                  >
+                                    Edit
+                                  </Link>
+                                </CustomMenuItem>
                                 <CustomMenuItem
                                   label="Delete"
                                   showBorder={false}
@@ -244,9 +183,6 @@ function Competitions() {
               </TableBody>
             </>
           </Table>
-          <HStack justify={"center"} w={"full"}>
-            <Pagination />
-          </HStack>
         </Container>
       </Box>
     </>

@@ -2,6 +2,7 @@
   font-family: var(--font-body);
   font-size: var(--base);
   font-weight: 300;
+  color: var(--white);
 }
 
 .text,
@@ -174,7 +175,7 @@
   font-family: var(--font-body);
   font-size: var(--md);
   letter-spacing: 0;
-  font-weight: 900;
+  font-weight: 500;
   color: var(--white);
   text-transform: uppercase !important;
 }
@@ -227,6 +228,14 @@
 .text.bold,
 .text.lead {
   font-weight: 700;
+}
+
+.text.semibold {
+  font-weight: 500;
+}
+
+.text.regular {
+  font-weight: 400;
 }
 
 .text.lead {

@@ -14,16 +14,13 @@ const LinkTab = ({
   theme: "theme-1" | "theme-2";
   currentLink?: string;
 }) => {
-  const searchParams = useSearchParams();
-  const queryString = searchParams.toString();
   const path = usePathname();
-  const pathname = queryString ? path + "?" + queryString : path;
 
   return (
     <Link
       href={link.href}
       className={clsx(styles.tab, styles[theme], {
-        [styles.current]: (currentLink || pathname) === link.href,
+        [styles.current]: (currentLink || path) === link.href.split("?")[0],
       })}
     >
       {link.name}

@@ -14,16 +14,13 @@ import TableColumnHeader from "@/components/Table/TableColumnHeader";
 import TableCell from "@/components/Table/TableCell";
 import Pagination from "@/components/Pagination/Pagination";
 import FormDialog from "@/components/admin/FormDialog/FormDialog";
-import ActionTable from "@/components/admin/ActionTable/ActionTable";
-import ActionTableHeader from "@/components/admin/ActionTable/ActionTableHeader";
-import ActionTableBody from "@/components/admin/ActionTable/ActionTableBody";
-import ActionTableBodyRow from "@/components/admin/ActionTable/ActionTableBodyRow";
 import Table from "@/components/Table/Table";
 import TableHeader from "@/components/Table/TableHeader";
 import TableRows from "@/components/Table/TableRows";
 import TableBody from "@/components/Table/TableBody";
 import CustomMenu from "@/components/admin/CustomMenu/CustomMenu";
 import CustomMenuItem from "@/components/admin/CustomMenu/CustomMenuItem";
+import Link from "next/link";
 
 const seasons = [
   {
@@ -66,47 +63,15 @@ function Seasons() {
       <Box w={"full"} h={"full"} mt={"30px"}>
         <Container maxW={"4xl"} fluid margin={"0 auto"}>
           <HStack justify={"flex-end"} mb={"20px"} gap="4">
-            <FormDialog
-              btn={
-                <Button
-                  colorPalette={"blue"}
-                  variant={"solid"}
-                  css={btnStyles}
-                  size={"md"}
-                >
-                  Create Season
-                </Button>
-              }
-              name="Season"
+            <Button
+              colorPalette={"blue"}
+              variant={"solid"}
+              css={btnStyles}
+              size={"md"}
+              asChild
             >
-              <form>
-                <Stack gap="4">
-                  <Field.Root required>
-                    <Field.Label color={"text_lg"}>Season</Field.Label>
-                    <Input
-                      name={"season"}
-                      type={"text"}
-                      placeholder="Enter Season"
-                      px={"2"}
-                      color={"text_lg"}
-                      fontSize={"sm"}
-                      fontWeight={"medium"}
-                      mb={"5px"}
-                    />
-                    <Field.HelperText
-                      fontSize={"sm"}
-                      fontWeight={"normal"}
-                      color={"text_md"}
-                    >
-                      Enter season e.g 2023/2024
-                    </Field.HelperText>
-                  </Field.Root>
-                  <Button type="submit" css={btnStyles} colorPalette={"blue"}>
-                    Save
-                  </Button>
-                </Stack>
-              </form>
-            </FormDialog>
+              <Link href={"/cp/seasons/create"}>Create Season</Link>
+            </Button>
           </HStack>
           <Table>
             <>
@@ -152,10 +117,11 @@ function Seasons() {
                           <TableCell>
                             <CustomMenu>
                               <>
-                                <CustomMenuItem
-                                  label="Edit"
-                                  showBorder={true}
-                                />
+                                <CustomMenuItem label="Edit" showBorder={true}>
+                                  <Link href={`/cp/seasons/${season.id}/edit`}>
+                                    Edit
+                                  </Link>
+                                </CustomMenuItem>
                                 <CustomMenuItem
                                   label="Delete"
                                   showBorder={false}
@@ -171,72 +137,6 @@ function Seasons() {
               </TableBody>
             </>
           </Table>
-          {/* <ActionTable selection={selection} hasSelection={hasSelection}>
-            <>
-              <ActionTableHeader
-                checked={indeterminate ? "indeterminate" : selection.length > 0}
-                label={"Select all rows"}
-                onCheckedChange={(changes: { checked: any }) => {
-                  setSelection(
-                    changes.checked
-                      ? seasons.map((season) => season.season)
-                      : []
-                  );
-                }}
-              >
-                <>
-                  {Object.keys(seasons[0])
-                    .filter((el) => el !== "id")
-                    .map((head, i) => {
-                      return (
-                        <TableColumnHeader
-                          key={head}
-                          textAlign={i === 1 || i === 2 ? "center" : "left"}
-                          pl={i === 0 ? "10px" : "0"}
-                        >
-                          {head}
-                        </TableColumnHeader>
-                      );
-                    })}
-                </>
-              </ActionTableHeader>
-              <ActionTableBody>
-                <>
-                  {seasons.map((season) => {
-                    return (
-                      <ActionTableBodyRow
-                        key={season.season}
-                        checked={selection.includes(season.season)}
-                        data_selected={
-                          selection.includes(season.season) ? "" : undefined
-                        }
-                        onCheckedChange={(changes) => {
-                          setSelection((prev) =>
-                            changes.checked
-                              ? [...prev, season.season]
-                              : selection.filter(
-                                  (name) => name !== season.season
-                                )
-                          );
-                        }}
-                      >
-                        <>
-                          <TableCell pl={"10px"}>{season.season}</TableCell>
-                          <TableCell textAlign={"center"}>
-                            {season.competitions}
-                          </TableCell>
-                          <TableCell textAlign={"center"}>
-                            {season.matches}
-                          </TableCell>
-                          <TableCell>{season.createdAt}</TableCell>
-                        </>
-                      </ActionTableBodyRow>
-                    );
-                  })}
-                </>
-              </ActionTableBody>
-            </>
-          </ActionTable> */}
           <HStack justify={"center"} w={"full"}>
             <Pagination />
           </HStack>

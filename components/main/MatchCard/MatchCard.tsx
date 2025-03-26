@@ -30,13 +30,23 @@ function MatchCard({
         <CardHeader theme={theme ? theme : "light"} border={true} as="div">
           <div className={clsx(styles["matchcard-header"])}>
             {match.competition && (
-              <Logo
-                logo={match.competition.logo}
-                name={match.competition.short_name}
-                size="md"
-              />
+              <div className={clsx(styles["matchcard-comp"])}>
+                <Logo
+                  logo={match.competition.logo}
+                  name={match.competition.short_name}
+                  size="md"
+                />
+                <Text
+                  color="white"
+                  letterCase={"upper"}
+                  size="sm"
+                  weight="semibold"
+                >
+                  {match.competition.short_name}
+                </Text>
+              </div>
             )}
-            <Text color="white" letterCase={"upper"} size="sm" weight="bold">
+            <Text color="white" letterCase={"upper"} size="sm" weight="regular">
               {formatDate(match.date)}
             </Text>
           </div>
@@ -50,30 +60,16 @@ function MatchCard({
                     color="secondary"
                     letterCase="upper"
                     size="xs"
-                    weight="bold"
+                    weight="semibold"
                     center={true}
                   >
                     {match.status}
                   </Text>
                 </div>
                 <div className={clsx(styles["matchcard-info"])}>
-                  <Text
-                    color="white"
-                    letterCase="upper"
-                    size="sm"
-                    weight="light"
-                  >
-                    {match.time}
-                  </Text>
+                  <p className={clsx(styles.time)}>{match.time}</p>
                   <span>|</span>
-                  <Text
-                    color="white"
-                    letterCase="capitalize"
-                    size="sm"
-                    weight="light"
-                  >
-                    {match.venue}
-                  </Text>
+                  <p className={clsx(styles.venue)}>{match.venue}</p>
                 </div>
                 <Link
                   href={
@@ -96,10 +92,12 @@ function MatchCard({
                     logo={match.home.team.logo}
                     showName={showName}
                     team={"home"}
-                    team_goals={match.home.goals}
+                  />
+                  <Details
+                    home_score={match.home.goals}
+                    away_score={match.away.goals}
                     status={match.status}
                   />
-                  <Details status={match.status} />
                   <MatchCardTeam
                     long_name={match.away.team.long_name}
                     short_name={match.away.team.short_name}
@@ -107,8 +105,6 @@ function MatchCard({
                     logo={match.away.team.logo}
                     showName={showName}
                     team={"away"}
-                    team_goals={match.away.goals}
-                    status={match.status}
                   />
                 </Link>
               </div>

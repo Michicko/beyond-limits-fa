@@ -9,12 +9,15 @@ import Hamburger from "./Hamburger";
 import NavLogo from "./NavLogo";
 import NavSearchBtn from "./NavSearchBtn";
 import { usePathname } from "next/navigation";
-import { seasons } from "@/lib/placeholder-data";
+import { months, seasons } from "@/lib/placeholder-data";
 import { getDefaultSeason } from "@/lib/helper";
 
 function Nav() {
   const pathname = usePathname();
   const isStatePopped = useRef(false);
+
+  const date = new Date();
+  const month = date.getUTCMonth();
 
   const [isSearchBarOpened, setIsSearchBarOpened] = useState(false);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -85,7 +88,7 @@ function Nav() {
               link={{
                 href: `/fixtures?season=${encodeURIComponent(
                   getDefaultSeason(seasons).toString()
-                )}`,
+                )}&month=${months[month]}`,
                 name: "fixtures",
               }}
             />

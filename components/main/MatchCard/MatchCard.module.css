@@ -11,8 +11,24 @@
   margin: 0.2rem 0;
 }
 
+.matchcard-info .time,
+.matchcard-info .venue {
+  font-family: var(--font-body);
+  font-size: var(--xs);
+  font-weight: 500;
+  color: var(--white);
+  text-transform: capitalize;
+}
+
 .matchcard-info span {
   margin-top: 0.2rem;
+  color: var(--white);
+}
+
+.matchcard-comp {
+  display: flex;
+  align-items: center;
+  gap: var(--xs);
 }
 
 .matchcard-header {
@@ -22,6 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: var(--white);
 }
 
 .matchcard-body {
@@ -38,7 +55,6 @@
 }
 
 .matchcard-team__info {
-  /* max-width: 12rem; */
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -59,11 +75,17 @@
   max-width: 10rem;
 }
 
+.matchcard-scores {
+  display: flex;
+  align-items: center;
+  gap: var(--xxs);
+}
+
 .matchcard-team {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: var(--xs);
 }
 
 .matchcard-team p {
@@ -138,11 +160,13 @@
 .matchlocation {
   font-size: var(--md);
   font-weight: 500;
+  color: var(--white);
 }
 
 .matchdate p {
   font-family: var(--font-body);
   text-transform: uppercase !important;
+  color: var(--white);
 }
 
 .matchscoreboard p {
@@ -182,7 +206,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0.2rem;
 }
 
 .match-score-tile {
@@ -190,6 +213,18 @@
   width: 2.5rem;
   color: var(--primary-light);
   font-weight: 700;
+}
+
+.match-score-tile.dark {
+  background: gray;
+}
+
+.match-score-tile.dark p {
+  color: var(--white);
+}
+
+.match-score-tile.light p {
+  color: var(--primary-dark);
 }
 
 .team-form p {
@@ -241,10 +276,11 @@
 .match-stat p {
   font-family: var(--font-body);
   font-size: var(--base);
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   padding-bottom: var(--xs);
   text-transform: capitalize;
+  color: var(--white);
 }
 
 .match-stat > *:nth-child(1)::before,
@@ -307,7 +343,7 @@
 
   .matchcard-header,
   .matchcard-body {
-    padding: var(--base) var(--xxl);
+    padding: var(--base) var(--xl);
   }
 
   .matchcard-body {
@@ -319,6 +355,11 @@
 
   .matchscoreboard.lg p {
     font-size: var(--xl);
+  }
+
+  .matchcard-info .time,
+  .matchcard-info .venue {
+    font-size: calc(var(--xs) + 0.1rem);
   }
 }
 
@@ -362,8 +403,8 @@
 
   .team-form,
   .match-score-tile {
-    height: 2rem;
-    width: 2rem;
+    /* height: 2rem; */
+    /* width: 2rem; */
   }
 }
 
@@ -375,5 +416,12 @@
 
   .matchscoreboard.iv .score {
     font-size: var(--v);
+  }
+}
+
+@media only screen and (min-width: 75rem) {
+  .matchcard-info .time,
+  .matchcard-info .venue {
+    font-size: var(--sm);
   }
 }

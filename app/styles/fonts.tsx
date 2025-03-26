@@ -1,4 +1,4 @@
-import { Roboto } from "next/font/google";
+import { Roboto, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 
 const roboto = Roboto({

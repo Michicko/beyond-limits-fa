@@ -11,6 +11,7 @@ function TableColumnHeader(
       textTransform={"capitalize"}
       fontWeight={"medium"}
       color={"text_lg"}
+      verticalAlign={"middle"}
       {...props}
     >
       {props.children}

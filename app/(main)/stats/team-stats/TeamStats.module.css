@@ -4,6 +4,7 @@
   gap: var(--md);
   margin-top: 4rem;
   align-items: flex-start;
+  color: var(--white);
 }
 
 .team-stats__heading,
@@ -65,7 +66,7 @@
 
 .team-stats__streak p,
 .team-stats__streak h4 {
-  font-weight: 700;
+  font-weight: 500;
   font-family: var(--font-body);
   font-size: var(--sm);
   text-transform: uppercase;
@@ -114,7 +115,7 @@
 @media only screen and (min-width: 64rem) {
   .team-stats__streak p,
   .team-stats__streak h4 {
-    font-size: var(--xl);
+    font-size: var(--lg);
   }
 
   .team-stats {

@@ -8,6 +8,7 @@ import { useState } from "react";
 import PlayerModal from "./PlayerModal";
 import Modal from "@/components/Modal/Modal";
 import Button from "../Button/Button";
+import { getIcon } from "@/lib/icons";
 
 const PlayerList = ({ players }: { players: IPlayer[] }) => {
   const [selectedPlayer, setSelectedPlayer] = useState<IPlayer | null>(null);
@@ -31,13 +32,9 @@ const PlayerList = ({ players }: { players: IPlayer[] }) => {
       {selectedPlayer && (
         <Modal isModalShown={isModalShown} setIsModalShown={setIsModalShown}>
           <div className={clsx(styles["player-modal"])}>
-            <Button
-              isLink={false}
-              text="close"
-              type="secondary"
-              size="md"
-              handleOnClick={closeModal}
-            />
+            <button onClick={closeModal} className={clsx("close-btn")}>
+              {getIcon("close")}
+            </button>
             <PlayerModal player={selectedPlayer} />
           </div>
         </Modal>

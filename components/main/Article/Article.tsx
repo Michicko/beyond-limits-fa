@@ -12,7 +12,7 @@ const Article = ({ article }: { article: IArticle }) => {
     to top,
     rgba(4, 48, 91, 0.75),
     rgba(64, 84, 102, 0.02)
-  ), url(${article.cover_image})`;
+  ), url(${article.coverImage})`;
 
   const cardStyles =
     article.category && article.category.name === "MATCH PREVIEW"
@@ -65,7 +65,7 @@ const Article = ({ article }: { article: IArticle }) => {
         {article.category && <ArticleCategory category={article.category} />}
         <h3>{article.title}</h3>
         <div className={clsx(styles["news__article-footer"])}>
-          <p>{formatDate(article.createdAt)}</p>
+          <p className={clsx(styles.date)}>{formatDate(article.createdAt)}</p>
           <Link
             href={`/news/${article.id}`}
             className={clsx(styles.article__link)}

@@ -7,14 +7,9 @@ import MatchDetails from "./MatchDetails";
 import CustomMenu from "../CustomMenu/CustomMenu";
 import CustomMenuItem from "../CustomMenu/CustomMenuItem";
 import Link from "next/link";
+import { IMatch } from "@/lib/definitions";
 
-function MatchCard({
-  status,
-  showMenu,
-}: {
-  status: "finished" | "upcoming";
-  showMenu?: boolean;
-}) {
+function MatchCard({ match, showMenu }: { match: IMatch; showMenu?: boolean }) {
   return (
     <Card.Root border={"1px solid"} borderColor={"neutral"} w={"full"}>
       <Card.Header
@@ -30,32 +25,29 @@ function MatchCard({
           h={"full"}
           px={"10px"}
         >
-          <HStack align={"center"}>
-            <MatchIcon
-              size="lg"
-              radius={false}
-              src="/images/league-tcc-icon.png"
-            />
-            <Text
-              color={"text_md"}
-              fontWeight={"medium"}
-              fontSize={"sm"}
-              ml={"sm"}
-            >
-              Viareggio Cup
-            </Text>
-          </HStack>
+          {match.competition && (
+            <HStack align={"center"}>
+              <MatchIcon size="md" radius={true} src={match.competition.logo} />
+              <Text
+                color={"text_md"}
+                fontWeight={"medium"}
+                fontSize={"sm"}
+                ml={"sm"}
+                textTransform={"uppercase"}
+              >
+                {match.competition.short_name}
+              </Text>
+            </HStack>
+          )}
           <HStack gap={"sm"}>
-            <Text color={"text_md"} fontSize={"sm"}>
-              2025-04-13
+            <Text color={"text_md"} fontSize={"sm"} textTransform={"uppercase"}>
+              {match.date}
             </Text>
             {showMenu && (
               <CustomMenu>
                 <>
                   <CustomMenuItem label="Edit" showBorder={true}>
-                    <Link href={`/cp/matches/2kdu89-3uiuu-3j8ui8/edit`}>
-                      Edit
-                    </Link>
+                    <Link href={`/cp/matches/${match.id}/edit`}>Edit</Link>
                   </CustomMenuItem>
                   <CustomMenuItem label="Delete" showBorder={false} />
                 </>
@@ -73,24 +65,29 @@ function MatchCard({
           textAlign={"center"}
           mb={"5px"}
         >
-          {status}
+          {match.status}
         </Text>
         <MatchDetails />
-        <HStack justify={"space-between"}>
-          <MatchTeam
-            short_name="BLFa"
-            long_name="Beyond Limits Fa"
-            team="home"
-            team_icon="/images/beyondimitslogo.png"
-          />
-          <MatchScores status={status} />
-          <MatchTeam
-            short_name="GFC"
-            long_name="Gbagada Fc"
-            team="away"
-            team_icon="/images/gbagada_fc.png"
-          />
-        </HStack>
+        {match.home.team && match.away.team && (
+          <HStack justify={"space-between"}>
+            <MatchTeam
+              short_name={match.home.team?.short_name}
+              long_name={match.home.team?.long_name}
+              team="home"
+              team_icon={match.home.team.logo}
+            />
+            <MatchScores
+              scores={{ home: match.home.goals, away: match.away.goals }}
+              status={match.status}
+            />
+            <MatchTeam
+              short_name={match.away.team?.short_name}
+              long_name={match.away.team?.long_name}
+              team="away"
+              team_icon={match.away.team.logo}
+            />
+          </HStack>
+        )}
       </Card.Body>
     </Card.Root>
   );

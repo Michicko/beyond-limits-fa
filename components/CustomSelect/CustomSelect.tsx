@@ -2,24 +2,39 @@ import { NativeSelect } from "@chakra-ui/react";
 import React from "react";
 
 function CustomSelect({
-  options,
   name,
-  value,
-  setValue,
+  description,
+  selectedValue,
+  options,
+  handleOnChange,
+  fixedWidth,
+  id,
 }: {
   name: string;
-  value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  description: string;
+  selectedValue: string;
   options: { label: string; value: string }[];
+  handleOnChange?: (e: { target: { name: string; value: string } }) => void;
+  fixedWidth?: boolean;
+  id?: string;
 }) {
   return (
-    <NativeSelect.Root size={"md"} variant={"outline"} colorPalette={"gray"}>
+    <NativeSelect.Root
+      size={"md"}
+      variant={"outline"}
+      colorPalette={"gray"}
+      maxW={fixedWidth ? "2xs" : "full"}
+    >
       <NativeSelect.Field
-        placeholder={`Select ${name}`}
+        placeholder={`Select ${description}`}
         color={"text_lg"}
         fontSize={"sm"}
         fontWeight={"medium"}
         pl={"10px"}
+        name={name}
+        value={selectedValue}
+        onChange={handleOnChange}
+        id={id}
       >
         {options.map((option) => {
           return (

@@ -9,19 +9,15 @@ function MatchCardTeam({
   short_name,
   long_name,
   logo,
-  team_goals,
   iconSize,
   team,
-  status,
 }: {
   showName?: boolean;
   short_name: string;
   long_name: string;
   logo: string;
-  team_goals: number;
   iconSize: "sm" | "md" | "lg" | "xl" | "xxl";
   team: "home" | "away";
-  status: string;
 }) {
   return (
     <div className={clsx(styles["matchcard-team"], styles[team])}>
@@ -37,11 +33,6 @@ function MatchCardTeam({
         </Text>
       )}
       <Logo logo={logo} name={short_name} size={iconSize || "lg"} />
-      {status === "FINISHED" && (
-        <Text color="white" letterCase="normal" size="xxl" weight="bold">
-          {team_goals}
-        </Text>
-      )}
     </div>
   );
 }

@@ -4,11 +4,12 @@ import StatCard from "@/components/admin/Card/StatCard";
 import PageTitle from "@/components/admin/Layout/PageTitle";
 import Scorers from "@/components/admin/Scorers/Scorers";
 import Standing from "@/components/admin/Standing/Standing";
-import { mixed_cups } from "@/lib/placeholder-data";
+import { leagues, matches, standing } from "@/lib/placeholder-data";
 import { Box, HStack, SimpleGrid, GridItem } from "@chakra-ui/react";
 import React from "react";
 
-const standing = mixed_cups[0].standing;
+const league = leagues.find((el) => el.competition?.short_name === "nnl");
+const standings = standing.filter((el) => el.league_id === league?.id);
 
 function Dashboard() {
   return (
@@ -29,10 +30,10 @@ function Dashboard() {
           <GridItem colSpan={{ base: 1, xl: 5 }}>
             <SimpleGrid columns={{ base: 1, md: 2 }} gap={"10px"}>
               <GridItem colSpan={{ base: 1 }}>
-                <MatchCard showMenu={false} status="finished" />
+                <MatchCard match={matches[1]} showMenu={false} />
               </GridItem>
               <GridItem colSpan={{ base: 1 }}>
-                <MatchCard showMenu={false} status="upcoming" />
+                <MatchCard match={matches[0]} showMenu={false} />
               </GridItem>
             </SimpleGrid>
           </GridItem>
@@ -44,7 +45,7 @@ function Dashboard() {
       <Box w="full" pb={"2px"} overflowX={"hidden"} as={"section"}>
         <SimpleGrid columns={{ base: 1, xl: 10 }} gap={"10px"}>
           <GridItem colSpan={{ base: 1, xl: 6 }}>
-            <Standing standings={standing} />
+            <Standing name="NNL" standings={standings} />
           </GridItem>
           <GridItem colSpan={{ base: 1, xl: 4 }}>
             <Scorers />

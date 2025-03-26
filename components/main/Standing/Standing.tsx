@@ -6,6 +6,7 @@ import Card from "../Card/Card";
 import CardHeader from "../Card/CardHeader";
 import CardBody from "../Card/CardBody";
 import StandingRow from "./StandingRow";
+import { teams } from "@/lib/placeholder-data";
 
 function Standing({
   standings,
@@ -16,7 +17,15 @@ function Standing({
   showFull: boolean;
   showLongName: boolean;
 }) {
-  const sortedStandings = standings.sort((a, b) => a.position - b.position);
+  const sortedStandings = standings
+    .map((row) => {
+      const team = teams.find((team) => team.id === row.team_id);
+      return {
+        ...row,
+        team,
+      };
+    })
+    .sort((a, b) => a.position - b.position);
 
   // get blfc index in standing
   const blfcIndex = sortedStandings.findIndex(
@@ -25,7 +34,7 @@ function Standing({
 
   // get team before blfc and blfc postions
   const filteredStandings = showFull
-    ? standings
+    ? sortedStandings
     : sortedStandings.slice(blfcIndex - 1, blfcIndex + 1);
 
   const theads = ["pos", "club", ...Object.keys(standings[0].stats)];

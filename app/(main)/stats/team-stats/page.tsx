@@ -4,8 +4,12 @@ import LayoutMain from "@/components/main/Layouts/CompetitionsLayout/LayoutMain"
 import Heading from "@/components/main/Typography/Heading";
 import {
   leagues as allLeagues,
-  mixed_cups as allMixedCups,
+  cups as all_cups,
+  competitions,
   matches,
+  playOffs,
+  standing,
+  teams,
 } from "@/lib/placeholder-data";
 import React, { Suspense } from "react";
 import clsx from "clsx";
@@ -14,9 +18,8 @@ import SeasonFilter from "@/components/main/Filters/SeasonFilter";
 import Card from "@/components/main/Card/Card";
 import CardHeader from "@/components/main/Card/CardHeader";
 import CardBody from "@/components/main/Card/CardBody";
-import Text from "@/components/main/Typography/Text";
-import Logo from "@/components/main/MatchCard/Logo";
 import TeamForm from "@/components/main/MatchCard/TeamForm";
+import TeamStat from "@/components/main/TeamStat/TeamStat";
 
 async function TeamStats(props: {
   searchParams?: Promise<{
@@ -25,36 +28,29 @@ async function TeamStats(props: {
 }) {
   const searchParams = await props.searchParams;
   const currentSeason = searchParams?.season || "";
-  const leagues = allLeagues.filter(
-    (el) => el.season?.season === decodeURIComponent(currentSeason)
-  );
-  const mixed_cups = allMixedCups.filter(
-    (el) => el.season?.season === decodeURIComponent(currentSeason)
-  );
 
-  const endings = [
-    {
-      nums: [1],
-      ending: "st",
-    },
-    {
-      nums: [2],
-      ending: "nd",
-    },
-    {
-      nums: [3],
-      ending: "rd",
-    },
-    {
-      nums: [4, 5, 6, 7, 8, 9, 0],
-      ending: "th",
-    },
-  ];
+  const leagues = allLeagues
+    .filter((el) => el.season?.season === decodeURIComponent(currentSeason))
+    .map((league) => {
+      const competition = competitions.find(
+        (el) => el.id === league.competition_id
+      );
+      return { ...league, competition };
+    });
 
-  const getPosition = (num: number) => {
-    const position = endings.find((el) => el.nums.includes(num))?.ending;
-    return position ? num + position : num;
-  };
+  const cups = all_cups
+    .filter((el) => el.season?.season === decodeURIComponent(currentSeason))
+    .map((cup) => {
+      const competition = competitions.find(
+        (el) => el.id === cup.competition_id
+      );
+      return { ...cup, competition };
+    });
+
+  const poplulatedStanding = standing.map((row) => {
+    const team = teams.find((team) => team.id === row.team_id);
+    return { ...row, team };
+  });
 
   return (
     <>
@@ -99,86 +95,38 @@ async function TeamStats(props: {
                 <div className={clsx(styles["team-stats__body"], styles.py)}>
                   <ul className={clsx(styles["competition-list"])}>
                     {leagues.map((league) => {
-                      const standing = league.standing.find(
-                        (standing) => standing.team?.isBeyondLimits
+                      const standings = poplulatedStanding.find(
+                        (row) => row.team && row.team.isBeyondLimits
                       );
+                      if (!league.competition || !standings) return;
+                      if (league.status === "completed") return;
                       return (
-                        <li
-                          className={clsx(styles["competition"])}
+                        <TeamStat
+                          competition_logo={league.competition.logo}
+                          competition_name={league.competition.long_name}
+                          position={standings.position}
                           key={league.id}
-                        >
-                          <div>
-                            <Text
-                              color="secondary"
-                              size="md"
-                              weight="bold"
-                              letterCase="normal"
-                            >
-                              {standing?.position &&
-                                getPosition(standing.position)}
-                            </Text>
-                            <Text
-                              color="white"
-                              size="md"
-                              weight="bold"
-                              letterCase="upper"
-                            >
-                              {standing?.competition?.long_name}
-                            </Text>
-                          </div>
-                          {standing?.competition && (
-                            <Logo
-                              name={standing.competition.long_name}
-                              logo={standing.competition.logo}
-                              size="lg"
-                            />
-                          )}
-                        </li>
+                        />
                       );
                     })}
                   </ul>
                   <ul className={clsx(styles["competition-list"])}>
-                    {mixed_cups.map((cup) => {
-                      const standing = cup.standing.find(
-                        (el) => el.team?.isBeyondLimits
-                      );
-                      const playOffs = cup.playOffs.map((el) => {
-                        return matches.find((match) => match.id === el);
-                      });
+                    {cups.map((cup) => {
+                      const playoffs = playOffs
+                        .map((el) => {
+                          return matches.find(
+                            (match) => match.id === el.match_id
+                          );
+                        })
+                        .filter((el) => el !== undefined);
+                      if (!cup.competition || !playoffs) return;
                       return (
-                        <li
-                          className={clsx(styles["competition"])}
+                        <TeamStat
+                          competition_logo={cup.competition.logo}
+                          competition_name={cup.competition.long_name}
+                          position={playoffs[playoffs.length - 1].round}
                           key={cup.id}
-                        >
-                          <div>
-                            <Text
-                              color="secondary"
-                              size="md"
-                              weight="bold"
-                              letterCase="normal"
-                            >
-                              {(playOffs &&
-                                playOffs.length > 0 &&
-                                playOffs[playOffs.length - 1]?.round) ||
-                                (standing && getPosition(standing.position))}
-                            </Text>
-                            <Text
-                              color="white"
-                              size="md"
-                              weight="bold"
-                              letterCase="upper"
-                            >
-                              {standing?.competition?.long_name}
-                            </Text>
-                          </div>
-                          {standing?.competition && (
-                            <Logo
-                              name={standing.competition.long_name}
-                              logo={standing.competition.logo}
-                              size="lg"
-                            />
-                          )}
-                        </li>
+                        />
                       );
                     })}
                   </ul>

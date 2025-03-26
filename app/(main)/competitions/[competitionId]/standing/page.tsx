@@ -2,10 +2,19 @@ import CompetitionsLayout from "@/components/main/Layouts/CompetitionsLayout/Com
 import MixedCup from "@/components/main/MixedCup/MixedCup";
 import Standing from "@/components/main/Standing/Standing";
 import Text from "@/components/main/Typography/Text";
-import { competitions, leagues, mixed_cups } from "@/lib/placeholder-data";
+import {
+  competitions,
+  cups,
+  leagues,
+  matches,
+  mixed_cups,
+  playOffs,
+  standing,
+} from "@/lib/placeholder-data";
 import React from "react";
 import clsx from "clsx";
 import styles from "../../Competitions.module.css";
+import Knockout from "@/components/main/Knockout/Knockout";
 
 function CompetitionStanding({
   params,
@@ -20,9 +29,18 @@ function CompetitionStanding({
     (el) => el.competition_id === params.competitionId
   );
 
-  const mixed_cup = mixed_cups.find(
-    (el) => el.competition_id === params.competitionId
+  const league_standing = standing.filter(
+    (el) => league && el.league_id === league.id
   );
+
+  const cup = cups.find((el) => el.competition_id === params.competitionId);
+
+  const playoffs = playOffs
+    .filter((el) => cup && el.cup_id === cup.id)
+    .map((el) => {
+      return matches.find((match) => match.id === el.match_id);
+    })
+    .filter((el) => el !== undefined);
 
   // no competition with that id
   if (!competition)
@@ -39,6 +57,20 @@ function CompetitionStanding({
       </CompetitionsLayout>
     );
 
+  if (!league)
+    return (
+      <CompetitionsLayout
+        pageTitle={"Competitions"}
+        competitionId={params.competitionId}
+      >
+        <div>
+          <Text size="base" color="white" letterCase="normal">
+            No League with that id
+          </Text>
+        </div>
+      </CompetitionsLayout>
+    );
+
   return (
     <CompetitionsLayout
       pageTitle={competition.long_name}
@@ -50,31 +82,23 @@ function CompetitionStanding({
             No League available
           </Text>
         )}
-        {competition.competition_type === "MIXEDCUP" && (
+        {competition.competition_type === "MIXEDCUP" && (league || cup) && (
           <>
-            {mixed_cup && (
-              <MixedCup
-                mixed_cup={mixed_cup}
-                competitionId={params.competitionId}
-              />
-            )}
-            {!mixed_cup && (
-              <Text size="md" color="white" letterCase="normal">
-                No Mixed cup available
-              </Text>
-            )}
+            <MixedCup
+              league_status={league.status}
+              playoffs={playoffs}
+              league_standing={league_standing}
+            />
           </>
+        )}
+        {competition.competition_type === "CUP" && (
+          <div>{playoffs && <Knockout playOffs={playoffs} />}</div>
         )}
         {competition.competition_type === "LEAGUE" && (
           <>
-            {league && !league.standing && (
-              <Text size="md" color="white" letterCase="normal">
-                No Standing available
-              </Text>
-            )}
-            {league && league.standing && (
+            {league && (
               <Standing
-                standings={league.standing}
+                standings={league_standing}
                 showFull={true}
                 showLongName={true}
               />
