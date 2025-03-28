@@ -1,7 +1,8 @@
 import BackButton from "@/components/admin/BackButton";
 import PlayerForm from "@/components/admin/Forms/PlayerForm";
+import PlayerPositionForm from "@/components/admin/Forms/PlayerPositionForm";
 import PageTitle from "@/components/admin/Layout/PageTitle";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, Heading, HStack } from "@chakra-ui/react";
 import React from "react";
 
 function CreatePlayer() {
@@ -12,6 +13,7 @@ function CreatePlayer() {
         <HStack mb={8}>
           <BackButton />
         </HStack>
+        <PlayerPositionForm />
         <PlayerForm />
       </Box>
     </>

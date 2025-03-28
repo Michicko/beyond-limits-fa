@@ -51,7 +51,7 @@ function Playoffs({
             as={"h3"}
             fontSize={"xl"}
             mb={"4"}
-            fontWeight={"600"}
+            fontWeight={"500"}
             color={"text_lg"}
           >
             Knockout rounds

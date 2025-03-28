@@ -1,9 +1,3 @@
-// import { useState, useEffect } from "react";
-// import { generateClient } from "aws-amplify/data";
-// import type { Schema } from "@/amplify/data/resource";
-// import "../../app.css";
-// import { Amplify } from "aws-amplify";
-// import outputs from "@/amplify_outputs.json";
 import ArticleList from "@/components/main/Article/ArticleList";
 import Button from "@/components/main/Button/Button";
 import Container from "@/components/main/Container/Container";

@@ -63,7 +63,7 @@
 .player__position-tile p {
   font-family: var(--font-body);
   font-size: var(--md);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--secondary-light);
   text-transform: uppercase;
 }
@@ -262,7 +262,7 @@
   text-transform: uppercase;
   color: var(--secondary-light);
   font-size: var(--sm);
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
 }
 

@@ -126,9 +126,9 @@ function Players() {
                   </>
                 </CustomTabList>
               }
-              {player_groups.map((group) => {
+              {player_groups.map((group, i) => {
                 return (
-                  <CustomTabContent value={group}>
+                  <CustomTabContent value={group} key={group + i}>
                     <Flex my={"20px"} direction={"column"} gap={"4"}>
                       {getGroup(group).map((player) => {
                         return <PlayerCard key={player.id} player={player} />;

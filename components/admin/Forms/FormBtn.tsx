@@ -6,10 +6,14 @@ function FormBtn({
   children,
   type,
   disabled,
+  loading,
+  loadingText,
 }: {
   children: React.ReactNode;
   type?: "button" | "submit";
   disabled?: boolean;
+  loading?: boolean;
+  loadingText?: string;
 }) {
   return (
     <Button
@@ -25,6 +29,8 @@ function FormBtn({
       fontWeight={"400"}
       disabled={disabled}
       _hover={{ bg: "primary_variant" }}
+      loading={loading}
+      loadingText={loadingText}
     >
       {children}
     </Button>

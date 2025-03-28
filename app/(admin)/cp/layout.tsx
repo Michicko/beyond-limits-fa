@@ -5,6 +5,7 @@ import { Provider } from "@/components/ui/provider";
 import RootLayout from "@/components/admin/Layout/RootLayout";
 import PageProvider from "@/providers/pageProvider";
 import NextTopLoader from "nextjs-toploader";
+import AwsInitialConfig from "@/components/AwsInitialConfig";
 
 export const metadata: Metadata = {
   title: "Beyon Limits Fa | Youth development for Remo stars fc",
@@ -24,6 +25,7 @@ export default function AuthLayout({
       className={`${roboto.variable}`}
     >
       <body>
+        <AwsInitialConfig />
         <NextTopLoader color="#ffd700" height={4} />
         <PageProvider>
           <Provider>

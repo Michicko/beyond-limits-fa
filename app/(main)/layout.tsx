@@ -6,6 +6,7 @@ import Nav from "@/components/main/nav/Nav";
 import { formula_condensed, roboto } from "@/app/styles/fonts";
 import Footer from "@/components/main/Footer/footer";
 import NextTopLoader from "nextjs-toploader";
+import AwsInitialConfig from "@/components/AwsInitialConfig";
 
 export const metadata: Metadata = {
   title: {
@@ -66,6 +67,7 @@ export default function RootLayout({
       className={`${formula_condensed.variable} ${roboto.variable}`}
     >
       <body className={clsx(styles.layout)}>
+        <AwsInitialConfig />
         <NextTopLoader color="#ffd700" height={4} />
         <Nav />
         {children}
